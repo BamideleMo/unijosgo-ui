@@ -1,4 +1,4 @@
-@import './base.css';
+@import "./base.css";
 
 /* #app {
   max-width: 1280px;
@@ -7,7 +7,6 @@
 
   font-weight: normal;
 } */
-
 
 a,
 .green {
@@ -35,29 +34,49 @@ a,
   } */
 }
 /* My styles */
-.content, .content2{
+.content,
+.content2 {
   color: #000000 !important;
 }
-.content ul{
+.content ul {
   list-style-type: decimal-leading-zero;
   margin: 0 32px;
 }
-.gist{
+.gist {
   color: #ff3300;
 }
-.content ul b{
+.content ul b {
   color: #ff3300;
   display: block;
   font-weight: normal;
 }
-.content ul li{
+.content ul li {
   padding: 10px 0;
 }
-.content hr,.content2 hr, header hr{
+.content hr,
+.content2 hr,
+header hr {
   height: 4px;
   margin: 12px 0;
-  background: linear-gradient(to right, rgba(0,118,186,1) 0%, rgba(0,118,186,1) 11%, rgba(74,174,32,1) 22%, rgba(74,174,32,1) 33%, rgba(255,147,0,1) 44%, rgba(255,147,0,1) 55%, rgba(228,68,54,1) 66%, rgba(228,68,54,1) 77%, rgba(205,50,146,1) 88%, rgba(205,50,146,1) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(0, 118, 186, 1) 0%,
+    rgba(0, 118, 186, 1) 11%,
+    rgba(74, 174, 32, 1) 22%,
+    rgba(74, 174, 32, 1) 33%,
+    rgba(255, 147, 0, 1) 44%,
+    rgba(255, 147, 0, 1) 55%,
+    rgba(228, 68, 54, 1) 66%,
+    rgba(228, 68, 54, 1) 77%,
+    rgba(205, 50, 146, 1) 88%,
+    rgba(205, 50, 146, 1) 100%
+  );
 }
-.h1{
+.h1 {
   color: #ff3300;
+}
+.content p,
+.content2 p {
+  font-size: 14px;
+  margin: 12px 0;
 }

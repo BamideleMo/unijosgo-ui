@@ -15,7 +15,7 @@ const title = "About Us";
         creating, & sharing fun and interesting gists for all Jossites to enjoy.
       </p>
       <p>
-        It is run by a team of young folks who enjoy telling inclusive, relatable, &
+        We enjoy telling inclusive, relatable, &
         fun gist that inspire other Jossites to live their best lives.
       </p>
       <p>

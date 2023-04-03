@@ -1,20 +1,21 @@
 
+<script setup>
+import { ref } from "vue";
+import SuperMeta from "../../components/SuperMeta.vue";
+
+
+const title = "Make Post";
+
+</script>
 <template>
   <SuperMeta :title="title" name="description" content="UniJosGist curates, create, & share fun
                 and interesting perspectives & activities Jossites will enjoy." />
   <div class="">
-    <h1 class="h1 font-semibold text-lg">Post</h1>
-    <div class="mt-4">
-      <div class="">
-        <CKEditor class="h-90 border-2" :editor="ClassicEditor" v-model="editorData" @ready="onReady" @input="onChange">
-        </ckeditor>
-      </div>
+    <h1 class="h1 font-semibold text-lg">All Posts</h1>
+    <div class="mt-4 space-y-6 text-black">
     </div>
   </div>
 </template>
 
-<script setup>
-
-</script>
 
 <style lang="scss" scoped></style>

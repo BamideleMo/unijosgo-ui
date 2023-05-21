@@ -1,14 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
-import IssueView from "../views/IssueView.vue";
+import VolumeView from "../views/VolumeView.vue";
+import IssuesView from "../views/IssuesView.vue";
 import WelcomeView from "../views/WelcomeView.vue";
 import AboutView from "../views/AboutView.vue";
-import SubscribeView from "../views/SubscribeView.vue";
-import SignInView from "../views/SignInView.vue";
 import PostView from "../views/admin/PostView.vue";
 import AllPostsView from "../views/admin/AllPostsView.vue";
 import PageNotFoundView from "../views/PageNotFoundView.vue";
 import LoadingIssueView from "../views/LoadingIssueView.vue";
-import UnauthorizedView from "../views/UnauthorizedView.vue";
+import CallToActionView from "../views/CallToActionView.vue";
 import { useUserStore } from "../store/user-store";
 
 const router = createRouter({
@@ -17,11 +16,11 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      redirect: "/issue",
+      redirect: "/volume",
     },
     {
       path: "/home",
-      redirect: "/issue",
+      redirect: "/volume",
     },
     {
       path: "/about",
@@ -29,27 +28,11 @@ const router = createRouter({
       component: AboutView,
     },
     {
-      path: "/subscribe",
-      name: "subscribe",
-      component: SubscribeView,
-    },
-    {
       path: "/welcome",
       name: "welcome",
       component: WelcomeView,
       meta: {
         requiresUserAuth: true,
-      },
-    },
-    {
-      path: "/sign-in",
-      name: "signin",
-      component: SignInView,
-      meta: {
-        loggedIn: true,
-      },
-      afterEach: (to, from, next) => {
-        next({ path: "/about" });
       },
     },
     {
@@ -66,38 +49,43 @@ const router = createRouter({
       component: AllPostsView,
     },
     {
-      path: "/issue/:id",
-      name: "issue",
-      component: IssueView,
+      path: "/volume/:id",
+      name: "volume",
+      component: VolumeView,
     },
     {
-      path: "/issue",
+      path: "/volume",
       name: "no_issue",
       component: LoadingIssueView,
     },
     {
-      path: "/unsubscribed/:id",
-      name: "un_authorized",
-      component: UnauthorizedView,
+      path: "/issues",
+      name: "all_issues",
+      component: IssuesView,
+      meta: {
+        requiresUserAuth: true,
+      },
+    },
+    {
+      path: "/call-to-action",
+      name: "cta",
+      component: CallToActionView,
     },
     {
       path: "/:pathMatch(.*)*",
       name: "not_found",
       component: PageNotFoundView,
     },
-    // {
-    //   path: "*",
-    //   redirect: "/404"
-    // }
   ],
 });
 
 router.beforeEach((to, from) => {
+  window.scrollTo(0, 0);
   const userStore = useUserStore();
 
   if (to.meta.requiresUserAuth && !userStore.uuser_id) {
     return {
-      path: "/subscribe",
+      path: "/sign-in",
       query: { redirect: to.fullPath },
     };
   }

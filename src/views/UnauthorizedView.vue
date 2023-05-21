@@ -52,34 +52,30 @@ const title = "Issue #" + route.params.id;
   />
   <main>
     <div v-if="issueContent !== ''">
-      <div class="content space-y-4">
-        <div
-          class="flex justify-between text-gray-600 pt-8 pb-4 drop-shadow-lg"
-        >
-          <div>Issue #{{ route.params.id }}</div>
-          <div>
-            {{ issueContent.data.data.post_date }}
-          </div>
-        </div>
+      <div class="content">
+        <h1 class="h1 font-semibold text-lg">Issue #{{ route.params.id }}</h1>
 
-        <div class="">Hey {{ name }} 👋</div>
+        <p class="flex justify-between">
+          <span>Hey {{ name }} 👋</span>
+          <span>📅 {{ issueContent.data.data.post_date }}</span>
+        </p>
         <div v-html="issueContent.data.data.content1"></div>
       </div>
       <div v-if="!userStore.uuser_id">
         <div
-          class="bg-gradient-to-r from-violet-900 to-blue-900 px-2 sm:px-10 py-6 rounded-lg my-6 text-center text-sm sm:text-base text-white"
+          class="bg-gradient-to-r from-violet-900 to-blue-900 px-4 sm:px-10 py-6 rounded-lg my-6 text-center text-sm sm:text-base text-white"
         >
           <h2 class="">
             Subscribe to Continue reading.
-            <b>300+ students have already subscribed</b>. Click the button
-            below. It is FREE
+            <b>300+ students have already subscribed</b>. Click the button below
+            to subscribe. It is FREE
           </h2>
           <div class="text-center mt-6 mb-3">
             <RouterLink
               to="/subscribe"
               class="bg-black cursor-pointer drop-shadow-lg p-3 rounded-lg text-white space-x-3 hover:opacity-60"
             >
-              <span>Subscribe</span>
+              <span class="text-lg">Subscribe</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -110,7 +106,7 @@ const title = "Issue #" + route.params.id;
     <div v-else class="text-black">
       <div class="text-center">
         <img src="/loading.gif" alt="" class="w-60 mx-auto" />
-        <p class="text-sm text-gray-400">Loading latest gist...</p>
+        <p class="text-sm text-gray-400 -mt-10">Loading Gist...</p>
       </div>
     </div>
   </main>

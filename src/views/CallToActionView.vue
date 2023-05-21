@@ -54,12 +54,12 @@ const title = "UniJosGo - Fun & Informative";
       <div class="mt-6 space-x-4" id="subscribe">
         <span
           @click="doShowForm('subscribe')"
-          class="border border-red-600 text-black text-sm py-3 px-3 hover:opacity-40 cursor-pointer"
+          class="shadow-lg border border-red-600 text-black text-sm py-3 px-3 hover:opacity-40 cursor-pointer"
           >Subscribe</span
         >
         <span
           @click="doShowForm('login')"
-          class="border border-red-600 text-black text-sm py-3 px-3 hover:opacity-40 cursor-pointer"
+          class="shadow-lg border border-red-600 text-black text-sm py-3 px-3 hover:opacity-40 cursor-pointer"
           >Login</span
         >
       </div>

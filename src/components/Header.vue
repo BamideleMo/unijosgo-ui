@@ -12,7 +12,7 @@
           >
         </div>
       </div>
-      <div class="pt-4 drop-shadow-lg">
+      <div class="pt-3 sm:pt-4 drop-shadow-lg">
         <RouterLink
           to="/about"
           class="bg-black text-white text-sm py-2 px-3 hover:opacity-40 cursor-pointer"

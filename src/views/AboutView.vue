@@ -34,7 +34,7 @@ const title = "About - UniJosGo";
       </p>
 
       <h2>❤️ What Subscribers say:</h2>
-      <div class="grid grid-cols-2 gap-2">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <div
           class="bg-blue-100 border text-slate-600 border-slate-300 text-xs shadow-lg p-3 space-y-1 rounded-lg"
         >

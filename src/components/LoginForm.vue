@@ -57,7 +57,9 @@ const submitForm = async () => {
 };
 </script>
 <template>
-  <form class="w-11/12 lg:w-6/12 mx-auto mt-20 bg-white p-10 rounded-lg">
+  <form
+    class="w-11/12 lg:w-6/12 mx-auto mt-10 sm:mt-20 bg-white p-5 sm:p-10 rounded-lg"
+  >
     <div class="flex justify-between">
       <h1 class="h1 font-semibold text-lg">
         Login to <span class="text-black">UniJos</span>Go

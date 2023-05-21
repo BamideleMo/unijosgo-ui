@@ -42,7 +42,7 @@ const title = "About - UniJosGo";
             "So good. I like how simple the website is. It's direct to the
             point."
           </p>
-          <p class="border-t border-slate-300 pt-1">- Ada; 200L Student</p>
+          <p class="border-t border-slate-300 pt-1">- Silas; 200L Student</p>
         </div>
         <div
           class="bg-blue-100 border text-slate-600 border-slate-300 text-xs shadow-lg p-3 space-y-1 rounded-lg"

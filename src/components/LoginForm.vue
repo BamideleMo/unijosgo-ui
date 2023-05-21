@@ -71,7 +71,7 @@ const submitForm = async () => {
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-6 h-6 text-red-900 hover:opacity-60 cursor-pointer"
+        class="w-10 h-10 -mt-2 -mr-2 text-red-900 hover:opacity-60 cursor-pointer"
       >
         <path
           stroke-linecap="round"
@@ -110,7 +110,7 @@ const submitForm = async () => {
             </div>
           </div>
           <div class="">
-            <label for="">WhatsApp Phone Number:</label>
+            <label for="" class="font-bold">WhatsApp Phone Number:</label>
             <input
               type="text"
               v-model="formData.phone"

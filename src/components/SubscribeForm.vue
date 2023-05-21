@@ -65,7 +65,7 @@ const title = "Subscribe";
 </script>
 <template>
   <form
-    class="w-11/12 lg:w-6/12 mx-auto mt-10 sm:mt-20 bg-white p-5 sm:p-10 rounded-lg"
+    class="w-11/12 lg:w-6/12 mx-auto mt-10 sm:mt-20 bg-white p-5 pb-10 sm:p-10 rounded-lg"
   >
     <div class="flex justify-between">
       <h1 class="h1 font-semibold text-lg">
@@ -78,7 +78,7 @@ const title = "Subscribe";
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-6 h-6 text-red-900 hover:opacity-60 cursor-pointer"
+        class="w-10 h-10 -mt-2 -mr-2 text-red-900 hover:opacity-60 cursor-pointer"
       >
         <path
           stroke-linecap="round"
@@ -123,7 +123,7 @@ const title = "Subscribe";
             </div>
           </div>
           <div class="">
-            <label for="">Name:</label>
+            <label for="" class="font-bold">Name:</label>
             <input
               type="text"
               v-model="formData.name"
@@ -141,7 +141,7 @@ const title = "Subscribe";
             </div>
           </div>
           <div class="">
-            <label for="">WhatsApp Phone Number:</label>
+            <label for="" class="font-bold">WhatsApp Phone Number:</label>
             <input
               type="text"
               v-model="formData.phone"

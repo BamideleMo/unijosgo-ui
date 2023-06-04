@@ -44,10 +44,11 @@ const submitForm = async () => {
 
   const validation = await v$.value.$validate();
   try {
-    let res = await axios.post(API_URL + "register", {
+    let res = await axios.post(API_URL + "subscribe", {
       name: formData.value.name,
       phone: formData.value.phone,
       password: "1234",
+      role: "user",
     });
 
     userStore.setUserDetails(res);
@@ -171,9 +172,9 @@ const title = "Subscribe";
               <button
                 v-if="isProcessing"
                 disabled
-                class="w-full bg-gray-400 cursor-progress p-2 opacity-60 text-white rounded-lg"
+                class="w-full bg-gray-400 cursor-not-allowed animate-pulse p-3 opacity-60 text-white rounded-lg"
               >
-                Processing...
+                Processing.. .
               </button>
               <button
                 v-else

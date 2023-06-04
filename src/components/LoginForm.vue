@@ -140,7 +140,7 @@ const submitForm = async () => {
               <button
                 v-if="isProcessing"
                 disabled
-                class="w-full bg-gray-400 cursor-progress p-2 opacity-60 text-white rounded-lg"
+                class="w-full bg-gray-400 cursor-not-allowed animate-pulse p-3 opacity-60 text-white rounded-lg"
               >
                 Processing...
               </button>

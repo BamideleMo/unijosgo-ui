@@ -7,7 +7,7 @@ import PostView from "../views/admin/PostView.vue";
 import AllPostsView from "../views/admin/AllPostsView.vue";
 import PageNotFoundView from "../views/PageNotFoundView.vue";
 import LoadingIssueView from "../views/LoadingIssueView.vue";
-import CallToActionView from "../views/CallToActionView.vue";
+import HomeView from "../views/HomeView.vue";
 import { useUserStore } from "../store/user-store";
 
 const router = createRouter({
@@ -16,11 +16,17 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      redirect: "/volume",
+      component: HomeView,
+      meta: {
+        loggedIn: true,
+      },
     },
     {
       path: "/home",
-      redirect: "/volume",
+      redirect: "/",
+      meta: {
+        loggedIn: true,
+      },
     },
     {
       path: "/about",
@@ -32,7 +38,7 @@ const router = createRouter({
       name: "welcome",
       component: WelcomeView,
       meta: {
-        requiresUserAuth: true,
+        loggedIn: true,
       },
     },
     {
@@ -52,24 +58,17 @@ const router = createRouter({
       path: "/volume/:id",
       name: "volume",
       component: VolumeView,
-    },
-    {
-      path: "/volume",
-      name: "no_issue",
-      component: LoadingIssueView,
-    },
-    {
-      path: "/issues",
-      name: "all_issues",
-      component: IssuesView,
       meta: {
         requiresUserAuth: true,
       },
     },
     {
-      path: "/call-to-action",
-      name: "cta",
-      component: CallToActionView,
+      path: "/volume",
+      name: "loading",
+      component: LoadingIssueView,
+      meta: {
+        requiresUserAuth: true,
+      },
     },
     {
       path: "/:pathMatch(.*)*",
@@ -81,23 +80,23 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
   window.scrollTo(0, 0);
-  const userStore = useUserStore();
+  const authStore = useUserStore();
 
-  if (to.meta.requiresUserAuth && !userStore.uuser_id) {
+  if (to.meta.requiresUserAuth && !authStore.cid) {
     return {
-      path: "/sign-in",
+      path: "/home",
       query: { redirect: to.fullPath },
     };
   }
-  if (to.meta.requiresAdminAuth && userStore.role !== "admin") {
+  if (to.meta.requiresAdminAuth && authStore.user_category !== "admin") {
     return {
-      path: "/",
+      path: "/home",
       query: { redirect: to.fullPath },
     };
   }
-  if (to.meta.loggedIn && userStore.uuser_id) {
+  if (to.meta.loggedIn && authStore.cid) {
     return {
-      path: "/",
+      path: "/volume",
       query: { redirect: to.fullPath },
     };
   }

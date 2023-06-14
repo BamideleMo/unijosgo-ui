@@ -1,33 +1,21 @@
 <script setup>
 import { useUserStore } from "../store/user-store";
+import { useRouter } from "vue-router";
+const router = useRouter();
 
-const userStore = useUserStore();
+const authStore = useUserStore();
 
-const logout = async () => {
-  const API_URL = import.meta.env.VITE_API_URL;
-  try {
-    let res = await axios.post(API_URL + "logout", "", {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${userStore.token}`,
-      },
-    });
-    userStore.clearUser();
-
-    router.push({
-      name: "cta",
-    });
-  } catch (error) {
-    console.log(error);
-  }
+const logout = () => {
+  authStore.clearUser();
+  router.push({ name: "home" });
 };
 </script>
 <template>
   <footer
-    class="py-10 mt-20 border-t border-gray-700 text-center text-sm sm:text-sm text-slate-900"
+    class="py-10 mt-20 border-t border-gray-700 text-center text-xs sm:text-sm text-slate-900"
   >
     <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto flex justify-between">
-      <div class="text-center space-x-8 lg:space-x-10">
+      <div class="text-center space-x-4 lg:space-x-6">
         <RouterLink to="/" class="border-b border-red-600 hover:opacity-60">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -44,11 +32,8 @@ const logout = async () => {
             />
           </svg>
         </RouterLink>
-        <RouterLink to="/about" class="border-b border-red-600 hover:opacity-60"
-          >About</RouterLink
-        >
         <span
-          v-if="userStore.uuser_id"
+          v-if="authStore.cid"
           @click="logout"
           class="border-b border-red-600 hover:opacity-60 cursor-pointer"
           >Logout</span

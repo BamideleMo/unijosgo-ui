@@ -9,20 +9,17 @@ import { useUserStore } from "../store/user-store";
 
 const router = useRouter();
 
-const userStore = useUserStore();
-
-const isLoading = ref(true);
-const errorMessage = ref(null);
+const authStore = useUserStore();
 
 onMounted(async () => {
   const API_URL = import.meta.env.VITE_API_URL;
 
-  if (userStore.uuser_id) {
+  if (authStore.cid) {
     try {
-      let res = await axios.get(API_URL + "posts/latest", {
+      let res = await axios.get(API_URL + "gists/latest", {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${userStore.token}`,
+          Authorization: `Bearer ${authStore.token}`,
         },
       });
       router.push({
@@ -33,7 +30,7 @@ onMounted(async () => {
     }
   } else {
     router.push({
-      path: "/call-to-action",
+      path: "/",
     });
   }
 });
@@ -45,7 +42,7 @@ const title = "Loading...";
   <div class="text-black">
     <div class="text-center">
       <img src="/loading.gif" alt="" class="w-60 mx-auto" />
-      <p class="text-sm text-gray-400 -mt-10">Loading Gist...</p>
+      <p class="text-sm text-gray-400 -mt-10">Loading Gists...</p>
     </div>
   </div>
 </template>

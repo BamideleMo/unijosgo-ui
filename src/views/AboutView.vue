@@ -20,8 +20,8 @@ const title = "About - UniJosGo";
     >
       <h1 class="h1 font-semibold text-lg text-center">About</h1>
       <p>
-        UniJosGo (www.unijosgo.ng) is a weekly online publication of interesting
-        gists for and about students in UniJos.
+        UniJosGo (www.unijosgo.ng) is a weekly post of interesting gists for and
+        about students in UniJos.
       </p>
       <p>
         It's a casual project for curating, and sharing inclusive, relatable,
@@ -47,7 +47,7 @@ const title = "About - UniJosGo";
         <div
           class="bg-blue-100 border text-slate-600 border-slate-300 text-xs shadow-lg p-3 space-y-1 rounded-lg"
         >
-          <p>"Interesting writeups. Will recommend to my friends."</p>
+          <p>"Nice one. Reading your posts is trully fun."</p>
           <p class="border-t border-slate-300 pt-1">- Godiya; 300L Student</p>
         </div>
       </div>

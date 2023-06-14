@@ -17,7 +17,9 @@ const isProcessing = ref(false);
 
 const formData = ref({
   name: "",
-  phone: "",
+  username: "",
+  password: "1234",
+  user_category: "user",
 });
 
 const mustBeNgphone = helpers.regex(/^[0][0-9]+$/);
@@ -27,7 +29,7 @@ const rules = {
     required: helpers.withMessage("Required", required),
     minLength: helpers.withMessage("Invalid", minLength(2)),
   },
-  phone: {
+  username: {
     required: helpers.withMessage("Required", required),
     minLength: helpers.withMessage("Invalid", minLength(11)),
     maxLength: helpers.withMessage("Invalid", maxLength(11)),
@@ -44,12 +46,7 @@ const submitForm = async () => {
 
   const validation = await v$.value.$validate();
   try {
-    let res = await axios.post(API_URL + "subscribe", {
-      name: formData.value.name,
-      phone: formData.value.phone,
-      password: "1234",
-      role: "user",
-    });
+    let res = await axios.post(API_URL + "users/register", formData.value);
 
     userStore.setUserDetails(res);
 
@@ -103,25 +100,9 @@ const title = "Subscribe";
         <div class="mt-6 space-y-4 text-sm">
           <div
             v-if="errorMessage"
-            class="bg-red-900 animate-pulse text-red-200 text-xs p-1 rounded flex justify-between space-x-2"
+            class="bg-purple-900 animate-pulse text-red-200 text-sm p-2 rounded space-x-2"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-8 h-8"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
-              />
-            </svg>
-            <div class="mt-0 leading-tight border-l border-yellow-800 pl-2">
-              {{ errorMessage }}
-            </div>
+            {{ errorMessage }}
           </div>
           <div class="">
             <label for="" class="font-bold">Name:</label>
@@ -130,10 +111,10 @@ const title = "Subscribe";
               v-model="formData.name"
               @blur="v$.name.$touch"
               placeholder="What should we call you?"
-              class="w-full placeholder:text-blue-300 mt-1 rounded-md outline-none px-3 py-1 h-10 border-2 bg-transparent border-blue-900"
+              class="w-full placeholder:text-blue-300 mt-1 rounded-md outline-none px-3 py-2 h-12 border-2 bg-transparent border-blue-900"
             />
             <div
-              class="text-right text-purple-500 font-semibold mt-2 text-xs"
+              class="text-right text-purple-500 font-semibold mt-1 text-xs"
               v-if="v$.name.$error"
             >
               <span class="w-16 float-right -mt-9 mr-2">
@@ -145,17 +126,17 @@ const title = "Subscribe";
             <label for="" class="font-bold">WhatsApp Phone Number:</label>
             <input
               type="text"
-              v-model="formData.phone"
-              @blur="v$.phone.$touch"
+              v-model="formData.username"
+              @blur="v$.username.$touch"
               placeholder="Example: 07035423612"
-              class="w-full placeholder:text-blue-300 mt-1 rounded-md outline-none px-3 py-1 h-10 border-2 bg-transparent border-blue-900"
+              class="w-full placeholder:text-blue-300 mt-1 rounded-md outline-none px-3 py-2 h-12 border-2 bg-transparent border-blue-900"
             />
             <div
-              class="text-right text-purple-500 font-semibold mt-2 text-xs"
-              v-if="v$.phone.$error"
+              class="text-right text-purple-500 font-semibold mt-1 text-xs"
+              v-if="v$.username.$error"
             >
               <span class="w-16 float-right -mt-9 mr-2">
-                <span>{{ v$.phone.$errors[0].$message }}</span></span
+                <span>{{ v$.username.$errors[0].$message }}</span></span
               >
             </div>
           </div>
@@ -164,7 +145,7 @@ const title = "Subscribe";
             <button
               v-if="v$.$invalid"
               disabled
-              class="w-full bg-gray-400 cursor-not-allowed p-2 h-10 opacity-60 text-white rounded-lg"
+              class="w-full bg-gray-400 cursor-not-allowed p-3 opacity-60 text-white rounded-lg"
             >
               Submit
             </button>
@@ -172,14 +153,14 @@ const title = "Subscribe";
               <button
                 v-if="isProcessing"
                 disabled
-                class="w-full bg-gray-400 cursor-not-allowed animate-pulse p-3 opacity-60 text-white rounded-lg"
+                class="w-full bg-gray-800 cursor-not-allowed animate-pulse p-3 opacity-60 text-white rounded-lg"
               >
                 Processing.. .
               </button>
               <button
                 v-else
                 @click="submitForm"
-                class="w-full bg-red-500 p-2 hover:opacity-60 text-white rounded-lg"
+                class="w-full bg-red-500 p-3 hover:opacity-60 text-white rounded-lg"
               >
                 Submit
               </button>

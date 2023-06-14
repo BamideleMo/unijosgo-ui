@@ -1,42 +1,39 @@
-import axios from 'axios';
-import { defineStore } from 'pinia'
+import axios from "axios";
+import { defineStore } from "pinia";
 const API_URL = import.meta.env.VITE_API_URL;
 
-export const useUserStore = defineStore('user', {
+export const useUserStore = defineStore("ujgo_user", {
   state: () => ({
-    uuser_id: null,
+    cid: null,
     token: null,
-    role: null,
+    user_category: null,
     name: null,
-    phone: null,
-    phone_verification: null,
+    username: null,
   }),
   actions: {
     async setUserDetails(res) {
-      this.$state.uuser_id = res.data.data.user.uuser_id
-      this.$state.token = res.data.data.token
-      this.$state.role = res.data.data.user.role
-      this.$state.name = res.data.data.user.name
-      this.$state.phone = res.data.data.user.phone
-      this.$state.phone_verification = res.data.data.user.phone_verification
+      this.$state.cid = res.data.user.cid;
+      this.$state.token = res.data.token;
+      this.$state.user_category = res.data.user.user_category;
+      this.$state.name = res.data.user.name;
+      this.$state.username = res.data.user.username;
+      console.log(res.data);
     },
     async fetchUser() {
-      let res = await axios.get(API_URL + this.$state.uuser_id)
+      let res = await axios.get(API_URL + this.$state.cid);
 
-      this.$state.uuser_id = res.data.data.user.uuser_id
-      this.$state.role = res.data.data.user.role
-      this.$state.name = res.data.data.user.name
-      this.$state.phone = res.data.data.user.phone,
-        this.$state.phone_verification = res.data.data.user.phone_verification
+      this.$state.cid = res.data.data.user.cid;
+      this.$state.user_category = res.data.data.user.user_category;
+      this.$state.name = res.data.data.user.name;
+      this.$state.username = res.data.data.user.username;
     },
     clearUser() {
-      this.$state.uuser_id = null
-      this.$state.token = null
-      this.$state.role = null
-      this.$state.name = null
-      this.$state.phone = null
-      this.$state.phone_verification = null
-    }
+      this.$state.cid = null;
+      this.$state.token = null;
+      this.$state.user_category = null;
+      this.$state.name = null;
+      this.$state.username = null;
+    },
   },
-  persist: true
-})
+  persist: true,
+});

@@ -51,7 +51,7 @@ a,
   font-weight: bold;
 }
 .content ul li {
-  padding: 12px 0;
+  padding: 8px 0;
   font-size: 14px;
   text-transform: capitalize;
 }
@@ -68,16 +68,18 @@ a,
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .content p {
-  color: #333333;
+  color: #000000;
+  margin: 15px 0;
 }
 .content h2 {
   padding-top: 20px;
-  color: #ff3300;
+  color: #0b5394;
   font-weight: bold;
+  font-size: 16px;
 }
 p a {
   border-bottom: #0764b1 1px solid !important;
-  color: #ff3300;
+  color: #0b5394;
 }
 p a:hover {
   color: #0764b1;

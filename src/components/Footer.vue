@@ -12,7 +12,7 @@ const logout = () => {
 </script>
 <template>
   <footer
-    class="py-10 mt-20 border-t border-gray-700 text-center text-xs sm:text-sm text-slate-900"
+    class="py-10 mt-0 border-t border-gray-700 text-center text-xs sm:text-sm text-black"
   >
     <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto flex justify-between">
       <div class="text-center space-x-4 lg:space-x-6">
@@ -39,7 +39,7 @@ const logout = () => {
           >Logout</span
         >
       </div>
-      <div class="text-gray-400">
+      <div class="text-gray-900">
         &copy; {{ new Date().getFullYear() }}. All rights reserved.
       </div>
     </div>

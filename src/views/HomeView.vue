@@ -65,10 +65,12 @@ const title = "UniJosGo - Fun & Informative";
       </div>
     </div>
     <div class="w-11/12 sm:w-8/12 mx-auto mt-12 lg:w-4/12 lg:-mt-8">
-      <div class="lg:px-4 border-double border-b border-red-600">
-        <img src="/mobile.png" class="max-w-80 mx-auto" />
+      <div class="lg:px-0">
+        <img
+          src="/mobile.png"
+          class="max-w-80 mx-auto lg:mx-0 lg:float-right"
+        />
       </div>
-      <div class="shadow-lg -mt-5">&nbsp;</div>
     </div>
   </div>
   <Footer />

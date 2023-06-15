@@ -14,7 +14,9 @@ const logout = () => {
   <footer
     class="py-10 mt-0 border-t border-gray-700 text-center text-xs sm:text-sm text-black"
   >
-    <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto flex justify-between">
+    <div
+      class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto flex space-x-6 justify-center lg:justify-between"
+    >
       <div class="text-center space-x-4 lg:space-x-6">
         <RouterLink to="/" class="border-b border-red-600 hover:opacity-60">
           <svg
@@ -39,7 +41,7 @@ const logout = () => {
           >Logout</span
         >
       </div>
-      <div class="text-gray-900">
+      <div class="text-gray-600">
         &copy; {{ new Date().getFullYear() }}. All rights reserved.
       </div>
     </div>

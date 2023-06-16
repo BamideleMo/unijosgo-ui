@@ -73,9 +73,18 @@ a,
 }
 .content h2 {
   padding-top: 20px;
+  color: #990000;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.content h3 {
+  padding-top: 0px;
   color: #0b5394;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 15px;
+  text-transform: capitalize;
+  text-decoration: underline;
 }
 p a {
   border-bottom: #0764b1 1px solid !important;

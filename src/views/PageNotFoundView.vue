@@ -1,5 +1,4 @@
 <script setup>
-import SuperMeta from "../components/SuperMeta.vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 
@@ -7,11 +6,6 @@ const title = "Page Not Found";
 </script>
 
 <template>
-  <SuperMeta
-    :title="title"
-    name="description"
-    content="Oops! The page you are looking for has been moved or deleted."
-  />
   <Header />
   <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
     <div

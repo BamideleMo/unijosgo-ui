@@ -1,12 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
-import VolumeView from "../views/VolumeView.vue";
-import IssuesView from "../views/IssuesView.vue";
+import GistView from "../views/GistView.vue";
 import WelcomeView from "../views/WelcomeView.vue";
 import AboutView from "../views/AboutView.vue";
+import ArchiveView from "../views/ArchiveView.vue";
 import PostView from "../views/admin/PostView.vue";
 import AllPostsView from "../views/admin/AllPostsView.vue";
 import PageNotFoundView from "../views/PageNotFoundView.vue";
-import LoadingIssueView from "../views/LoadingIssueView.vue";
 import HomeView from "../views/HomeView.vue";
 import { useUserStore } from "../store/user-store";
 
@@ -55,17 +54,17 @@ const router = createRouter({
       component: AllPostsView,
     },
     {
-      path: "/volume/:id",
-      name: "volume",
-      component: VolumeView,
+      path: "/gist",
+      name: "gist",
+      component: GistView,
       meta: {
         requiresUserAuth: true,
       },
     },
     {
-      path: "/volume",
-      name: "loading",
-      component: LoadingIssueView,
+      path: "/archive",
+      name: "archive",
+      component: ArchiveView,
       meta: {
         requiresUserAuth: true,
       },
@@ -96,7 +95,7 @@ router.beforeEach((to, from) => {
   }
   if (to.meta.loggedIn && authStore.cid) {
     return {
-      path: "/volume",
+      path: "/gist",
       query: { redirect: to.fullPath },
     };
   }

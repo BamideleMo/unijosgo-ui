@@ -47,9 +47,10 @@ const submitForm = async () => {
     authStore.setUserDetails(res);
 
     router.push({
-      name: "loading",
+      name: "gist",
     });
   } catch (error) {
+    console.log(error);
     isProcessing.value = false;
     errorMessage.value = error.response.data.message;
   }
@@ -123,7 +124,7 @@ const submitForm = async () => {
               <button
                 v-if="isProcessing"
                 disabled
-                class="w-full bg-gray-800 cursor-not-allowed animate-pulse p-3 opacity-60 text-white rounded-lg"
+                class="w-full bg-orange-400 cursor-not-allowed p-3 animate-pulse opacity-60 text-white rounded-lg"
               >
                 Processing.. .
               </button>

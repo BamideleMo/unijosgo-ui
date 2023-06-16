@@ -2,7 +2,6 @@
 import { ref } from "vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
-import SuperMeta from "../components/SuperMeta.vue";
 import LoginForm from "../components/LoginForm.vue";
 
 const showForm = ref(false);
@@ -18,11 +17,6 @@ const closeForm = () => {
 const title = "Welcome";
 </script>
 <template>
-  <SuperMeta
-    :title="title"
-    name="description"
-    content="Welcome aboard UniJosGo. Glad to have you!"
-  />
   <Header />
   <div
     v-if="showForm"

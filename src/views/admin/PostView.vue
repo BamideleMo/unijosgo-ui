@@ -6,7 +6,6 @@ import Header from "../../components/Header.vue";
 import Footer from "../../components/Footer.vue";
 import { useVuelidate } from "@vuelidate/core";
 import { required, helpers } from "@vuelidate/validators";
-import SuperMeta from "../../components/SuperMeta.vue";
 import axios from "axios";
 import { useUserStore } from "../../store/user-store";
 import { useRouter } from "vue-router";
@@ -20,7 +19,6 @@ const mainContent = ref(null);
 const isProcessing = ref(false);
 
 const getMainContent = (val) => {
-  console.log(val);
   mainContent.value = val;
 };
 
@@ -82,13 +80,6 @@ const submitForm = async () => {
 const title = "Make Post";
 </script>
 <template>
-  <SuperMeta
-    :title="title"
-    name="description"
-    content="UniJosGo curates, create, & share fun
-                and interesting perspectives & activities Jossites will enjoy."
-  />
-
   <Header />
   <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
     <div

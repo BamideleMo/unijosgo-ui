@@ -1,5 +1,4 @@
 <script setup>
-import SuperMeta from "../components/SuperMeta.vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 
@@ -7,50 +6,22 @@ const title = "About - UniJosGo";
 </script>
 
 <template>
-  <SuperMeta
-    :title="title"
-    name="description"
-    content="UniJosGo.ng curates, create, & share fun
-            and interesting perspectives & activities Jossites will enjoy."
-  />
   <Header />
   <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
     <div
       class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-7/12 lg:mx-auto"
     >
       <h1 class="h1 font-semibold text-lg text-center">About</h1>
-      <p>
-        UniJosGo (www.unijosgo.ng) is a weekly post of interesting gists for and
-        about students in UniJos.
-      </p>
-      <p>
-        It's a casual project for curating, and sharing inclusive, relatable,
-        interesting & fun gists that inspire other Jossites to live their best
-        lives.
-      </p>
-      <p>
-        <em>Every Friday</em> we post a volume of gists that we’ve discovered
-        that week for our amazing subscribers to enjoy.
-      </p>
 
-      <h2>❤️ What Subscribers say:</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-        <div
-          class="bg-blue-100 border text-slate-600 border-slate-300 text-xs shadow-lg p-3 space-y-1 rounded-lg"
-        >
-          <p>
-            "So good. I like how simple the website is. It's direct to the
-            point."
-          </p>
-          <p class="border-t border-slate-300 pt-1">- Silas; 200L Student</p>
-        </div>
-        <div
-          class="bg-blue-100 border text-slate-600 border-slate-300 text-xs shadow-lg p-3 space-y-1 rounded-lg"
-        >
-          <p>"Nice one. Reading your posts is trully fun."</p>
-          <p class="border-t border-slate-300 pt-1">- Godiya; 300L Student</p>
-        </div>
-      </div>
+      <p>
+        <em>Every Friday</em> we post fun gists that we’ve discovered during the
+        week for Jossites to enjoy.
+      </p>
+      <p>
+        UniJosGo (www.unijosgo.ng) is a casual project for curating, and sharing
+        inclusive, relatable, interesting & fun gists that inspire other
+        Jossites to live their best lives.
+      </p>
 
       <h2>⚠️ Disclaimer:</h2>
       <p>
@@ -78,7 +49,7 @@ const title = "About - UniJosGo";
       <h2>☎️ Contact us:</h2>
 
       <p>
-        We're open to collaborations and partnership. Contact us today!<br />
+        We're always excited to hear from you. Contact us today!<br />
         <a href="/" target="_blank" class="">0818 708 4716</a>
       </p>
     </div>

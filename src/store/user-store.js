@@ -17,7 +17,6 @@ export const useUserStore = defineStore("ujgo_user", {
       this.$state.user_category = res.data.user.user_category;
       this.$state.name = res.data.user.name;
       this.$state.username = res.data.user.username;
-      console.log(res.data);
     },
     async fetchUser() {
       let res = await axios.get(API_URL + this.$state.cid);

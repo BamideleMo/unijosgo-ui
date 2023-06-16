@@ -1,21 +1,13 @@
 <script setup>
 import { useUserStore } from "../store/user-store";
+import Logo from "./Logo.vue";
 
 const authStore = useUserStore();
 </script>
 <template>
   <div class="bg-white border-b shadow-lg py-2">
     <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto flex justify-between">
-      <div class="drop-shadow-lg">
-        <RouterLink to="/" class="text-3xl font-extrabold hover:opacity-60">
-          <span class="text-black">UniJos</span><span class="myred">Gö</span>
-        </RouterLink>
-        <div class="-mt-1 text-gray-600 text-xs">
-          <RouterLink to="/" class="hover:opacity-60"
-            >www.unijosgo.ng</RouterLink
-          >
-        </div>
-      </div>
+      <Logo />
       <div class="pt-3 sm:pt-3 drop-shadow-lg">
         <RouterLink
           v-if="authStore.cid"

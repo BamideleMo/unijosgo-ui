@@ -4,7 +4,6 @@ import { useVuelidate } from "@vuelidate/core";
 import { required, minLength, maxLength, helpers } from "@vuelidate/validators";
 import axios from "axios";
 import { useUserStore } from "../store/user-store";
-import SuperMeta from "../components/SuperMeta.vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -153,7 +152,7 @@ const title = "Subscribe";
               <button
                 v-if="isProcessing"
                 disabled
-                class="w-full bg-gray-800 cursor-not-allowed animate-pulse p-3 opacity-60 text-white rounded-lg"
+                class="w-full bg-orange-400 cursor-not-allowed animate-pulse p-3 opacity-60 text-white rounded-lg"
               >
                 Processing.. .
               </button>

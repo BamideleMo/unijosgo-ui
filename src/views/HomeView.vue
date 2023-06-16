@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from "vue";
-import SuperMeta from "../components/SuperMeta.vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 import LoginForm from "../components/LoginForm.vue";
@@ -17,16 +16,8 @@ const doShowForm = (which) => {
 const closeForm = () => {
   showForm.value = !showForm.value;
 };
-
-const title = "UniJosGo - Fun & Informative";
 </script>
 <template>
-  <SuperMeta
-    :title="title"
-    name="description"
-    content="Welcome to the weekly online publication of fun gists for all Jossites 
-    about Jossites!"
-  />
   <div
     v-if="showForm"
     class="min-h-screen fixed bg-slate-900 top-0 w-full z-50 bg-opacity-80"
@@ -49,7 +40,7 @@ const title = "UniJosGo - Fun & Informative";
         about students in UniJos!
       </p>
       <p class="text-xs mt-4 text-blue-800 font-semibold">
-        <b class="text-black">*</b> Subscribe or Login to read our latest gists.
+        <b class="text-black">*</b> Subscribe or Login for fun gists.
       </p>
       <div class="mt-6 space-x-4" id="subscribe">
         <span

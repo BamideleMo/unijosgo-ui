@@ -58,7 +58,7 @@ onMounted(async () => {
   <Loading v-if="!volumeContent" />
   <div v-else class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-2">
     <div
-      class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-7/12 lg:mx-auto"
+      class="content leading-snug lg:leading-loose space-y-4 mt-2 lg:mt-4 lg:w-7/12 lg:mx-auto"
     >
       <h2>🗓️ {{ volumeContent.post_date }}:</h2>
       <p>Hi, {{ userStore.name }}</p>

@@ -34,16 +34,13 @@ a,
   } */
 }
 /* My styles */
-.content,
-.content2 {
+.content {
   color: #000000 !important;
+  font-size: 15px;
 }
 .content ul {
   list-style-type: square;
   margin: 0 32px;
-}
-.myred {
-  color: #ff3300;
 }
 .content ul li strong {
   color: #000000;
@@ -52,10 +49,10 @@ a,
 }
 .content ul li {
   padding: 8px 0;
-  font-size: 14px;
-  text-transform: capitalize;
+  font-size: 15px;
 }
-.h1 {
+.h1,
+.myred {
   color: #ff3300;
 }
 .content em {
@@ -86,10 +83,10 @@ a,
   text-transform: capitalize;
   text-decoration: underline;
 }
-p a {
-  border-bottom: #0764b1 1px solid !important;
+.content a {
+  border-bottom: #000000 1px solid !important;
   color: #0b5394;
 }
-p a:hover {
-  color: #0764b1;
+.content a:hover {
+  color: #ff3300;
 }

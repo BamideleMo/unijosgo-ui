@@ -12,7 +12,7 @@ const logout = () => {
 </script>
 <template>
   <footer
-    class="py-10 mt-0 border-t border-gray-700 text-center text-xs sm:text-xs text-black"
+    class="py-10 mt-0 border-t-2 border-gray-400 text-center text-xs sm:text-xs text-black"
   >
     <div
       class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto flex space-x-6 justify-center"

@@ -1,12 +1,22 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 import LoginForm from "../components/LoginForm.vue";
+import Loading from "../components/Loading.vue";
 import SubscribeForm from "../components/SubscribeForm.vue";
+import { useRouter } from "vue-router";
+import { useUserStore } from "../store/user-store";
+import axios from "axios";
+
+const router = useRouter();
+const userStore = useUserStore();
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 const showForm = ref(false);
 const whichForm = ref(null);
+const isloading = ref(true);
 
 const doShowForm = (which) => {
   showForm.value = !showForm.value;
@@ -16,6 +26,32 @@ const doShowForm = (which) => {
 const closeForm = () => {
   showForm.value = !showForm.value;
 };
+
+onMounted(async () => {
+  if (userStore.cid) {
+    axios
+      .get(API_URL + "gists/latest", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userStore.token}`,
+        },
+      })
+      .then((response) => {
+        console.log(response.data.data.volume);
+        router.push({
+          name: "gist",
+          query: {
+            v: response.data.data.volume,
+          },
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  } else {
+    isloading.value = false;
+  }
+});
 </script>
 <template>
   <div
@@ -26,7 +62,9 @@ const closeForm = () => {
     <LoginForm v-else @close-form="closeForm" />
   </div>
   <Header />
+  <Loading v-if="isloading" />
   <div
+    v-else
     class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-20"
   >
     <div class="lg:w-8/12 text-center lg:text-left drop-shadow-lg">

@@ -1,7 +1,13 @@
 <script setup>
 import { ref } from "vue";
 import { useVuelidate } from "@vuelidate/core";
-import { required, minLength, maxLength, helpers } from "@vuelidate/validators";
+import {
+  required,
+  minLength,
+  maxLength,
+  email,
+  helpers,
+} from "@vuelidate/validators";
 import axios from "axios";
 import { useUserStore } from "../store/user-store";
 import { useRouter } from "vue-router";
@@ -21,18 +27,19 @@ const formData = ref({
   user_category: "user",
 });
 
-const mustBeNgphone = helpers.regex(/^[0][0-9]+$/);
+// const mustBeNgphone = helpers.regex(/^[0][0-9]+$/);
 
 const rules = {
   name: {
-    required: helpers.withMessage("Required", required),
-    minLength: helpers.withMessage("Invalid", minLength(2)),
+    required: helpers.withMessage("*Required", required),
+    minLength: helpers.withMessage("*Invalid", minLength(2)),
   },
   username: {
     required: helpers.withMessage("Required", required),
-    minLength: helpers.withMessage("Invalid", minLength(11)),
-    maxLength: helpers.withMessage("Invalid", maxLength(11)),
-    mustBeNgphone: helpers.withMessage("Invalid", mustBeNgphone),
+    email: helpers.withMessage("Invalid", email),
+    // minLength: helpers.withMessage("Invalid", minLength(11)),
+    // maxLength: helpers.withMessage("Invalid", maxLength(11)),
+    // mustBeNgphone: helpers.withMessage("Invalid", mustBeNgphone),
   },
 };
 
@@ -87,7 +94,7 @@ const title = "Subscribe";
     <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-6 text-black">
       <div class="space-y-4 text-sm">
         <p class="mt-6 sm:mt-5.5">
-          Join over 300 other Jossites who get to read our exclusive fun &
+          Join over 300 other Jossites who get to read exclusive, fun &
           interesting gist every week.
         </p>
         <p>
@@ -104,16 +111,16 @@ const title = "Subscribe";
             {{ errorMessage }}
           </div>
           <div class="">
-            <label for="" class="font-bold">Name:</label>
+            <label for="" class="font-bold">Nickname:</label>
             <input
               type="text"
               v-model="formData.name"
               @blur="v$.name.$touch"
               placeholder="What should we call you?"
-              class="w-full placeholder:text-blue-300 mt-1 rounded-md outline-none px-3 py-2 h-12 border-2 bg-transparent border-blue-900"
+              class="w-full placeholder:text-blue-300 shadow-lg mt-1 rounded-md outline-none px-3 py-2 h-12 border-2 bg-transparent border-blue-900"
             />
             <div
-              class="text-right text-purple-500 font-semibold mt-1 text-xs"
+              class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs"
               v-if="v$.name.$error"
             >
               <span class="w-16 float-right -mt-9 mr-2">
@@ -122,16 +129,15 @@ const title = "Subscribe";
             </div>
           </div>
           <div class="">
-            <label for="" class="font-bold">WhatsApp Phone Number:</label>
+            <label for="" class="font-bold">Email Address:</label>
             <input
               type="text"
               v-model="formData.username"
               @blur="v$.username.$touch"
-              placeholder="Example: 07035423612"
-              class="w-full placeholder:text-blue-300 mt-1 rounded-md outline-none px-3 py-2 h-12 border-2 bg-transparent border-blue-900"
+              class="w-full shadow-lg mt-1 rounded-md outline-none px-3 py-2 h-12 border-2 bg-transparent border-blue-900"
             />
             <div
-              class="text-right text-purple-500 font-semibold mt-1 text-xs"
+              class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs"
               v-if="v$.username.$error"
             >
               <span class="w-16 float-right -mt-9 mr-2">
@@ -144,7 +150,7 @@ const title = "Subscribe";
             <button
               v-if="v$.$invalid"
               disabled
-              class="w-full bg-gray-400 cursor-not-allowed p-3 opacity-60 text-white rounded-lg"
+              class="w-full bg-gray-400 shadow-lg cursor-not-allowed p-3 opacity-60 text-white rounded-lg"
             >
               Submit
             </button>
@@ -152,14 +158,14 @@ const title = "Subscribe";
               <button
                 v-if="isProcessing"
                 disabled
-                class="w-full bg-orange-400 cursor-not-allowed animate-pulse p-3 opacity-60 text-white rounded-lg"
+                class="w-full bg-orange-400 shadow-lg cursor-not-allowed animate-pulse p-3 opacity-60 text-white rounded-lg"
               >
                 Processing.. .
               </button>
               <button
                 v-else
                 @click="submitForm"
-                class="w-full bg-red-500 p-3 hover:opacity-60 text-white rounded-lg"
+                class="w-full bg-red-500 shadow-lg p-3 hover:opacity-60 text-white rounded-lg"
               >
                 Submit
               </button>

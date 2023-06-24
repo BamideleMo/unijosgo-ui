@@ -16,17 +16,14 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
-      meta: {
-        loggedIn: true,
-      },
     },
-    {
-      path: "/home",
-      redirect: "/",
-      meta: {
-        loggedIn: true,
-      },
-    },
+    // {
+    //   path: "/home",
+    //   redirect: "/",
+    //   meta: {
+    //     loggedIn: true,
+    //   },
+    // },
     {
       path: "/about",
       name: "about",

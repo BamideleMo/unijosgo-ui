@@ -32,7 +32,7 @@ onMounted(async () => {
   <Loading v-if="!content" />
   <div v-else class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
     <div
-      class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-7/12 lg:mx-auto"
+      class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto"
     >
       <h1 class="h1 font-semibold text-lg text-center">All Gists</h1>
       <table cellpadding="0" cellspacing="0" class="w-full border border-black">
@@ -43,8 +43,8 @@ onMounted(async () => {
               ><span>{{ item.post_date }}</span></span
             >
             <RouterLink
-              class="text-base text-red-900 hover:underline leading-none"
-              :to="`/gist?volume=${item.volume}`"
+              class="text-base text-red-900 hover:text-gray-600 leading-none"
+              :to="`/gist?v=${item.volume}`"
               >{{ item.meta_data }}</RouterLink
             >
           </td>

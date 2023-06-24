@@ -48,33 +48,51 @@ const submitForm = async () => {
   isProcessing.value = true;
 
   const validation = await v$.value.$validate();
-  try {
-    let res = await axios.post(
-      API_URL + "gists",
-      {
-        topic_meta: formData.value.topic,
-        volume: formData.value.issue,
-        post_date: formData.value.when,
-        gist: mainContent.value,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${userStore.token}`,
-        },
-      }
-    );
-
-    // userStore.setUserDetails(res);
-
-    // isProcessing.value = false
-
-    router.push({
-      name: "home",
+  Promise.all([makePost(), createLog()])
+    .then((values) => {
+      console.log(values);
+      router.push({
+        name: "home",
+      });
+    })
+    .catch((error) => {
+      console.log(error);
     });
-  } catch (error) {
-    errorMessage.value = error.response.data.message;
-  }
+};
+
+const makePost = async () => {
+  const res = await axios.post(
+    API_URL + "gists",
+    {
+      topic_meta: formData.value.topic,
+      volume: formData.value.issue,
+      post_date: formData.value.when,
+      gist: mainContent.value,
+    },
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userStore.token}`,
+      },
+    }
+  );
+  return res.data.data;
+};
+
+const createLog = async () => {
+  const res = await axios.post(
+    API_URL + "logs",
+    {
+      volume: formData.value.issue,
+    },
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userStore.token}`,
+      },
+    }
+  );
+  return res.data.data;
 };
 
 const title = "Make Post";

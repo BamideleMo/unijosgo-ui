@@ -71,7 +71,7 @@ const title = "Subscribe";
   <form
     class="w-11/12 lg:w-6/12 mx-auto mt-10 sm:mt-20 bg-white p-5 pb-10 sm:p-10 rounded-lg"
   >
-    <div class="flex justify-between">
+    <div class="flex justify-between border-b border-black">
       <h1 class="h1 font-semibold text-lg">
         Subscribe to <span class="text-black">UniJos</span>Go
       </h1>
@@ -82,7 +82,7 @@ const title = "Subscribe";
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-10 h-10 -mt-2 -mr-2 text-red-900 hover:opacity-60 cursor-pointer"
+        class="w-10 h-10 -mt-2 -mr-2 text-slate-900 hover:opacity-60 cursor-pointer"
       >
         <path
           stroke-linecap="round"

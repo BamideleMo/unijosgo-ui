@@ -70,8 +70,7 @@ onMounted(async () => {
     <div class="lg:w-8/12 text-center lg:text-left drop-shadow-lg">
       <h1 class="lg:pt-4 text-2xl sm:text-4xl font-bold leading-tight">
         Spotlights, Social Life, <br />
-        Opinions, & Fun Gists for<br />
-        UniJos Students.
+        Opinions, Giveaways & Fun Gists for UniJos Students.
       </h1>
       <p class="mt-4 text-lg sm:text-lg">
         Hi, this is UniJosGo, a weekly online publication of fun gist for &

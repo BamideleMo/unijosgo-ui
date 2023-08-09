@@ -23,6 +23,7 @@ const isProcessing = ref(false);
 const formData = ref({
   name: "",
   username: "",
+  campus: "",
   password: "1234",
   user_category: "user",
 });
@@ -40,6 +41,9 @@ const rules = {
     // minLength: helpers.withMessage("Invalid", minLength(11)),
     // maxLength: helpers.withMessage("Invalid", maxLength(11)),
     // mustBeNgphone: helpers.withMessage("Invalid", mustBeNgphone),
+  },
+  campus: {
+    required: helpers.withMessage("Required", required),
   },
 };
 
@@ -69,11 +73,11 @@ const title = "Subscribe";
 </script>
 <template>
   <form
-    class="w-11/12 lg:w-6/12 mx-auto mt-10 sm:mt-20 bg-white p-5 pb-10 sm:p-10 rounded-lg"
+    class="w-11/12 lg:w-7/12 mx-auto mt-10 sm:mt-20 bg-white p-5 pb-10 sm:p-10 rounded-lg"
   >
     <div class="flex justify-between border-b border-black">
       <h1 class="h1 font-semibold text-lg">
-        Subscribe to <span class="text-black">UniJos</span>Go
+        Subscribe to <span class="text-black">Campus</span>168
       </h1>
       <svg
         @click="$emit('closeForm')"
@@ -91,41 +95,66 @@ const title = "Subscribe";
         />
       </svg>
     </div>
+    <div
+      v-if="errorMessage"
+      class="bg-purple-900 animate-pulse text-red-200 text-xs p-2 mt-2 border-l-4 border-black"
+    >
+      {{ errorMessage }}
+    </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-6 text-black">
       <div class="space-y-4 text-sm">
         <p class="mt-6 sm:mt-5.5">
-          Join over 300 other Jossites who get to read exclusive, fun &
-          interesting gist every week.
+          Join hundreds of other Nigerian students who get to read exclusive,
+          fun & interesting gist completely localised for their individual
+          campuses every week.
         </p>
         <p>
-          UniJosGo.ng will never send you unsolicited messages or share your
-          information with anyone.
+          Currently available in: KASU, UniJos, PLASU & UniAbuja. To be
+          available in more campuses soon.
         </p>
       </div>
       <div class="">
         <div class="mt-6 space-y-4 text-sm">
-          <div
-            v-if="errorMessage"
-            class="bg-purple-900 animate-pulse text-red-200 text-sm p-2 rounded space-x-2"
-          >
-            {{ errorMessage }}
-          </div>
-          <div class="">
-            <label for="" class="font-bold">Nickname:</label>
-            <input
-              type="text"
-              v-model="formData.name"
-              @blur="v$.name.$touch"
-              placeholder="What should we call you?"
-              class="w-full placeholder:text-blue-300 shadow-lg mt-1 rounded-md outline-none px-3 py-2 h-12 border-2 bg-transparent border-blue-900"
-            />
-            <div
-              class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs"
-              v-if="v$.name.$error"
-            >
-              <span class="w-16 float-right -mt-9 mr-2">
-                <span>{{ v$.name.$errors[0].$message }}</span>
-              </span>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div class="">
+              <label for="" class="font-bold">Name:</label>
+              <input
+                type="text"
+                v-model="formData.name"
+                @blur="v$.name.$touch"
+                placeholder="E.g: Moses"
+                class="w-full placeholder:text-blue-300 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900"
+              />
+              <div
+                class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs"
+                v-if="v$.name.$error"
+              >
+                <span class="w-16 float-right -mt-8 mr-2">
+                  <span>{{ v$.name.$errors[0].$message }}</span>
+                </span>
+              </div>
+            </div>
+            <div class="">
+              <label for="" class="font-bold">Select your Campus:</label>
+              <select
+                v-model="formData.campus"
+                @blur="v$.campus.$touch"
+                class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900"
+              >
+                <option value="">&nbsp;</option>
+                <option value="UniJos">UniJos</option>
+                <option value="UniAbuja">UniAbuja</option>
+                <option value="KASU">KASU</option>
+                <option value="PLASU">PLASU</option>
+              </select>
+              <div
+                class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs"
+                v-if="v$.campus.$error"
+              >
+                <span class="w-16 float-right -mt-8 mr-2">
+                  <span>{{ v$.campus.$errors[0].$message }}</span></span
+                >
+              </div>
             </div>
           </div>
           <div class="">
@@ -134,13 +163,13 @@ const title = "Subscribe";
               type="text"
               v-model="formData.username"
               @blur="v$.username.$touch"
-              class="w-full shadow-lg mt-1 rounded-md outline-none px-3 py-2 h-12 border-2 bg-transparent border-blue-900"
+              class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900"
             />
             <div
               class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs"
               v-if="v$.username.$error"
             >
-              <span class="w-16 float-right -mt-9 mr-2">
+              <span class="w-16 float-right -mt-8 mr-2">
                 <span>{{ v$.username.$errors[0].$message }}</span></span
               >
             </div>

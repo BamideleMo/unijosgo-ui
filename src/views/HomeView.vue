@@ -52,6 +52,45 @@ onMounted(async () => {
     isloading.value = false;
   }
 });
+
+const phrases = ["UniJos ", "UniAbuja ", "PLASU ", "KASU "];
+
+const currentPhraseIndex = ref(0);
+const currentCharacterIndex = ref(0);
+const currentPhrase = ref("");
+const isDeleting = ref(false);
+
+function loop() {
+  const currentPhraseText = phrases[currentPhraseIndex.value];
+
+  if (!isDeleting.value) {
+    currentPhrase.value += currentPhraseText[currentCharacterIndex.value];
+    currentCharacterIndex.value++;
+  } else {
+    currentPhrase.value = currentPhrase.value.slice(0, -1);
+    currentCharacterIndex.value--;
+  }
+
+  if (currentCharacterIndex.value === currentPhraseText.length) {
+    isDeleting.value = true;
+  }
+
+  if (currentCharacterIndex.value === 0) {
+    currentPhrase.value = "";
+    isDeleting.value = false;
+    currentPhraseIndex.value++;
+    if (currentPhraseIndex.value === phrases.length) {
+      currentPhraseIndex.value = 0;
+    }
+  }
+
+  const spedUp = Math.random() * (80 - 50) + 50;
+  const normalSpeed = Math.random() * (300 - 200) + 200;
+  const time = isDeleting.value ? spedUp : normalSpeed;
+  setTimeout(loop, time);
+}
+
+loop();
 </script>
 <template>
   <div
@@ -68,13 +107,15 @@ onMounted(async () => {
     class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-20"
   >
     <div class="lg:w-8/12 text-center lg:text-left drop-shadow-lg">
-      <h1 class="lg:pt-4 text-2xl sm:text-4xl font-bold leading-tight">
-        Spotlights, Social Life, <br />
-        Opinions, Giveaways & Fun Gists for UniJos Students.
+      <h1 class="lg:pt-4 text-2xl sm:text-3xl font-bold leading-tight">
+        Spotlights, Opinions, Giveaways, <br class="hidden lg:inline" />& Fun
+        Gists for Students in<br />
+        <span class="text-blue-900">{{ currentPhrase + "👋" }}</span
+        >.
       </h1>
-      <p class="mt-4 text-lg sm:text-lg">
-        Hi, this is UniJosGo, a weekly online publication of fun gist for &
-        about students in UniJos!
+      <p class="mt-4 text-base">
+        Hi, this is Campus168, a weekly online newsletter about and for students
+        across selected Nigerian campuses!
       </p>
       <p class="text-xs mt-4 text-blue-800 font-semibold">
         <b class="text-black">*</b> Subscribe or Login for fun gists.

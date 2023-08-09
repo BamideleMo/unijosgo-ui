@@ -69,11 +69,17 @@ a,
   margin: 15px 0;
 }
 .content h2 {
-  padding-top: 20px;
+  padding-top: 30px;
+  margin-top: 30px !important;
   color: #990000;
   font-weight: bold;
   font-size: 15px;
   text-transform: uppercase;
+  border-top: #000000 dashed 1px;
+}
+.content h2.date {
+  border: none;
+  margin-top: 0 !important;
 }
 .content h3 {
   padding-top: 0px;

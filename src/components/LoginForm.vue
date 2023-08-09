@@ -50,17 +50,47 @@ const submitForm = async () => {
       username: formData.value.username,
       password: "1234",
     });
+    console.log(res);
 
-    authStore.setUserDetails(res);
+    if (res.data.user.status !== "verified") {
+      sendEmail(formData.value.username);
+      router.push({
+        name: "verify",
+        query: {
+          e: formData.value.username,
+        },
+      });
+    } else {
+      authStore.setUserDetails(res);
 
-    router.push({
-      name: "gist",
-    });
+      router.push({
+        name: "gist",
+      });
+    }
   } catch (error) {
     console.log(error);
     isProcessing.value = false;
     errorMessage.value = error.response.data.message;
   }
+};
+
+const sendEmail = (email) => {
+  axios
+    .post(
+      API_URL + "emails",
+      { email: email },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 </script>
 <template>
@@ -69,7 +99,7 @@ const submitForm = async () => {
   >
     <div class="flex justify-between border-b border-black">
       <h1 class="h1 font-semibold text-lg">
-        Login to <span class="text-black">UniJos</span>Go
+        Login to <span class="text-black">Campus</span>168
       </h1>
       <svg
         @click="$emit('closeForm')"
@@ -87,6 +117,13 @@ const submitForm = async () => {
         />
       </svg>
     </div>
+
+    <div
+      v-if="errorMessage"
+      class="bg-purple-900 animate-pulse text-red-200 text-xs p-2 mt-2 border-l-4 border-black"
+    >
+      {{ errorMessage }}
+    </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 text-black">
       <div class="space-y-4 text-sm">
         <p class="mt-6 sm:mt-5.5">Welcome back.</p>
@@ -94,25 +131,19 @@ const submitForm = async () => {
       </div>
       <div class="">
         <div class="mt-6 space-y-4 text-sm">
-          <div
-            v-if="errorMessage"
-            class="bg-purple-900 animate-pulse text-red-200 text-sm p-2 rounded space-x-2"
-          >
-            {{ errorMessage }}
-          </div>
           <div class="">
             <label for="" class="font-bold">Email Address:</label>
             <input
               type="text"
               v-model="formData.username"
               @blur="v$.username.$touch"
-              class="w-full shadow-lg mt-1 rounded-md outline-none px-3 py-2 h-12 border-2 bg-transparent border-blue-900"
+              class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900"
             />
             <div
               class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs"
               v-if="v$.username.$error"
             >
-              <span class="w-16 float-right -mt-9 mr-2">
+              <span class="w-16 float-right -mt-8 mr-2">
                 <span>{{ v$.username.$errors[0].$message }}</span></span
               >
             </div>

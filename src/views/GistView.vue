@@ -108,7 +108,7 @@ onMounted(async () => {
     <div
       class="content leading-snug lg:leading-loose space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto"
     >
-      <h2 class="flex justify-between">
+      <h2 class="date flex justify-between">
         <span>🗓️ {{ volumeContent.post_date }}:</span>
         <span class="capitalize">No. {{ volumeContent.volume }}</span>
       </h2>

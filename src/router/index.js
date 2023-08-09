@@ -6,6 +6,8 @@ import ArchiveView from "../views/ArchiveView.vue";
 import PostView from "../views/admin/PostView.vue";
 import AllPostsView from "../views/admin/AllPostsView.vue";
 import PageNotFoundView from "../views/PageNotFoundView.vue";
+import DisclaimerView from "../views/DisclaimerView.vue";
+import VerifyView from "../views/VerifyView.vue";
 import HomeView from "../views/HomeView.vue";
 import { useUserStore } from "../store/user-store";
 
@@ -28,6 +30,19 @@ const router = createRouter({
       path: "/about",
       name: "about",
       component: AboutView,
+    },
+    {
+      path: "/disclaimer",
+      name: "disclaimer",
+      component: DisclaimerView,
+    },
+    {
+      path: "/verify",
+      name: "verify",
+      component: VerifyView,
+      meta: {
+        loggedIn: true,
+      },
     },
     {
       path: "/welcome",

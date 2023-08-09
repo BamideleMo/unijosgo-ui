@@ -1,6 +1,6 @@
 <script setup>
 import { useUserStore } from "../store/user-store";
-import { useRouter } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 const router = useRouter();
 
 const authStore = useUserStore();
@@ -29,6 +29,11 @@ const logout = () => {
           @click="logout"
           class="border-b border-red-600 hover:opacity-60 cursor-pointer"
           >Logout</span
+        >
+        <RouterLink
+          to="/disclaimer"
+          class="border-b border-red-600 hover:opacity-60 cursor-pointer"
+          >Disclaimer</RouterLink
         >
         <span>&copy; {{ new Date().getFullYear() }}</span>
       </div>

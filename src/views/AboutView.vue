@@ -12,40 +12,23 @@ const title = "About - UniJosGo";
       class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto"
     >
       <h1 class="h1 font-semibold text-lg text-center">About</h1>
-
       <p>
-        <em>Every Friday</em> we post fun gists that we’ve discovered during the
-        week for Jossites to enjoy.
-      </p>
-      <p>
-        UniJosGo (www.unijosgo.ng) is a casual project for curating, and sharing
-        inclusive, relatable, interesting & fun gists that inspire other
-        Jossites to live their best lives.
+        Campus168.ng is a weekly online newsletter for and about students across
+        selected Nigerian campuses!
       </p>
 
-      <h2>⚠️ Disclaimer:</h2>
+      <h2>🚀 Features:</h2>
       <p>
-        UniJosGo.ng is NOT an official platform of the University of Jos. We DO
-        NOT claim any form of affiliation with the school authorities at any
-        level.
+        <b><u>Personalised Contents</u>:</b><br />
+        <em>Every Friday</em> we post fun gists, spotlights, opinions, and more
+        that we’ve discovered during the week for students to enjoy. The posts
+        are completely localised for individual campuses.
       </p>
       <p>
-        This website and the contents provided herein are simply for fun and
-        general information purposes only.
+        <b><u>Trending Topics</u>:</b><br />
+        Campus168.ng lets you follow trending gists on campus and even national
+        gists especially those relating to tertiary education in Nigeria.
       </p>
-      <p>
-        Any use of information seen on this platform is at your own risk. We
-        (UniJosGo.ng & associated entities) do not assume and hereby disclaim
-        any liability to any part of the loss, damage or disruption caused by
-        errors or omissions, negligence or other causes that may be linked to
-        this platform.
-      </p>
-      <h2>⛔ Terms of use:</h2>
-      <p>
-        You are not allowed to use this website or associated platforms if you
-        are below 18 years of age.
-      </p>
-
       <h2>☎️ Contact us:</h2>
 
       <p>

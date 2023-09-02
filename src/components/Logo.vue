@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
   <RouterLink to="/" class="cursor-pointer drop-shadow-lg flex space-x-1">
-    <div class="text-4xl py-1 px-1.5 border border-black bg-red-600 rounded-lg">🗞️</div>
+    <div class="text-4xl p-1 border border-black bg-red-600 rounded-lg">🗞️</div>
     <div>
       <span class="text-3xl font-extrabold hover:opacity-60">
         <span class="text-black">Kampa</span>

@@ -116,7 +116,7 @@ const title = "Subscribe";
       </div>
       <div class="">
         <div class="mt-6 space-y-4 text-sm">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div class="grid grid-cols-2 sm:grid-cols-2 gap-2">
             <div class="">
               <label for="" class="font-bold">Name:</label>
               <input

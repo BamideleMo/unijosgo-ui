@@ -93,14 +93,18 @@ onMounted(async () => {
           >Login</span
         >
       </div>
-      <div class="text-xs mt-6 text-slate-600"><b class="text-blue-800">Available in:</b>  <b>UniJos</b>, <b>UniAbuja</b>, & <b>ABU Zaria</b>.
+      <div class="text-xs mt-6 text-slate-600">
+        <b class="text-blue-800">
+        Available in:
+        </b>  
+        UniJos, UniAbuja, & ABU Zaria.
       </div>
-      <div class="mt-10 flex justify-center sm:justify-start space-x-2 -ml-1">
-        <div class="w-36 sm:w-36 overflow-hidden max-h-12"><img class="w-full" src="/play-store.png" /></div>
-        <div class="w-36 sm:w-36 overflow-hidden max-h-12"><img class="w-full" src="/app-store.png" /></div>
+      <div class="mt-24 sm:mt-10 flex justify-center sm:justify-start space-x-2 -ml-1">
+        <div class="w-40 sm:w-36 overflow-hidden cursor-not-allowed"><img class="w-full" src="/play-store.png" /></div>
+        <div class="w-40 sm:w-36 overflow-hidden cursor-not-allowed"><img class="w-full" src="/app-store.png" /></div>
       </div>
     </div>
-    <div class="w-11/12 sm:w-8/12 mx-auto mt-12 lg:w-4/12 lg:-mt-6">
+    <div class="w-11/12 sm:w-8/12 mx-auto mt-6 lg:w-4/12 lg:-mt-6">
       <div class="lg:px-0">
         <img
           src="/mobile.png"

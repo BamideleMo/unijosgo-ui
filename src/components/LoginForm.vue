@@ -99,7 +99,7 @@ const sendEmail = (email) => {
   >
     <div class="flex justify-between border-b border-black">
       <h1 class="h1 font-semibold text-lg">
-        Login to <span class="text-black">Campus</span>168
+        Login
       </h1>
       <svg
         @click="$emit('closeForm')"

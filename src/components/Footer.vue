@@ -17,7 +17,7 @@ const logout = () => {
     <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto flex justify-between">
       <div>
         <a
-          href="/"
+          href="https://wa.me/23408187084716"
           target="_blank"
           class="border-b border-red-600 hover:opacity-60 cursor-pointer"
           >0818 708 4716</a
@@ -35,7 +35,7 @@ const logout = () => {
           class="border-b border-red-600 hover:opacity-60 cursor-pointer"
           >Disclaimer</RouterLink
         >
-        <span>&copy; {{ new Date().getFullYear() }}</span>
+        <span>&copy; {{ new Date().getFullYear() }}.</span>
       </div>
     </div>
   </footer>

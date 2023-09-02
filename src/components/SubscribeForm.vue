@@ -77,7 +77,7 @@ const title = "Subscribe";
   >
     <div class="flex justify-between border-b border-black">
       <h1 class="h1 font-semibold text-lg">
-        Subscribe to <span class="text-black">Campus</span>168
+        Subscribe
       </h1>
       <svg
         @click="$emit('closeForm')"
@@ -104,12 +104,13 @@ const title = "Subscribe";
     <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-6 text-black">
       <div class="space-y-4 text-sm">
         <p class="mt-6 sm:mt-5.5">
-          Join hundreds of other Nigerian students who get to read exclusive,
+          Join many other Nigerian students who get to read exclusive,
           fun & interesting gist completely localised for their individual
           campuses every week.
         </p>
         <p>
-          Currently available in: KASU, UniJos, PLASU & UniAbuja. To be
+          Currently available in: UniJos, ABU-Zaria & UniAbuja.</p>
+          <p>To be
           available in more campuses soon.
         </p>
       </div>
@@ -122,20 +123,20 @@ const title = "Subscribe";
                 type="text"
                 v-model="formData.name"
                 @blur="v$.name.$touch"
-                placeholder="E.g: Moses"
+                placeholder="E.g: Lekan"
                 class="w-full placeholder:text-blue-300 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900"
               />
               <div
                 class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs"
                 v-if="v$.name.$error"
               >
-                <span class="w-16 float-right -mt-8 mr-2">
+                <span class="w-16 float-right -mt-8 mr-2 text-xs">
                   <span>{{ v$.name.$errors[0].$message }}</span>
                 </span>
               </div>
             </div>
             <div class="">
-              <label for="" class="font-bold">Select your Campus:</label>
+              <label for="" class="font-bold">Campus:</label>
               <select
                 v-model="formData.campus"
                 @blur="v$.campus.$touch"
@@ -144,14 +145,13 @@ const title = "Subscribe";
                 <option value="">&nbsp;</option>
                 <option value="UniJos">UniJos</option>
                 <option value="UniAbuja">UniAbuja</option>
-                <option value="KASU">KASU</option>
-                <option value="PLASU">PLASU</option>
+                <option value="ABU">ABU, Zaria</option>
               </select>
               <div
                 class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs"
                 v-if="v$.campus.$error"
               >
-                <span class="w-16 float-right -mt-8 mr-2">
+                <span class="w-16 float-right -mt-8 mr-2 text-xs">
                   <span>{{ v$.campus.$errors[0].$message }}</span></span
                 >
               </div>
@@ -169,7 +169,7 @@ const title = "Subscribe";
               class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs"
               v-if="v$.username.$error"
             >
-              <span class="w-16 float-right -mt-8 mr-2">
+              <span class="w-16 float-right -mt-8 mr-2 text-xs">
                 <span>{{ v$.username.$errors[0].$message }}</span></span
               >
             </div>

@@ -18,7 +18,7 @@ const title = "About - UniJosGo";
       </p>
       <p>
         Any use of information seen on this platform is at your own risk. We
-        (Campus168.ng & associated entities) do not assume and hereby disclaim
+        (Kampa.ng & associated entities) do not assume and hereby disclaim
         any liability to any part of the loss, damage or disruption caused by
         errors or omissions, negligence or other causes that may be linked to
         this platform.

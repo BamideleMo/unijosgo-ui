@@ -1,11 +1,14 @@
 <script setup></script>
 <template>
-  <RouterLink to="/" class="cursor-pointer drop-shadow-lg">
-    <span class="text-3xl font-extrabold hover:opacity-60">
-      <span class="text-black">Campus</span><span class="myred">168</span>
-    </span>
-    <div class="-mt-1 text-gray-600 text-xs">
-      <span class="hover:opacity-60">www.campus168.ng</span>
+  <RouterLink to="/" class="cursor-pointer drop-shadow-lg flex space-x-1">
+    <div class="text-4xl py-1 px-1.5 border border-black bg-red-600 rounded-lg">🗞️</div>
+    <div>
+      <span class="text-3xl font-extrabold hover:opacity-60">
+        <span class="text-black">Kampa</span>
+      </span>
+      <div class="-mt-1 text-gray-600 text-xs">
+        <span class="hover:opacity-60">www.kampa.ng</span>
+      </div>
     </div>
   </RouterLink>
 </template>

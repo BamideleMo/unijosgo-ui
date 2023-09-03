@@ -137,6 +137,7 @@ const sendEmail = (email) => {
               type="text"
               v-model="formData.username"
               @blur="v$.username.$touch"
+              @keydown.space.prevent
               class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900"
             />
             <div

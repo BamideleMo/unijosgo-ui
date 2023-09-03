@@ -42,7 +42,7 @@ const closeForm = () => {
                     </RouterLink>
                 </div>
                 <span v-if="authStore.cid" @click="logout" class="border-b border-red-600 hover:opacity-60 cursor-pointer">Logout</span>
-                <span>&copy; {{ new Date().getFullYear() }}.</span>
+                <span>&copy; {{ new Date().getFullYear() }}. All rights reserved.</span>
             </div>
         </div>
     </footer>

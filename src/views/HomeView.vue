@@ -5,6 +5,7 @@ import Footer from "../components/Footer.vue";
 import LoginForm from "../components/LoginForm.vue";
 import Loading from "../components/Loading.vue";
 import SubscribeForm from "../components/SubscribeForm.vue";
+import Available from "../components/Available.vue";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../store/user-store";
 import axios from "axios";
@@ -72,7 +73,7 @@ onMounted(async () => {
                 to help you be smarter + stay well informed!
             </p>
             <p class="text-xs mt-4 text-red-600 font-semibold">
-                <b class="text-black">*</b> Over 1,100 students have already subscribed.
+                <b class="text-black">*</b> Over 501 students have already subscribed.
             </p>
             <div class="mt-6 space-x-4" id="subscribe">
                 <span @click="doShowForm('subscribe')" class="shadow-lg border border-black text-white bg-red-600 text-sm py-3 px-3 hover:opacity-40 cursor-pointer">
@@ -80,11 +81,8 @@ onMounted(async () => {
                 </span>
                 <span @click="doShowForm('login')" class="shadow-lg border border-red-600 text-black text-sm py-3 px-3 hover:opacity-40 cursor-pointer">Login</span>
             </div>
-            <div class="text-xs mt-6 text-slate-600">
-                <b class="text-blue-800">
-                    Available in:
-                </b>
-                UniJos, UniAbuja, & ABU Zaria.
+            <div class="text-xs mt-6">
+                <Available/>
             </div>
         </div>
         <div class="w-11/12 sm:w-8/12 mx-auto mt-6 lg:w-4/12 lg:-mt-6">

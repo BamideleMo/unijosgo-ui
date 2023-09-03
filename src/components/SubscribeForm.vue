@@ -8,6 +8,7 @@ import {
   email,
   helpers,
 } from "@vuelidate/validators";
+import Available from "./Available.vue";
 import axios from "axios";
 import { useUserStore } from "../store/user-store";
 import { useRouter } from "vue-router";
@@ -109,10 +110,8 @@ const title = "Subscribe";
           campuses every week.
         </p>
         <p>
-          Currently available in: UniJos, ABU-Zaria & UniAbuja.</p>
-          <p>To be
-          available in more campuses soon.
-        </p>
+          <Available/>
+          </p>
       </div>
       <div class="">
         <div class="mt-6 space-y-4 text-sm">
@@ -144,8 +143,6 @@ const title = "Subscribe";
               >
                 <option value="">&nbsp;</option>
                 <option value="UniJos">UniJos</option>
-                <option value="UniAbuja">UniAbuja</option>
-                <option value="ABU">ABU, Zaria</option>
               </select>
               <div
                 class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs"

@@ -30,7 +30,7 @@ const closeForm = () => {
                 <img @click="doShowForm" src="/play-store.png" class="h-10 hover:opacity-60" />
                 <img @click="doShowForm" src="/app-store.png" class="h-10 hover:opacity-60" />
             </div>
-            <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6 sm:pt-2">
+            <div class="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-6 sm:pt-2">
                 <div>
                     <a href="https://wa.me/23408187084716" target="_blank" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
                         0818 708 4716
@@ -41,8 +41,14 @@ const closeForm = () => {
                         Disclaimer
                     </RouterLink>
                 </div>
-                <span v-if="authStore.cid" @click="logout" class="border-b border-red-600 hover:opacity-60 cursor-pointer">Logout</span>
-                <span>&copy; {{ new Date().getFullYear() }}. All rights reserved.</span>
+                <div v-if="authStore.cid">
+                    <span class="border-b border-red-600 hover:opacity-60 cursor-pointer" @click="logout">Logout
+                    </span>
+                </div>
+                <div>
+                    <div>All rights reserved</div>
+                    <div>&copy; {{ new Date().getFullYear() }}.</div>
+                </div>
             </div>
         </div>
     </footer>

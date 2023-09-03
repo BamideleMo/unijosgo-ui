@@ -135,7 +135,7 @@ const title = "Subscribe";
               </div>
             </div>
             <div class="">
-              <label for="" class="font-bold">Campus:</label>
+              <label for="" class="font-bold">University:</label>
               <select
                 v-model="formData.campus"
                 @blur="v$.campus.$touch"

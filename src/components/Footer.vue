@@ -30,14 +30,16 @@ const closeForm = () => {
                 <img @click="doShowForm" src="/play-store.png" class="h-10 hover:opacity-60" />
                 <img @click="doShowForm" src="/app-store.png" class="h-10 hover:opacity-60" />
             </div>
-            <div class="flex flex-col space-y-6 sm:flex-row sm:space-y-0 sm:space-x-6 sm:pt-2">
+            <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6 sm:pt-2">
                 <div>
                     <a href="https://wa.me/23408187084716" target="_blank" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
                         0818 708 4716
                     </a>
                 </div>
                 <div>
-                    <RouterLink to="/disclaimer" class="border-b border-red-600 hover:opacity-60 cursor-pointer">Disclaimer</RouterLink>
+                    <RouterLink to="/disclaimer" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
+                        Disclaimer
+                    </RouterLink>
                 </div>
                 <span v-if="authStore.cid" @click="logout" class="border-b border-red-600 hover:opacity-60 cursor-pointer">Logout</span>
                 <span>&copy; {{ new Date().getFullYear() }}.</span>

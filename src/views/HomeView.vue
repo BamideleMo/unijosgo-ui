@@ -12,106 +12,86 @@ import axios from "axios";
 const router = useRouter();
 const userStore = useUserStore();
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL =
+    import.meta.env.VITE_API_URL;
 
 const showForm = ref(false);
 const whichForm = ref(null);
 const isloading = ref(true);
 
 const doShowForm = (which) => {
-  showForm.value = !showForm.value;
-  whichForm.value = which;
+    showForm.value = !showForm.value;
+    whichForm.value = which;
 };
 
 const closeForm = () => {
-  showForm.value = !showForm.value;
+    showForm.value = !showForm.value;
 };
 
 onMounted(async () => {
-  if (userStore.cid) {
-    axios
-      .get(API_URL + "gists/latest", {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${userStore.token}`,
-        },
-      })
-      .then((response) => {
-        console.log(response.data.data.volume);
-        router.push({
-          name: "gist",
-          query: {
-            v: response.data.data.volume,
-          },
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  } else {
-    isloading.value = false;
-  }
+    if (userStore.cid) {
+        axios
+            .get(API_URL + "gists/latest", {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${userStore.token}`,
+                },
+            })
+            .then((response) => {
+                console.log(response.data.data.volume);
+                router.push({
+                    name: "gist",
+                    query: {
+                        v: response.data.data.volume,
+                    },
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    } else {
+        isloading.value = false;
+    }
 });
-
-
 </script>
 <template>
-  <div
-    v-if="showForm"
-    class="min-h-screen fixed bg-slate-900 top-0 w-full z-50 bg-opacity-80"
-  >
-    <SubscribeForm v-if="whichForm === 'subscribe'" @close-form="closeForm" />
-    <LoginForm v-else @close-form="closeForm" />
-  </div>
-  <Header />
-  <Loading v-if="isloading" />
-  <div
-    v-else
-    class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-20"
-  >
-    <div class="lg:w-8/12 text-center lg:text-left drop-shadow-lg">
-      <h2 class="text-blue-900">A Student in Nigerian University?</h2>
-      <h1 class="mt-1 text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
-        Get Smarter with 15-mins of Fun Gists Every Saturday.
-      </h1>
-      <p class="mt-4 text-base">
-        Hi, this is Kampa a weekly online newsletter of localised campus news, spotlights, opinions & more 
-        to help you be smarter + stay well informed!
-      </p>
-      <p class="text-xs mt-4 text-red-600 font-semibold">
-        <b class="text-black">*</b> Over 1,100 students have already subscribed.
-      </p>
-      <div class="mt-6 space-x-4" id="subscribe">
-        <span
-          @click="doShowForm('subscribe')"
-          class="shadow-lg border border-black text-white bg-red-600 text-sm py-3 px-3 hover:opacity-40 cursor-pointer"
-          >Subscribe for FREE</span
-        >
-        <span
-          @click="doShowForm('login')"
-          class="shadow-lg border border-red-600 text-black text-sm py-3 px-3 hover:opacity-40 cursor-pointer"
-          >Login</span
-        >
-      </div>
-      <div class="text-xs mt-6 text-slate-600">
-        <b class="text-blue-800">
-        Available in:
-        </b>  
-        UniJos, UniAbuja, & ABU Zaria.
-      </div>
-      <div class="mt-24 sm:mt-10 flex justify-center sm:justify-start space-x-2 -ml-1">
-        <div class="w-40 sm:w-36 overflow-hidden cursor-not-allowed"><img class="w-full" src="/play-store.png" /></div>
-        <div class="w-40 sm:w-36 overflow-hidden cursor-not-allowed"><img class="w-full" src="/app-store.png" /></div>
-      </div>
+    <div v-if="showForm" class="min-h-screen fixed bg-slate-900 top-0 w-full z-50 bg-opacity-80">
+        <SubscribeForm v-if="whichForm === 'subscribe'" @close-form="closeForm" />
+        <LoginForm v-else @close-form="closeForm" />
     </div>
-    <div class="w-11/12 sm:w-8/12 mx-auto mt-6 lg:w-4/12 lg:-mt-6">
-      <div class="lg:px-0">
-        <img
-          src="/mobile.png"
-          class="max-w-80 mx-auto lg:mx-0 lg:float-right"
-        />
-      </div>
+    <Header />
+    <Loading v-if="isloading" />
+    <div v-else class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-20">
+        <div class="lg:w-8/12 text-center lg:text-left drop-shadow-lg">
+            <h2 class="text-blue-900">A Student in Nigerian University?</h2>
+            <h1 class="mt-1 text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
+                Get Smarter with 15-mins of Fun Gists Every Saturday.
+            </h1>
+            <p class="mt-4 text-base">
+                Hi, this is Kampa a weekly online newsletter of localised campus news, spotlights, opinions & more
+                to help you be smarter + stay well informed!
+            </p>
+            <p class="text-xs mt-4 text-red-600 font-semibold">
+                <b class="text-black">*</b> Over 1,100 students have already subscribed.
+            </p>
+            <div class="mt-6 space-x-4" id="subscribe">
+                <span @click="doShowForm('subscribe')" class="shadow-lg border border-black text-white bg-red-600 text-sm py-3 px-3 hover:opacity-40 cursor-pointer">
+                    Subscribe for FREE
+                </span>
+                <span @click="doShowForm('login')" class="shadow-lg border border-red-600 text-black text-sm py-3 px-3 hover:opacity-40 cursor-pointer">Login</span>
+            </div>
+            <div class="text-xs mt-6 text-slate-600">
+                <b class="text-blue-800">
+                    Available in:
+                </b>
+                UniJos, UniAbuja, & ABU Zaria.
+            </div>
+        </div>
+        <div class="w-11/12 sm:w-8/12 mx-auto mt-6 lg:w-4/12 lg:-mt-6">
+            <div class="lg:px-0">
+                <img src="/mobile.png" class="max-w-80 mx-auto lg:mx-0 lg:float-right" />
+            </div>
+        </div>
     </div>
-  </div>
-  <Footer />
+    <Footer />
 </template>

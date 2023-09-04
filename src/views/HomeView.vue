@@ -68,7 +68,7 @@ onMounted(async () => {
             <h1 class="mt-1 text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
                 Get Smarter with 15-mins of Fun Gists Every Saturday.
             </h1>
-            <p class="mt-4 text-base">
+            <p class="mt-4 text-sm sm:text-base">
                 Hi, this is Kampa, an online weekly newsletter of localised campus news, spotlights, opinions & more
                 to help you be smarter + stay well informed!
             </p>

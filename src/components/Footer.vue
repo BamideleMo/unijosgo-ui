@@ -46,8 +46,7 @@ const closeForm = () => {
                     </span>
                 </div>
                 <div>
-                    <div>All rights reserved</div>
-                    <div>&copy; {{ new Date().getFullYear() }}.</div>
+                    &copy; {{ new Date().getFullYear() }}.
                 </div>
             </div>
         </div>

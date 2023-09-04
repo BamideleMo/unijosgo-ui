@@ -95,7 +95,7 @@ const sendEmail = (email) => {
 </script>
 <template>
   <form
-    class="w-11/12 lg:w-6/12 mx-auto mt-10 sm:mt-20 bg-white p-5 sm:p-10 rounded-lg"
+    class="w-11/12 lg:w-6/12 mx-auto mt-10 sm:mt-20 bg-white p-3 sm:p-10 rounded-lg"
   >
     <div class="flex justify-between border-b border-black">
       <h1 class="h1 font-semibold text-lg">
@@ -124,15 +124,15 @@ const sendEmail = (email) => {
     >
       {{ errorMessage }}
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 text-black">
+    <div class="grid grid-cols-1 sm:grid-cols-3 sm:gap-10 text-black">
       <div class="space-y-4 text-sm">
         <p class="mt-6 sm:mt-5.5">Welcome back.</p>
         <p>Enter your email and click the submit button to login.</p>
       </div>
-      <div class="">
+      <div class="col-span-2">
         <div class="mt-6 space-y-4 text-sm">
           <div class="">
-            <label for="" class="font-bold">Email Address:</label>
+            <label for="" class="font-bold">Email Address: <span class="text-red-600">*</span></label>
             <input
               type="text"
               v-model="formData.username"

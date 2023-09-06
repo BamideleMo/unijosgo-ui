@@ -27,7 +27,6 @@ const formData = ref({
   campus: "",
   password: "1234",
   user_category: "user",
-  referrer: "",
 });
 
 // const mustBeNgphone = helpers.regex(/^[0][0-9]+$/);
@@ -86,7 +85,7 @@ const title = "Subscribe";
         <div v-if="errorMessage" class="bg-purple-900 animate-pulse text-red-200 text-xs p-2 mt-2 border-l-4 border-black">
             {{ errorMessage }}
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 sm:gap-6 text-black">
+        <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-6 text-black">
             <div class="space-y-4 text-sm">
                 <p class="mt-6 sm:mt-5.5">
                     Join many other students getting exclusive,
@@ -97,7 +96,7 @@ const title = "Subscribe";
                     <Available />
                 </p>
             </div>
-            <div class="col-span-2">
+            <div class="">
                 <div class="mt-6 space-y-4 text-sm">
                     <div class="grid grid-cols-2 sm:grid-cols-2 gap-2">
                         <div class="">
@@ -121,18 +120,12 @@ const title = "Subscribe";
                             </div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-2 sm:grid-cols-2 gap-2">
-                        <div class="">
-                            <label for="" class="font-bold">Email Address: <span class="text-red-600">*</span></label>
-                            <input type="text" v-model="formData.username" @blur="v$.username.$touch" @keydown.space.prevent class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900" />
-                            <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.username.$error">
-                                <span class="w-16 float-right -mt-8 mr-2 text-xs">
-                                    <span>{{ v$.username.$errors[0].$message }}</span></span>
-                            </div>
-                        </div>
-                        <div class="">
-                            <label for="" class="font-bold">Referrer Email:</label>
-                            <input type="text" v-model="formData.referral" @keydown.space.prevent class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900 placeholder:text-gray-300" placeholder="Optional" />
+                    <div class="">
+                        <label for="" class="font-bold">Email Address: <span class="text-red-600">*</span></label>
+                        <input type="text" v-model="formData.username" @blur="v$.username.$touch" @keydown.space.prevent class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900" />
+                        <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.username.$error">
+                            <span class="w-16 float-right -mt-8 mr-2 text-xs">
+                                <span>{{ v$.username.$errors[0].$message }}</span></span>
                         </div>
                     </div>
                     <div class="">

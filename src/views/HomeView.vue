@@ -86,7 +86,7 @@ onMounted(async () => {
             </div>
         </div>
         <div class="w-11/12 sm:w-8/12 mx-auto mt-6 lg:w-4/12 lg:-mt-6">
-            <div class="lg:px-0">
+            <div class="lg:px-0 min-h-96">
                 <img src="/mobile.png" class="max-w-80 mx-auto lg:mx-0 lg:float-right" />
             </div>
         </div>

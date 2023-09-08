@@ -62,8 +62,8 @@ onMounted(async () => {
     </div>
     <Header />
     <Loading v-if="isloading" />
-    <div v-else class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-20">
-        <div class="lg:w-8/12 text-center lg:text-left drop-shadow-lg">
+    <div v-else class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-20">
+        <div class="w-11/12 mx-auto lg:w-8/12 xl:w-8/12 text-center lg:text-left drop-shadow-lg">
             <h2 class="text-blue-900">A Student in Nigerian University?</h2>
             <h1 class="mt-1 text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
                 Get Smarter with 15-mins of Fun Gists Every Saturday.
@@ -85,7 +85,7 @@ onMounted(async () => {
                 <Available/>
             </div>
         </div>
-        <div class="w-11/12 sm:w-8/12 mx-auto mt-6 lg:w-4/12 lg:-mt-6">
+        <div class="w-11/12 sm:w-6/12 mx-auto mt-6 lg:w-4/12 xl:w-4/12 lg:-mt-6">
             <div class="lg:px-0 min-h-96">
                 <img src="/mobile.png" class="max-w-80 mx-auto lg:mx-0 lg:float-right" />
             </div>

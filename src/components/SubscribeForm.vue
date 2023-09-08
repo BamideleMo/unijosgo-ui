@@ -27,6 +27,7 @@ const formData = ref({
   campus: "",
   password: "1234",
   user_category: "user",
+  status: "confirm-email",
 });
 
 // const mustBeNgphone = helpers.regex(/^[0][0-9]+$/);

@@ -48,29 +48,25 @@ onMounted(async () => {
     <Loading v-if="isloading" />
     <div v-else class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-20 xl:mt-20">
         <div class="w-11/12 mx-auto lg:w-8/12 xl:w-8/12 text-center lg:text-left drop-shadow-lg">
-            <h2 class="text-blue-900">A Student in Nigerian University?</h2>
-            <h1 class="mt-1 text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
-                Get Smarter with 15-mins of Fun Gists Every Saturday.
+            <h1 class="mt-1 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+                Get Smarter with 20-mins of Localised <span class="border-b border-red-600">Campus Gists</span> Published Every Saturday.
             </h1>
             <p class="mt-4 text-sm sm:text-base">
-                Hi, this is Kampa, an online weekly newsletter of localised campus news, spotlights, opinions & more
-                to help you be smarter + stay well informed!
-            </p>
-            <p class="text-xs mt-4 text-red-600 font-semibold">
-                <b class="text-black">*</b> Over 501 students have already subscribed.
+                Join 650+ students and get localised campus news, interviews, opinions & more
+                to help you become smarter + stay well informed!
             </p>
             <div class="mt-6 space-x-4" id="subscribe">
-                <span @click="doShowForm('subscribe')" class="shadow-lg border border-black text-white bg-red-600 text-sm py-3 px-3 hover:opacity-40 cursor-pointer">
+                <span @click="doShowForm('subscribe')" class="shadow-lg border border-black text-white bg-black text-sm py-3 px-3 hover:opacity-40 cursor-pointer">
                     Subscribe for FREE
                 </span>
-                <span @click="doShowForm('login')" class="shadow-lg border border-red-600 text-black text-sm py-3 px-3 hover:opacity-40 cursor-pointer">Login</span>
+                <span @click="doShowForm('login')" class="shadow-lg border border-black text-black text-sm py-3 px-3 hover:opacity-40 cursor-pointer">Login</span>
             </div>
             <div class="text-xs mt-6">
                 <Available />
             </div>
         </div>
         <div class="w-11/12 sm:w-6/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 lg:-mt-6">
-            <div class="px-4 lg:px-1 w-80 sm:w-full mx-auto max-h-96 border-b-4 border-gray-400 overflow-hidden drop-shadow-lg">
+            <div class="px-2 lg:px-1 w-full mx-auto max-h-96 border-b-4 border-gray-400 overflow-hidden drop-shadow-lg">
                 <img src="/kampa-mobile.png" class="w-full lg:float-right" />
             </div>
         </div>

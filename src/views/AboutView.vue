@@ -12,19 +12,19 @@ const title = "About - Kampa";
             <p>
                 Kampa.ng is the modern campus magazine
                 providing the best social content that's focused on Nigerian Universities for students to
-                enjoy, stay informed, and be smarter.
+                enjoy, stay informed, and become smarter.
             </p>
             <p>
                 It's a weekly online newsletter for and about students across
-                selected Nigerian campuses!
+                selected Nigerian universities!
             </p>
             <h2>🚀 Features:</h2>
             <p>
                 <b><u>Localised Content</u>:</b><br />
-                <em class="text-blue-500">Every Saturday</em> we share fun gists, spotlights, opinions, and more
+                <em class="text-blue-500">Every Saturday</em> we share fun gists, interviews, opinions, and more
                 that we’ve discovered during the week to help you become smarter and stay well informed in just 15-minutes.</p>
             <p>Content
-                are completely localised for individual campuses.
+                are completely localised for individual universities.
             </p>
             <p>
                 <b><u>Trending Topics</u>:</b><br />

@@ -48,8 +48,9 @@ onMounted(async () => {
     <Loading v-if="isloading" />
     <div v-else class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-20 xl:mt-20">
         <div class="w-11/12 mx-auto lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
-            <h1 class="mt-1 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-                Get Smarter with 20-mins of Localised <span class="border-b border-red-600">Campus Gists</span> Published Every Saturday.
+            <h1 class="mt-1 text-3xl sm:text-3xl lg:text-4xl font-normal">
+                Get Smarter with 20-mins of 
+                <span class="font-semibold">Localised Campus Gists</span> Published Every Saturday.
             </h1>
             <p class="mt-4 text-sm sm:text-base">
                 Join 650+ students and get localised campus news, interviews, opinions & more

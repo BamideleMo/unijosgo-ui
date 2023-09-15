@@ -7,10 +7,6 @@ const router = useRouter();
 
 const authStore = useUserStore();
 
-const logout = () => {
-    authStore.clearUser();
-    router.push({ name: "home" });
-};
 
 const showForm = ref(false);
 
@@ -24,11 +20,11 @@ const closeForm = () => {
 </script>
 <template>
     <ComingSoon v-if="showForm" @close-form="closeForm" />
-    <footer class="py-10 mt-0 border-t border-gray-400 text-xs sm:text-xs text-black">
+    <footer class="py-10 mt-20 border-t border-gray-400 text-xs sm:text-xs text-black">
         <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto flex justify-between">
-            <div class="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3">
-                <img @click="doShowForm" src="/play-store.png" class="h-10 hover:opacity-60" />
-                <img @click="doShowForm" src="/app-store.png" class="h-10 hover:opacity-60" />
+            <div class="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4">
+                <img @click="doShowForm" src="/play-store.png" class="cursor-pointer h-10 hover:opacity-60" />
+                <img @click="doShowForm" src="/app-store.png" class="cursor-pointer h-10 hover:opacity-60" />
             </div>
             <div class="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-6 sm:pt-2">
                 <div>
@@ -40,10 +36,6 @@ const closeForm = () => {
                     <RouterLink to="/disclaimer" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
                         Disclaimer
                     </RouterLink>
-                </div>
-                <div v-if="authStore.cid">
-                    <span class="border-b border-red-600 hover:opacity-60 cursor-pointer" @click="logout">Logout
-                    </span>
                 </div>
                 <div>
                     &copy; {{ new Date().getFullYear() }}.

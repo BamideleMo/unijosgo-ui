@@ -31,25 +31,9 @@ const closeForm = () => {
 
 onMounted(async () => {
     if (userStore.cid) {
-        axios
-            .get(API_URL + "gists/latest", {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${userStore.token}`,
-                },
-            })
-            .then((response) => {
-                console.log(response.data.data.volume);
-                router.push({
-                    name: "gist",
-                    query: {
-                        v: response.data.data.volume,
-                    },
-                });
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        router.push({
+            name: "gist",
+        });
     } else {
         isloading.value = false;
     }
@@ -62,7 +46,7 @@ onMounted(async () => {
     </div>
     <Header />
     <Loading v-if="isloading" />
-    <div v-else class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-20">
+    <div v-else class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-20 xl:mt-20">
         <div class="w-11/12 mx-auto lg:w-8/12 xl:w-8/12 text-center lg:text-left drop-shadow-lg">
             <h2 class="text-blue-900">A Student in Nigerian University?</h2>
             <h1 class="mt-1 text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
@@ -82,12 +66,12 @@ onMounted(async () => {
                 <span @click="doShowForm('login')" class="shadow-lg border border-red-600 text-black text-sm py-3 px-3 hover:opacity-40 cursor-pointer">Login</span>
             </div>
             <div class="text-xs mt-6">
-                <Available/>
+                <Available />
             </div>
         </div>
         <div class="w-11/12 sm:w-6/12 mx-auto mt-6 lg:w-4/12 xl:w-4/12 lg:-mt-6">
-            <div class="lg:px-0 min-h-96">
-                <img src="/mobile.png" class="max-w-80 mx-auto lg:mx-0 lg:float-right" />
+            <div class="lg:px-1 max-h-96 border-b-4 border-black overflow-hidden">
+                <img src="/kampa-mobile.png" class=" mx-auto lg:mx-0 lg:float-right" />
             </div>
         </div>
     </div>

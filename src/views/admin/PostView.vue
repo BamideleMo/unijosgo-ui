@@ -42,8 +42,10 @@ const rules = {
 
 const v$ = useVuelidate(rules, formData);
 
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 const submitForm = async () => {
-  const API_URL = import.meta.env.VITE_API_URL;
 
   isProcessing.value = true;
 
@@ -64,10 +66,11 @@ const makePost = async () => {
   const res = await axios.post(
     API_URL + "gists",
     {
-      topic_meta: formData.value.topic,
+      meta_data: formData.value.topic,
       volume: formData.value.issue,
       post_date: formData.value.when,
       gist: mainContent.value,
+      campus: userStore.campus,
     },
     {
       headers: {
@@ -190,13 +193,13 @@ const title = "Make Post";
         <div class="">
           <label for="">Main Content:</label>
           <MainContentEditor
-            class="mt-1"
+            class="mt-1 h-96"
             @sendContent="getMainContent"
           ></MainContentEditor>
         </div>
         <div class="">
           <button
-            v-if="v$.$invalid"
+            v-if="v$.$invalid || !mainContent"
             disabled
             class="w-full bg-gray-400 cursor-not-allowed p-2 opacity-60 text-white rounded-lg"
           >

@@ -14,7 +14,7 @@
             <div class="text-black text-sm space-y-4 pt-4">
                 <p>Kampa.ng Android app and iOS app are in the works. Our team of developers are working really hard to make that happen.</p>
                 <p>
-                    In the mean time, enjoy our web app (this website) and explore interesting and fun gist to help you stay informed and become smarter!
+                    In the mean time, enjoy our web app (this website) where we post interesting and fun gists to help you stay informed and become smarter!
                 </p>
             </div>
         </div>

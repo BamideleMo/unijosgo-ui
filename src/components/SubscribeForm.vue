@@ -27,10 +27,10 @@ const formData = ref({
   campus: "",
   password: "1234",
   user_category: "user",
-  status: "confirm-email",
+  status: "unverified",
 });
 
-// const mustBeNgphone = helpers.regex(/^[0][0-9]+$/);
+const mustBeNgphone = helpers.regex(/^[0][0-9]+$/);
 
 const rules = {
   name: {
@@ -38,18 +38,30 @@ const rules = {
     minLength: helpers.withMessage("*Invalid", minLength(2)),
   },
   username: {
-    required: helpers.withMessage("Required", required),
-    email: helpers.withMessage("Invalid", email),
-    // minLength: helpers.withMessage("Invalid", minLength(11)),
-    // maxLength: helpers.withMessage("Invalid", maxLength(11)),
-    // mustBeNgphone: helpers.withMessage("Invalid", mustBeNgphone),
+    required: helpers.withMessage("*Required", required),
+    //email: helpers.withMessage("*Invalid", email),
+    minLength: helpers.withMessage("Invalid", minLength(11)),
+    maxLength: helpers.withMessage("Invalid", maxLength(11)),
+    mustBeNgphone: helpers.withMessage("Invalid", mustBeNgphone),
   },
   campus: {
-    required: helpers.withMessage("Required", required),
+    required: helpers.withMessage("*Required", required),
   },
 };
 
 const v$ = useVuelidate(rules, formData);
+
+const sendSMS = async () =>{
+    const res = await axios.post("https://api.ng.termii.com/api/sms/send", {
+    api_key: "TLWK68ATIe2skreBC99fl2dy7ltYNjpqpJweEoRqLRCPOamqO54zIP4RmGVh5P",
+    to: phone,
+    from: "Kampa",
+    sms: "Your Kampa confirmation code is" + userStore.cid,
+    type: "plain",
+    channel: "generic",
+  });
+  return res.data.data;
+}
 
 const submitForm = async () => {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -62,6 +74,8 @@ const submitForm = async () => {
 
     userStore.setUserDetails(res);
 
+    sendSMS();
+
     router.push({
       name: "welcome",
     });
@@ -71,7 +85,6 @@ const submitForm = async () => {
   }
 };
 
-const title = "Subscribe";
 </script>
 <template>
     <form class="w-11/12 lg:w-7/12 mx-auto mt-6 sm:mt-20 bg-white p-3 sm:p-10 rounded-lg">
@@ -83,18 +96,17 @@ const title = "Subscribe";
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </div>
-        <div v-if="errorMessage" class="bg-purple-900 animate-pulse text-red-200 text-xs p-2 mt-2 border-l-4 border-black">
-            {{ errorMessage }}
-        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-6 text-black">
-            <div class="space-y-4 text-sm">
+            <div class="space-y-4 text-xs">
                 <p class="mt-6 sm:mt-5.5">
                     Join many other students getting exclusive,
                     fun & interesting gists completely localised for their individual
-                    campuses every week.
+                    universities every Saturday.
                 </p>
                 <p>
                     <Available />
+                </p>
+                <p class="hidden sm:block">We'll never share your phone contact with anyone or send you unsolicited/useless messages.
                 </p>
             </div>
             <div class="">
@@ -102,7 +114,7 @@ const title = "Subscribe";
                     <div class="grid grid-cols-2 sm:grid-cols-2 gap-2">
                         <div class="">
                             <label for="" class="font-bold">Name: <span class="text-red-600">*</span></label>
-                            <input type="text" v-model="formData.name" @blur="v$.name.$touch" placeholder="E.g: Lekan" class="w-full placeholder:text-blue-300 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900" />
+                            <input type="text" v-model="formData.name" @blur="v$.name.$touch" placeholder="e.g: Moses" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900" />
                             <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.name.$error">
                                 <span class="w-16 float-right -mt-8 mr-2 text-xs">
                                     <span>{{ v$.name.$errors[0].$message }}</span>
@@ -112,7 +124,7 @@ const title = "Subscribe";
                         <div class="">
                             <label for="" class="font-bold">University: <span class="text-red-600">*</span></label>
                             <select v-model="formData.campus" @blur="v$.campus.$touch" class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900">
-                                <option value="">&nbsp;</option>
+                                <option value="">Select</option>
                                 <option value="UniJos">UniJos</option>
                             </select>
                             <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.campus.$error">
@@ -122,15 +134,20 @@ const title = "Subscribe";
                         </div>
                     </div>
                     <div class="">
-                        <label for="" class="font-bold">Email Address: <span class="text-red-600">*</span></label>
-                        <input type="text" v-model="formData.username" @blur="v$.username.$touch" @keydown.space.prevent class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900" />
+                        <label for="" class="font-bold">Phone Number: <span class="text-red-600">*</span></label>
+                        <input type="text" v-model="formData.username" @blur="v$.username.$touch" @keydown.space.prevent placeholder="e.g.: 08187084716" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900" />
                         <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.username.$error">
                             <span class="w-16 float-right -mt-8 mr-2 text-xs">
                                 <span>{{ v$.username.$errors[0].$message }}</span></span>
                         </div>
                     </div>
+                    <p class="sm:hidden text-xs">We'll never share your phone contact with anyone or send you unsolicited/useless messages.
+                    </p>
+                    <div v-if="errorMessage" class="bg-purple-900 animate-pulse text-red-200 text-xs p-2 mt-2 border-l-4 border-black">
+                        {{ errorMessage }}
+                    </div>
                     <div class="">
-                        <button v-if="v$.$invalid" disabled class="w-full bg-gray-400 shadow-lg cursor-not-allowed p-3 opacity-60 text-white rounded-lg">
+                        <button v-if="v$.$invalid" disabled class="capitalise w-full bg-gray-400 shadow-lg cursor-not-allowed p-3 opacity-60 text-white rounded-lg">
                             Submit
                         </button>
                         <span v-else>

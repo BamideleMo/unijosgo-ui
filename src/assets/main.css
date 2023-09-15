@@ -63,6 +63,7 @@ a,
 .content img {
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 auto;
 }
 .content p {
   color: #000000;
@@ -71,10 +72,10 @@ a,
 .content h2 {
   padding-top: 30px;
   margin-top: 30px !important;
-  color: rgb(30 58 138);
+  color: #ff3300;
   font-weight: bold;
   font-size: 15px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   border-top: #000000 dashed 1px;
 }
 .content h2.date {
@@ -82,12 +83,14 @@ a,
   margin-top: 0 !important;
 }
 .content h3 {
-  padding-top: 0px;
+  margin-top: 8px;
+/*  border-left: 5px #00bfff solid;*/
+/*  padding-left: 4px;*/
   color: #0b5394;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 16px;
   text-transform: capitalize;
-  text-decoration: underline;
+  line-height: 19px;
 }
 .content a {
   border-bottom: #000000 1px solid !important;
@@ -95,4 +98,10 @@ a,
 }
 .content a:hover {
   color: #ff3300;
+}
+.content .at{
+  color: #000000;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
 }

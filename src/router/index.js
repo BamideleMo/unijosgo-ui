@@ -7,6 +7,7 @@ import PostView from "../views/admin/PostView.vue";
 import AllPostsView from "../views/admin/AllPostsView.vue";
 import PageNotFoundView from "../views/PageNotFoundView.vue";
 import DisclaimerView from "../views/DisclaimerView.vue";
+import PhoneChangedView from "../views/PhoneChangedView.vue";
 import VerifyView from "../views/VerifyView.vue";
 import HomeView from "../views/HomeView.vue";
 import { useUserStore } from "../store/user-store";
@@ -37,6 +38,11 @@ const router = createRouter({
       component: DisclaimerView,
     },
     {
+      path: "/changed",
+      name: "changed",
+      component: PhoneChangedView,
+    },
+    {
       path: "/verify",
       name: "verify",
       component: VerifyView,
@@ -48,9 +54,6 @@ const router = createRouter({
       path: "/welcome",
       name: "welcome",
       component: WelcomeView,
-      meta: {
-        loggedIn: true,
-      },
     },
     {
       path: "/admin/post",
@@ -91,21 +94,21 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
   window.scrollTo(0, 0);
-  const authStore = useUserStore();
+  const userStore = useUserStore();
 
-  if (to.meta.requiresUserAuth && !authStore.cid) {
+  if (to.meta.requiresUserAuth && !userStore.cid) {
     return {
-      path: "/home",
+      path: "/",
       query: { redirect: to.fullPath },
     };
   }
-  if (to.meta.requiresAdminAuth && authStore.user_category !== "admin") {
+  if (to.meta.requiresAdminAuth && userStore.user_category !== "admin") {
     return {
-      path: "/home",
+      path: "/",
       query: { redirect: to.fullPath },
     };
   }
-  if (to.meta.loggedIn && authStore.cid) {
+  if (to.meta.loggedIn && userStore.cid) {
     return {
       path: "/gist",
       query: { redirect: to.fullPath },

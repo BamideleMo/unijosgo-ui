@@ -69,9 +69,9 @@ onMounted(async () => {
                 <Available />
             </div>
         </div>
-        <div class="w-11/12 sm:w-6/12 mx-auto mt-6 lg:w-4/12 xl:w-4/12 lg:-mt-6">
-            <div class="lg:px-1 max-h-96 border-b-4 border-black overflow-hidden">
-                <img src="/kampa-mobile.png" class=" mx-auto lg:mx-0 lg:float-right" />
+        <div class="w-11/12 sm:w-6/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 lg:-mt-6">
+            <div class="px-4 lg:px-1 w-80 sm:w-full mx-auto max-h-96 border-b-4 border-gray-400 overflow-hidden drop-shadow-lg">
+                <img src="/kampa-mobile.png" class="w-full lg:float-right" />
             </div>
         </div>
     </div>

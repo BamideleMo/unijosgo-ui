@@ -114,30 +114,30 @@ const submitForm = async () => {
                     <div class="grid grid-cols-2 sm:grid-cols-2 gap-2">
                         <div class="">
                             <label for="" class="font-bold">Name: <span class="text-red-600">*</span></label>
-                            <input type="text" v-model="formData.name" @blur="v$.name.$touch" placeholder="e.g: Moses" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
+                            <input type="text" v-model="formData.name" @focus="v$.name.$touch" placeholder="e.g: Moses" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
                             <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.name.$error">
-                                <span class="w-16 float-right -mt-8 mr-2 text-xs">
+                                <span class="w-16 float-right -mt-9 mr-2 text-xs">
                                     <span>{{ v$.name.$errors[0].$message }}</span>
                                 </span>
                             </div>
                         </div>
                         <div class="">
                             <label for="" class="font-bold">University: <span class="text-red-600">*</span></label>
-                            <select v-model="formData.campus" @blur="v$.campus.$touch" class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900">
+                            <select v-model="formData.campus" @focus="v$.campus.$touch" class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900">
                                 <option value="">Select</option>
                                 <option value="UniJos">UniJos</option>
                             </select>
                             <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.campus.$error">
-                                <span class="w-16 float-right -mt-8 mr-2 text-xs">
+                                <span class="w-16 float-right -mt-9 mr-2 text-xs">
                                     <span>{{ v$.campus.$errors[0].$message }}</span></span>
                             </div>
                         </div>
                     </div>
                     <div class="">
                         <label for="" class="font-bold">Phone Number: <span class="text-red-600">*</span></label>
-                        <input type="text" v-model="formData.username" @blur="v$.username.$touch" @keydown.space.prevent placeholder="e.g: 08187084716" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
+                        <input type="text" v-model="formData.username" @focus="v$.username.$touch" @keydown.space.prevent placeholder="e.g: 08187084716" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
                         <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.username.$error">
-                            <span class="w-16 float-right -mt-8 mr-2 text-xs">
+                            <span class="w-16 float-right -mt-9 mr-2 text-xs">
                                 <span>{{ v$.username.$errors[0].$message }}</span></span>
                         </div>
                     </div>

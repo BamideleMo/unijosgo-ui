@@ -90,9 +90,9 @@ const submitForm = async () => {
                 <div class="mt-6 space-y-4 text-sm">
                     <div class="">
                         <label for="" class="font-bold">Phone Number: <span class="text-red-600">*</span></label>
-                        <input type="text" v-model="formData.username" @blur="v$.username.$touch" @keydown.space.prevent placeholder="e.g: 08187084716" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
+                        <input type="text" v-model="formData.username" @focus="v$.username.$touch" @keydown.space.prevent placeholder="e.g: 08187084716" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
                         <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.username.$error">
-                            <span class="w-16 float-right -mt-8 mr-2">
+                            <span class="w-16 float-right -mt-9 mr-2">
                                 <span>{{ v$.username.$errors[0].$message }}</span></span>
                         </div>
                     </div>

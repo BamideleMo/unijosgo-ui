@@ -36,7 +36,7 @@ const toggleShowMenu = () => {
                     <p class="text-gray-900">
                         Kampa.ng is the modern campus magazine
                         providing the best social content that's focused on Nigerian Universities for students to
-                        enjoy, stay informed, and be smarter.
+                        enjoy, stay informed, and become smarter.
                     </p>
                     <RouterLink to="/about" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
                         Learn more

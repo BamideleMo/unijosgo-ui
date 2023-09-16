@@ -23,7 +23,7 @@ const toggleShowMenu = () => {
 <template>
     <div v-if="showMenu" class="w-screen h-screen top-0 fixed bg-black bg-opacity-90 z-50 flex ">
         <div class="grow border-t-2 border-red-600">&nbsp;</div>
-        <div class="bg-white w-60 xl:w-80 text-sm xl:text-base">
+        <div class="bg-white w-60 xl:w-80 text-sm xl:text-sm">
             <div class="flex border-b shadow-lg py-4 pl-4 pr-4">
                 <div class="grow"><img src="/icon.png" class="h-8"/></div>
                 <div class="w-8">

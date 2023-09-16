@@ -143,7 +143,7 @@ const submitForm = async () => {
                     </div>
                     <p class="sm:hidden text-xs">We'll never share your phone contact with anyone or send you unsolicited/useless messages.
                     </p>
-                    <div v-if="errorMessage" class="bg-purple-900 animate-pulse text-red-200 text-xs p-2 mt-2 border-l-4 border-black">
+                    <div v-if="errorMessage" class="bg-black animate-pulse text-white text-xs p-2 mt-2 border-l-4 border-purple-900 capitalize">
                         {{ errorMessage }}
                     </div>
                     <div class="">

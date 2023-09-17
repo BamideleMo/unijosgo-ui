@@ -86,7 +86,8 @@ const submitForm = async () => {
                 <p class="mt-6 sm:mt-5.5">Welcome back.</p>
                 <p>Enter your phone number and click the submit button to login.</p>
             </div>
-            <div class="">
+            
+            <form @submit.prevent="submitForm" class="">
                 <div class="mt-6 space-y-4 text-sm">
                     <div class="">
                         <label for="" class="font-bold">Phone Number: <span class="text-red-600">*</span></label>
@@ -107,13 +108,13 @@ const submitForm = async () => {
                             <button v-if="isProcessing" disabled class="w-full bg-orange-400 shadow-lg cursor-not-allowed p-3 animate-pulse opacity-60 text-white rounded-lg">
                                 Processing.. .
                             </button>
-                            <button v-else @click="submitForm" class="w-full bg-red-500 shadow-lg p-3 hover:opacity-60 text-white rounded-lg">
+                            <button v-else class="w-full bg-red-500 shadow-lg p-3 hover:opacity-60 text-white rounded-lg">
                                 Submit
                             </button>
                         </span>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </form>
 </template>

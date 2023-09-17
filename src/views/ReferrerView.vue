@@ -174,40 +174,42 @@ onMounted(async () => {
                         That's still awesome; just click on the SKIP button to continue.
                     </p>
                 </div>
-                <div class="space-y-4 bg-white p-6 rounded-lg">
-                    <div>
-                        <label for="" class="font-bold">
-                            Referrer's Phone Number: <span class="text-gray-600 font-normal">(Optional)</span>
-                        </label>
-                        <input type="text" v-model="formData.referrer" @blur="v$.referrer.$touch" @keydown.space.prevent placeholder="e.g: 08187084716" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
-                        <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.referrer.$error">
-                            <span class="w-16 float-right -mt-9 mr-2 text-xs">
-                                <span>{{ v$.referrer.$errors[0].$message }}</span></span>
-                        </div>
-                    </div>
-                    <div v-if="errorMessage" class="bg-black animate-pulse text-white text-xs p-2 mt-2 border-l-4 border-purple-900 capitalize">
-                        {{ errorMessage }}
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white p-6 rounded-lg">
+                    <form @submit.prevent="submitForm" class="space-y-4">
                         <div>
-                            <button @click="skip" class="w-full bg-blue-900 shadow-lg p-3 hover:opacity-60 text-white rounded-lg">
-                                Skip for Now
-                            </button>
+                            <label for="" class="font-bold">
+                                Referrer's Phone Number: <span class="text-gray-600 font-normal">(Optional)</span>
+                            </label>
+                            <input type="text" v-model="formData.referrer" @blur="v$.referrer.$touch" @keydown.space.prevent placeholder="e.g: 08187084716" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
+                            <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.referrer.$error">
+                                <span class="w-16 float-right -mt-9 mr-2 text-xs">
+                                    <span>{{ v$.referrer.$errors[0].$message }}</span></span>
+                            </div>
                         </div>
-                        <div>
-                            <button v-if="v$.$invalid" disabled class="w-full bg-gray-400 shadow-lg cursor-not-allowed p-3 opacity-60 text-white rounded-lg">
-                                Submit
-                            </button>
-                            <span v-else>
-                                <button v-if="isProcessing" disabled class="w-full bg-orange-400 shadow-lg cursor-not-allowed p-3 animate-pulse opacity-60 text-white rounded-lg">
-                                    Processing.. .
+                        <div v-if="errorMessage" class="bg-black animate-pulse text-white text-xs p-2 mt-2 border-l-4 border-purple-900 capitalize">
+                            {{ errorMessage }}
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <button @click="skip" class="w-full bg-blue-900 shadow-lg p-3 hover:opacity-60 text-white rounded-lg">
+                                    Skip for Now
                                 </button>
-                                <button v-else @click="submitForm" class="w-full bg-red-500 shadow-lg p-3 hover:opacity-60 text-white rounded-lg">
+                            </div>
+                            <div>
+                                <button v-if="v$.$invalid" disabled class="w-full bg-gray-400 shadow-lg cursor-not-allowed p-3 opacity-60 text-white rounded-lg">
                                     Submit
                                 </button>
-                            </span>
+                                <span v-else>
+                                    <button v-if="isProcessing" disabled class="w-full bg-orange-400 shadow-lg cursor-not-allowed p-3 animate-pulse opacity-60 text-white rounded-lg">
+                                        Processing.. .
+                                    </button>
+                                    <button v-else @click="submitForm" class="w-full bg-red-500 shadow-lg p-3 hover:opacity-60 text-white rounded-lg">
+                                        Submit
+                                    </button>
+                                </span>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

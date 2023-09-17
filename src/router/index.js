@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import GistView from "../views/GistView.vue";
 import WelcomeView from "../views/WelcomeView.vue";
+import ReferrerView from "../views/ReferrerView.vue";
 import AboutView from "../views/AboutView.vue";
 import ArchiveView from "../views/ArchiveView.vue";
 import PostView from "../views/admin/PostView.vue";
@@ -56,6 +57,11 @@ const router = createRouter({
       component: WelcomeView,
     },
     {
+      path: "/referrer",
+      name: "referrer",
+      component: ReferrerView,
+    },
+    {
       path: "/admin/post",
       name: "post",
       component: PostView,
@@ -94,21 +100,21 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
   window.scrollTo(0, 0);
-  const userStore = useUserStore();
+  const authStore = useUserStore();
 
-  if (to.meta.requiresUserAuth && !userStore.cid) {
+  if (to.meta.requiresUserAuth && !authStore.cid) {
     return {
       path: "/",
       query: { redirect: to.fullPath },
     };
   }
-  if (to.meta.requiresAdminAuth && userStore.user_category !== "admin") {
+  if (to.meta.requiresAdminAuth && authStore.user_category !== "admin") {
     return {
       path: "/",
       query: { redirect: to.fullPath },
     };
   }
-  if (to.meta.loggedIn && userStore.cid) {
+  if (to.meta.loggedIn && authStore.cid) {
     return {
       path: "/gist",
       query: { redirect: to.fullPath },

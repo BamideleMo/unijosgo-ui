@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from "vue";
+    import { ref, onMounted } from "vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 import ChangePhone from "../components/ChangePhone.vue";
@@ -17,7 +17,7 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-const userStore = useUserStore();
+const authStore = useUserStore();
 
 const errorMessage = ref(null);
 
@@ -48,36 +48,46 @@ const rules = {
 
 const v$ = useVuelidate(rules, formData);
 
+const API_URL = import.meta.env.VITE_API_URL;
+  
 const submitForm = async () => {
-  const API_URL = import.meta.env.VITE_API_URL;
 
   isProcessing.value = true;
 
-  if(formData.value.code === userStore.cid){
+  if(formData.value.code === authStore.cid){
 
-      try {
-        let res = await axios.patch(API_URL + "users/"+userStore.cid, {
-          status: 'verified',
+    axios
+        .patch(
+            API_URL + "users/" + authStore.cid, {
+                status: 'verified',
+            }, {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${authStore.token}`,
+                },
+            }
+        )
+        .then((response) => {
+            router.push({
+              name: "referrer",
+            });
+        })
+        .catch((error) => {
+            console.log(error);
+            isProcessing.value = false;
+            errorMessage.value = error.response.data.message;
         });
-
-        router.push({
-          name: "gist",
-        });
-        
-      } catch (error) {
-        isProcessing.value = false;
-        errorMessage.value = error.response.data.message;
-      }
 
   }
   else{
-        errorMessage.value = "Incorrect Code.";
+        errorMessage.value = "Incorrect Code. Check and try again.";
+        isProcessing.value = false;
   }
 };
 
 
 onMounted(async () => {
-    if(!userStore.cid){
+    if(!authStore.cid){
 
         router.push({
           name: "home",
@@ -93,22 +103,22 @@ onMounted(async () => {
         <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-7/12 lg:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">Confirmation Code</h1>
             <div class="sm:pt-0">
-                <p>Hi {{userStore.name}} 👋🏾</p>
-                <p>We sent a confirmation code to your phone number: <b class="text-blue-800">{{userStore.username}}</b></p>
+                <p>Hi {{authStore.name}} 👋🏾</p>
+                <p>We sent a confirmation code to your phone number: <b class="text-blue-800">{{authStore.username}}</b></p>
                 <p>
                     Enter the code into the box below and submit.
                 </p>
             </div>
-            <div class="space-y-4">
+            <div class="space-y-4 bg-blue-100 p-6 rounded-lg">
                 <div>
                     <label for="" class="font-bold">Confirmation Code: <span class="text-red-600">*</span></label>
                     <input type="text" v-model="formData.code" @blur="v$.code.$touch" @keydown.space.prevent class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900" />
                     <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.code.$error">
-                        <span class="w-16 float-right -mt-8 mr-2 text-xs">
+                        <span class="w-16 float-right -mt-9 mr-2 text-xs">
                             <span>{{ v$.code.$errors[0].$message }}</span></span>
                     </div>
                 </div>
-                <div v-if="errorMessage" class="bg-purple-900 animate-pulse text-red-200 text-xs p-2 mt-2 border-l-4 border-black">
+                <div v-if="errorMessage" class="bg-black animate-pulse text-white text-xs p-2 mt-2 border-l-4 border-purple-900 capitalize">
                     {{ errorMessage }}
                 </div>
                 <div class="">
@@ -127,11 +137,11 @@ onMounted(async () => {
             </div>
             <h2><span class="text-xl">🤔</span> Psst...</h2>
             <p>
-                <b>Didn't get confirmation code via SMS?</b><br/>Get it via WhatsApp chat: <a class="text-red-600 hover:opacity-60" href="https://wa.me/23408187084716?text=I'm%20yet%20to%20get%20Kampa%20confirmation%20code" target="_blank">Click here</a>
+                <b>Didn't get confirmation code via SMS?</b><br />Get it via WhatsApp chat: <a class="text-red-600 hover:opacity-60" href="https://wa.me/23408187084716?text=I'm%20yet%20to%20get%20Kampa%20confirmation%20code" target="_blank">Click here</a>
             </p>
             <p><b>Want to change phone number?</b>
-            <br/>
-                <span @click="doShowForm()" class="border-b border-black cursor-pointer text-red-600 hover:opacity-60">Click here to change <b class="text-blue-800">{{userStore.username}}</b></span>
+                <br />
+                <span @click="doShowForm()" class="border-b border-black cursor-pointer text-red-600 hover:opacity-60">Click here to change <b class="text-blue-800">{{authStore.username}}</b></span>
             </p>
         </div>
     </div>

@@ -15,7 +15,7 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-const userStore = useUserStore();
+const authStore = useUserStore();
 
 const errorMessage = ref(null);
 
@@ -51,20 +51,51 @@ const rules = {
 
 const v$ = useVuelidate(rules, formData);
 
-const sendSMS = async () =>{
-    const res = await axios.post("https://api.ng.termii.com/api/sms/send", {
-    api_key: "TLWK68ATIe2skreBC99fl2dy7ltYNjpqpJweEoRqLRCPOamqO54zIP4RmGVh5P",
-    to: phone,
-    from: "Kampa",
-    sms: "Your Kampa confirmation code is" + userStore.cid,
-    type: "plain",
-    channel: "generic",
-  });
-  return res.data.data;
+
+const API_URL = import.meta.env.VITE_API_URL;
+
+const sendSMS = async () => {
+    try{
+
+        let res = await axios.post("https://api.ng.termii.com/api/sms/send", {
+            api_key: "TLWK68ATIe2skreBC99fl2dy7ltYNjpqpJweEoRqLRCPOamqO54zIP4RmGVh5P",
+            to: '234'+formData.value.username,
+            from: "Kampa",
+            sms: "Your Kampa confirmation code is: " + code.value,
+            type: "plain",
+            channel: "generic",
+          });
+
+
+        loginNow();
+    }
+    catch(error){
+        console.log(error)
+    }
 }
 
+const loginNow = async () => {
+
+
+  try {
+    let res = await axios.post(API_URL + "users/login", {
+      username: formData.value.username,
+      password: "1234",
+    });
+    
+    authStore.setUserDetails(res);
+
+    router.push({
+        name: "welcome",
+    });
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const code = ref(null);
 const submitForm = async () => {
-  const API_URL = import.meta.env.VITE_API_URL;
 
   isProcessing.value = true;
 
@@ -72,13 +103,8 @@ const submitForm = async () => {
   try {
     let res = await axios.post(API_URL + "users/register", formData.value);
 
-    userStore.setUserDetails(res);
-
+    code.value = res.data.data.customId;
     sendSMS();
-
-    router.push({
-      name: "welcome",
-    });
   } catch (error) {
     isProcessing.value = false;
     errorMessage.value = error.response.data.message;
@@ -114,7 +140,7 @@ const submitForm = async () => {
                     <div class="grid grid-cols-2 sm:grid-cols-2 gap-2">
                         <div class="">
                             <label for="" class="font-bold">Name: <span class="text-red-600">*</span></label>
-                            <input type="text" v-model="formData.name" @focus="v$.name.$touch" placeholder="e.g: Moses" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
+                            <input type="text" v-model="formData.name" @blur="v$.name.$touch" placeholder="e.g: Moses" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
                             <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.name.$error">
                                 <span class="w-16 float-right -mt-9 mr-2 text-xs">
                                     <span>{{ v$.name.$errors[0].$message }}</span>
@@ -123,7 +149,7 @@ const submitForm = async () => {
                         </div>
                         <div class="">
                             <label for="" class="font-bold">University: <span class="text-red-600">*</span></label>
-                            <select v-model="formData.campus" @focus="v$.campus.$touch" class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900">
+                            <select v-model="formData.campus" @blur="v$.campus.$touch" class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900">
                                 <option value="">Select</option>
                                 <option value="UniJos">UniJos</option>
                             </select>
@@ -135,7 +161,7 @@ const submitForm = async () => {
                     </div>
                     <div class="">
                         <label for="" class="font-bold">Phone Number: <span class="text-red-600">*</span></label>
-                        <input type="text" v-model="formData.username" @focus="v$.username.$touch" @keydown.space.prevent placeholder="e.g: 08187084716" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
+                        <input type="text" v-model="formData.username" @blur="v$.username.$touch" @keydown.space.prevent placeholder="e.g: 08187084716" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
                         <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.username.$error">
                             <span class="w-16 float-right -mt-9 mr-2 text-xs">
                                 <span>{{ v$.username.$errors[0].$message }}</span></span>

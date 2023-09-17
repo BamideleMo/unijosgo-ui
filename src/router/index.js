@@ -3,12 +3,13 @@ import GistView from "../views/GistView.vue";
 import WelcomeView from "../views/WelcomeView.vue";
 import ReferrerView from "../views/ReferrerView.vue";
 import AboutView from "../views/AboutView.vue";
+import SubscribeView from "../views/SubscribeView.vue";
+import LoginView from "../views/LoginView.vue";
 import ArchiveView from "../views/ArchiveView.vue";
 import PostView from "../views/admin/PostView.vue";
 import AllPostsView from "../views/admin/AllPostsView.vue";
 import PageNotFoundView from "../views/PageNotFoundView.vue";
 import DisclaimerView from "../views/DisclaimerView.vue";
-import PhoneChangedView from "../views/PhoneChangedView.vue";
 import VerifyView from "../views/VerifyView.vue";
 import HomeView from "../views/HomeView.vue";
 import { useUserStore } from "../store/user-store";
@@ -21,27 +22,25 @@ const router = createRouter({
       name: "home",
       component: HomeView,
     },
-    // {
-    //   path: "/home",
-    //   redirect: "/",
-    //   meta: {
-    //     loggedIn: true,
-    //   },
-    // },
     {
       path: "/about",
       name: "about",
       component: AboutView,
     },
     {
+      path: "/subscribe",
+      name: "subscribe",
+      component: SubscribeView,
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: LoginView,
+    },
+    {
       path: "/disclaimer",
       name: "disclaimer",
       component: DisclaimerView,
-    },
-    {
-      path: "/changed",
-      name: "changed",
-      component: PhoneChangedView,
     },
     {
       path: "/verify",

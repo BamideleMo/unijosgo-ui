@@ -1,5 +1,8 @@
 <script setup>
     import { ref } from "vue";
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
+import Available from "../components/Available.vue";
 import { useVuelidate } from "@vuelidate/core";
 import {
   required,
@@ -8,7 +11,6 @@ import {
   email,
   helpers,
 } from "@vuelidate/validators";
-import Available from "./Available.vue";
 import axios from "axios";
 import { useUserStore } from "../store/user-store";
 import { useRouter } from "vue-router";
@@ -113,28 +115,18 @@ const submitForm = async () => {
 
 </script>
 <template>
-    <form class="w-11/12 lg:w-7/12 mx-auto mt-6 sm:mt-20 bg-white p-3 sm:p-10 rounded-lg">
-        <div class="flex justify-between border-b border-black">
-            <h1 class="h1 font-semibold text-lg">
-                Subscribe
-            </h1>
-            <svg @click="$emit('closeForm')" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 -mt-2 -mr-2 text-slate-900 hover:opacity-60 cursor-pointer">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-6 text-black">
-            <div class="space-y-4 text-xs">
-                <p class="mt-6 sm:mt-5.5">
-                    Join many other students getting exclusive,
-                    fun & interesting gists completely localised for their individual
-                    universities every Saturday.
-                </p>
-                <p>
-                    <Available />
-                </p>
-                <p class="hidden sm:block">We'll never share your phone contact with anyone or send you unsolicited/useless messages.
-                </p>
-            </div>
+    <Header />
+    <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
+        <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto">
+            <h1 class="h1 font-semibold text-lg text-center">Subscribe for FREE</h1>
+            <p>
+                Join many other students getting exclusive,
+                fun & interesting gists completely localised for their individual
+                universities every Saturday.
+            </p>
+            <p>
+                <Available />
+            </p>
             <form @submit.prevent="submitForm" class="">
                 <div class="mt-6 space-y-4 text-sm">
                     <div class="grid grid-cols-2 sm:grid-cols-2 gap-2">
@@ -167,8 +159,6 @@ const submitForm = async () => {
                                 <span>{{ v$.username.$errors[0].$message }}</span></span>
                         </div>
                     </div>
-                    <p class="sm:hidden text-xs">We'll never share your phone contact with anyone or send you unsolicited/useless messages.
-                    </p>
                     <div v-if="errorMessage" class="bg-black animate-pulse text-white text-xs p-2 mt-2 border-l-4 border-purple-900 capitalize">
                         {{ errorMessage }}
                     </div>
@@ -187,6 +177,11 @@ const submitForm = async () => {
                     </div>
                 </div>
             </form>
+            <p class="">
+                We'll never share your information with anyone or send you unsolicited/useless messages.
+            </p>
         </div>
-    </form>
+    </div>
+    <Footer />
 </template>
+<style></style>

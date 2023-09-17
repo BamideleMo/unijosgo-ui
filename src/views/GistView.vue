@@ -141,11 +141,12 @@ onMounted(async () => {
                 <span class="capitalize border-b border-black">{{ volumeContent.post_date }}</span>
             </h2>
             <div class="at">
-                <span class="capitalize"><b>{{user.campus}} Gist</b></span>
+                <span class="capitalize text-gray-300">
+                    <b class="text-black">{{user.campus}}</b>
+                </span>
             </div>
             <p>Hi, {{ userStore.name }}</p>
             <div v-html="volumeContent.gist"></div>
-            <h2>Wins</h2>
         </div>
     </div>
     <Footer />

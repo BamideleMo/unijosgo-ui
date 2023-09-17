@@ -1,5 +1,8 @@
 <script setup>
     import { ref } from "vue";
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
+import Available from "../components/Available.vue";
 import { useVuelidate } from "@vuelidate/core";
 import {
   required,
@@ -17,6 +20,7 @@ const router = useRouter();
 const authStore = useUserStore();
 
 const errorMessage = ref(null);
+
 const isProcessing = ref(false);
 
 const formData = ref({
@@ -35,9 +39,12 @@ const rules = {
   },
 };
 
+
 const v$ = useVuelidate(rules, formData);
 
+
 const API_URL = import.meta.env.VITE_API_URL;
+
 
 const submitForm = async () => {
 
@@ -72,21 +79,16 @@ const submitForm = async () => {
 
 </script>
 <template>
-    <form class="w-11/12 lg:w-6/12 mx-auto mt-10 sm:mt-20 bg-white p-3 sm:p-10 rounded-lg">
-        <div class="flex justify-between border-b border-black">
-            <h1 class="h1 font-semibold text-lg">
-                Login
-            </h1>
-            <svg @click="$emit('closeForm')" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 -mt-2 -mr-2 text-slate-900 hover:opacity-60 cursor-pointer">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 text-black">
-            <div class="space-y-4 text-xs">
-                <p class="mt-6 sm:mt-5.5">Welcome back.</p>
-                <p>Enter your phone number and click the submit button to login.</p>
-            </div>
-            
+    <Header />
+    <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
+        <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto">
+            <h1 class="h1 font-semibold text-lg text-center">Login</h1>
+            <p>
+                Welcome back.
+            </p>
+            <p>
+                Enter your phone number and click the submit button to login.
+            </p>
             <form @submit.prevent="submitForm" class="">
                 <div class="mt-6 space-y-4 text-sm">
                     <div class="">
@@ -116,5 +118,7 @@ const submitForm = async () => {
                 </div>
             </form>
         </div>
-    </form>
+    </div>
+    <Footer />
 </template>
+<style></style>

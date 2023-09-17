@@ -29,7 +29,7 @@ const title = "About - Kampa";
             <p>
                 <b><u>Trending Topics</u>:</b><br />
                 Kampa.ng lets you follow trending gists on campus and national
-                gists especially those relating to tertiary education in Nigeria.
+                gists especially as it relates to university education in Nigeria.
             </p>
             <h2>☎️ Contact us:</h2>
             <p>

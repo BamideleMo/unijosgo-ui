@@ -37,8 +37,10 @@ const rules = {
 
 const v$ = useVuelidate(rules, formData);
 
-const submitForm = async () => {
+
   const API_URL = import.meta.env.VITE_API_URL;
+
+const submitForm = async () => {
 
   isProcessing.value = true;
 
@@ -58,26 +60,32 @@ const submitForm = async () => {
 };
 
 const sendSMS = async () => {
-    const res = await axios.post("https://api.ng.termii.com/api/sms/send", {
-    api_key: "TLWK68ATIe2skreBC99fl2dy7ltYNjpqpJweEoRqLRCPOamqO54zIP4RmGVh5P",
-    to: phone,
-    from: "Kampa",
-    sms: "Your Kampa confirmation code is" + userStore.cid,
-    type: "plain",
-    channel: "generic",
-  });
-  //return res.data.data;
-    logout();
+    try{
+
+        let res = await axios.post("https://api.ng.termii.com/api/sms/send", {
+            api_key: "TLWK68ATIe2skreBC99fl2dy7ltYNjpqpJweEoRqLRCPOamqO54zIP4RmGVh5P",
+            to: '234'+formData.value.username,
+            from: "Kampa",
+            sms: "Your Kampa confirmation code is: " + userStore.cid,
+            type: "plain",
+            channel: "generic",
+          });
+
+
+        router.push({
+            name: "welcome",
+        });
+    }
+    catch(error){
+        console.log(error)
+    }
 };
 
-const logout = () => {
-    authStore.clearUser();
-    router.push({ name: "changed" });
-};
+
 </script>
 <template>
     <div  class="min-h-screen fixed bg-slate-900 top-0 w-full z-50 bg-opacity-80">
-        <form class="w-11/12 lg:w-6/12 mx-auto mt-10 sm:mt-20 bg-white p-3 sm:p-10 rounded-lg">
+        <form @submit.prevent="submitForm" class="w-11/12 lg:w-6/12 mx-auto mt-10 sm:mt-20 bg-white p-3 sm:p-10 rounded-lg">
             <div class="flex justify-between border-b border-black">
                 <h1 class="h1 font-semibold text-lg">
                     Change Phone Number
@@ -112,7 +120,7 @@ const logout = () => {
                                 <button v-if="isProcessing" disabled class="w-full bg-orange-400 shadow-lg cursor-not-allowed p-3 animate-pulse opacity-60 text-white rounded-lg">
                                     Processing.. .
                                 </button>
-                                <button v-else @click="submitForm" class="w-full bg-red-500 shadow-lg p-3 hover:opacity-60 text-white rounded-lg">
+                                <button v-else class="w-full bg-red-500 shadow-lg p-3 hover:opacity-60 text-white rounded-lg">
                                     Submit
                                 </button>
                             </span>

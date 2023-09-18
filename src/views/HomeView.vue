@@ -63,7 +63,7 @@ onMounted(async () => {
             </div>
         </div>
         <div class="w-11/12 sm:w-6/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 lg:-mt-6">
-            <div class="px-2 lg:px-1 w-full mx-auto max-h-96 border-b-4 border-gray-400 overflow-hidden drop-shadow-lg">
+            <div class="px-2 lg:px-1 max-w-full mx-auto h-96 border-b-4 border-gray-400 overflow-hidden drop-shadow-lg">
                 <img src="/kampa-mobile.png" class="w-full lg:float-right" />
             </div>
         </div>

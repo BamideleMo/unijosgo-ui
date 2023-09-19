@@ -20,15 +20,15 @@ const title = "About - Kampa";
             </p>
             <h2>🚀 Features:</h2>
             <p>
-                <b><u>Localised Content</u>:</b><br />
+                <b><u>Relevant & Fun Gists</u>:</b><br />
                 <em class="text-blue-500">Every Saturday</em> we share fun gists, interviews, opinions, and more
                 that we’ve discovered during the week to help you become smarter and stay well informed in just 15-minutes.</p>
             <p>Content
                 are completely localised for individual universities.
             </p>
             <p>
-                <b><u>Trending Topics</u>:</b><br />
-                Kampa.ng lets you follow trending gists on campus and at the national
+                <b><u>Trending NEWS</u>:</b><br />
+                Kampa.ng lets you follow trending NEWS on campus and at the national
                 level especially as it relates to university education in Nigeria.
             </p>
             <h2>☎️ Contact us:</h2>

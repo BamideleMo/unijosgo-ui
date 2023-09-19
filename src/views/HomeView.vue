@@ -44,7 +44,7 @@ onMounted(async () => {
         <div class="w-11/12 mx-auto lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
             <h1 class="mt-1 text-3xl sm:text-3xl lg:text-4xl font-normal">
                 Get Smarter with 15-mins of 
-                <span class="font-semibold">Localised Campus Gists</span> Published Every Saturday.
+                <span class="font-semibold">Relevant Campus Gists</span> Published Every Saturday.
             </h1>
             <p class="mt-4 text-sm sm:text-base">
                 Join 650+ students and get localised campus news, interviews, opinions & more

@@ -117,7 +117,7 @@ const submitForm = async () => {
 <template>
     <Header />
     <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
-        <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto">
+        <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-5/12 sm:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">Subscribe for FREE</h1>
             <p>
                 Join many other students getting exclusive,
@@ -127,8 +127,8 @@ const submitForm = async () => {
             <p>
                 <Available />
             </p>
-            <form @submit.prevent="submitForm" class="">
-                <div class="mt-6 space-y-4 text-sm">
+            <form @submit.prevent="submitForm" class="bg-blue-50 p-4 border border-blue-100">
+                <div class="space-y-4 text-sm">
                     <div class="grid grid-cols-2 sm:grid-cols-2 gap-2">
                         <div class="">
                             <label for="" class="font-bold">Name: <span class="text-red-600">*</span></label>

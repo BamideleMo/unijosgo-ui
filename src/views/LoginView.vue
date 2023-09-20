@@ -81,7 +81,7 @@ const submitForm = async () => {
 <template>
     <Header />
     <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
-        <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto">
+        <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-5/12 sm:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">Login</h1>
             <p>
                 Welcome back.
@@ -89,8 +89,8 @@ const submitForm = async () => {
             <p>
                 Enter your phone number and click the submit button to login.
             </p>
-            <form @submit.prevent="submitForm" class="">
-                <div class="mt-6 space-y-4 text-sm">
+            <form @submit.prevent="submitForm" class="bg-blue-50 p-4 border border-blue-100">
+                <div class="space-y-4 text-sm">
                     <div class="">
                         <label for="" class="font-bold">Phone Number: <span class="text-red-600">*</span></label>
                         <input type="text" v-model="formData.username" @blur="v$.username.$touch" @keydown.space.prevent placeholder="e.g: 08187084716" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />

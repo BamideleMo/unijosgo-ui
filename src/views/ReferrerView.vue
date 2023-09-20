@@ -149,7 +149,7 @@ onMounted(async () => {
 <template>
     <Header />
     <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
-        <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-7/12 lg:mx-auto">
+        <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-5/12 lg:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">Referrer Info.</h1>
             <div v-if="hasReferrer" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 <div><b>Referrer:</b> <br />{{referrer.username}}</div>
@@ -159,22 +159,19 @@ onMounted(async () => {
             <div v-else>
                 <div class="sm:pt-0">
                     <p>
-                        <b>Someone told you about Kampa? Were you referred to Kampa by a friend?</b>
-                    </p>
-                    <p>
+                        <b>Someone told you about Kampa?</b> 
                         We might have a gift for that good person.
                     </p>
                     <p>
-                        Enter the Phone Number of that good person into the box below and click submit.
+                        Please enter the Phone Number of that good person into the box below and click submit.
                     </p>
                     <p>
-                        <b>No one referred you? or don't want to provide that info now?</b>
-                    </p>
-                    <p>
+                        <b>Nobody referred you? Don't want to provide that info now?</b>
+                    <br/>
                         That's still awesome; just click on the SKIP button to continue.
                     </p>
                 </div>
-                <form @submit.prevent="submitForm" class="space-y-4">
+                <form @submit.prevent="submitForm" class="space-y-4 bg-blue-50 p-4 border border-blue-100">
                     <div>
                         <label for="" class="font-bold">
                             Referrer's Phone Number: <span class="text-gray-600 font-normal">(Optional)</span>

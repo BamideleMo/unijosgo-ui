@@ -100,7 +100,7 @@ onMounted(async () => {
     <ChangePhone v-if="showForm" @close-form="closeForm" />
     <Header />
     <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
-        <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-7/12 lg:mx-auto">
+        <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-5/12 lg:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">Confirmation Code</h1>
             <div class="sm:pt-0">
                 <p>Hi {{authStore.name}} 👋🏾</p>
@@ -109,7 +109,7 @@ onMounted(async () => {
                     Enter the code into the box below and submit.
                 </p>
             </div>
-            <form @submit.prevent="submitForm" class="space-y-4">
+            <form @submit.prevent="submitForm" class="space-y-4 bg-blue-50 p-4 border border-blue-100">
                 <div>
                     <label for="" class="font-bold">Confirmation Code: <span class="text-red-600">*</span></label>
                     <input type="text" v-model="formData.code" @blur="v$.code.$touch" @keydown.space.prevent class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900" />

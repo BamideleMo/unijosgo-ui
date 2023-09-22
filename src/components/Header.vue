@@ -26,7 +26,7 @@ const toggleShowMenu = () => {
         <div class="bg-white w-60 xl:w-80 text-sm xl:text-sm">
             <div class="flex border-b shadow-lg py-2.5 pl-4 pr-4">
                 <div class="grow">
-                    <img src="/icon.png" class="h-10 border border-black bg-red-600 rounded-lg"/>
+                    <img src="/icon.png" class="h-10"/>
                 </div>
                 <div class="w-8">
                     <IconClose @click="toggleShowMenu" class="text-red-400 cursor-pointer hover:opacity-60" />

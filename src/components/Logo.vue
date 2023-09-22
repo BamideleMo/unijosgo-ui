@@ -1,8 +1,8 @@
 <script setup></script>
 <template>
-    <RouterLink to="/" class="cursor-pointer drop-shadow-lg flex space-x-1">
+    <RouterLink to="/" class="cursor-pointer drop-shadow-lg flex">
 
-                    <img src="/icon.png" class="h-10 mt-1 border border-black bg-red-600 rounded-lg"/>
+                    <img src="/icon.png" class="h-10 mt-1"/>
         <div>
             <span class="text-3xl font-extrabold hover:opacity-60">
                 <span class="text-black">Kampa</span>

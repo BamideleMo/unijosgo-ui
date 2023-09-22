@@ -24,8 +24,10 @@ const toggleShowMenu = () => {
     <div v-if="showMenu" class="w-screen h-screen top-0 fixed bg-black bg-opacity-90 z-50 flex ">
         <div class="grow border-t-2 border-red-600">&nbsp;</div>
         <div class="bg-white w-60 xl:w-80 text-sm xl:text-sm">
-            <div class="flex border-b shadow-lg py-3 pl-4 pr-4">
-                <div class="grow"><img src="/icon.png" class="h-10"/></div>
+            <div class="flex border-b shadow-lg py-2.5 pl-4 pr-4">
+                <div class="grow">
+                    <img src="/icon.png" class="h-10 border border-black bg-red-600 rounded-lg"/>
+                </div>
                 <div class="w-8">
                     <IconClose @click="toggleShowMenu" class="text-red-400 cursor-pointer hover:opacity-60" />
                 </div>
@@ -73,7 +75,7 @@ const toggleShowMenu = () => {
     <div class="bg-white border-b shadow-lg py-2">
         <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto flex justify-between">
             <Logo />
-            <div class="pt-3 sm:pt-3 drop-shadow-lg space-x-4">
+            <div class="pt-2.5 sm:pt-2.5 drop-shadow-lg space-x-4">
                 <MenuIcon @click="toggleShowMenu" class="cursor-pointer hover:opacity-60 -mt-2"  />
             </div>
         </div>

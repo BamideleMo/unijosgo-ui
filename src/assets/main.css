@@ -38,7 +38,7 @@ a,
   color: #000000 !important;
   font-size: 15px;
 }
-.content ul {
+.content ul,.content ol {
   list-style-type: square;
   margin: 0 32px;
 }
@@ -47,9 +47,12 @@ a,
   display: block;
   font-weight: bold;
 }
-.content ul li {
+.content ul li, .content ol li {
   padding: 8px 0;
   font-size: 15px;
+}
+.content ol{
+  list-style-type: decimal-leading-zero;
 }
 .h1,
 .myred {
@@ -64,6 +67,7 @@ a,
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 0 auto;
+  max-width: 100% !important;
 }
 .content p {
   color: #000000;
@@ -75,7 +79,7 @@ a,
   color: #ff3300;
   font-weight: bold;
   font-size: 15px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   border-top: #000000 dashed 1px;
 }
 .content h2.date {

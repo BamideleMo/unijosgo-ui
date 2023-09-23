@@ -131,8 +131,8 @@ const submitForm = async () => {
                 <div class="space-y-4 text-sm">
                     <div class="grid grid-cols-2 sm:grid-cols-2 gap-2">
                         <div class="">
-                            <label for="" class="font-bold">Name: <span class="text-red-600">*</span></label>
-                            <input type="text" v-model="formData.name" @blur="v$.name.$touch" placeholder="e.g: Moses" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
+                            <label for="" class="font-bold">Nickname: <span class="text-red-600">*</span></label>
+                            <input type="text" v-model="formData.name" @blur="v$.name.$touch" placeholder="e.g: LadyPK" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
                             <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.name.$error">
                                 <span class="w-16 float-right -mt-9 mr-2 text-xs">
                                     <span>{{ v$.name.$errors[0].$message }}</span>

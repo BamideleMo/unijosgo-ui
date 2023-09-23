@@ -142,7 +142,7 @@ onMounted(async () => {
             </h2>
             <div class="at">
                 <span class="capitalize text-gray-300">
-                    <b class="text-black">@{{user.campus}}</b>
+                    Kampa<b class="text-black uppercase">@{{user.campus}}</b>
                 </span>
             </div>
             <p>Hi, {{ userStore.name }}</p>

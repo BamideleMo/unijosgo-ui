@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import GistView from "../views/GistView.vue";
 import WelcomeView from "../views/WelcomeView.vue";
 import ReferrerView from "../views/ReferrerView.vue";
+import ReferredByView from "../views/ReferredByView.vue";
 import AboutView from "../views/AboutView.vue";
 import SubscribeView from "../views/SubscribeView.vue";
 import LoginView from "../views/LoginView.vue";
@@ -10,7 +11,6 @@ import PostView from "../views/admin/PostView.vue";
 import AllPostsView from "../views/admin/AllPostsView.vue";
 import PageNotFoundView from "../views/PageNotFoundView.vue";
 import DisclaimerView from "../views/DisclaimerView.vue";
-import VerifyView from "../views/VerifyView.vue";
 import HomeView from "../views/HomeView.vue";
 import { useUserStore } from "../store/user-store";
 
@@ -43,14 +43,6 @@ const router = createRouter({
       component: DisclaimerView,
     },
     {
-      path: "/verify",
-      name: "verify",
-      component: VerifyView,
-      meta: {
-        loggedIn: true,
-      },
-    },
-    {
       path: "/welcome",
       name: "welcome",
       component: WelcomeView,
@@ -59,6 +51,11 @@ const router = createRouter({
       path: "/referrer",
       name: "referrer",
       component: ReferrerView,
+    },
+    {
+      path: "/referred-by",
+      name: "referredby",
+      component: ReferredByView,
     },
     {
       path: "/admin/post",

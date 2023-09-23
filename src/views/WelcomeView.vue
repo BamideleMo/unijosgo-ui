@@ -69,7 +69,7 @@ const submitForm = async () => {
         )
         .then((response) => {
             router.push({
-              name: "referrer",
+              name: "referredby",
             });
         })
         .catch((error) => {

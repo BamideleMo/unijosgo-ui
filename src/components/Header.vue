@@ -61,7 +61,7 @@ const toggleShowMenu = () => {
                 </li>
                 <li v-if="authStore.cid" class="border-b px-4 py-6">
                     <RouterLink to="/referrer" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
-                        Referrer
+                        Referral Info.
                     </RouterLink>
                 </li>
                 <li v-if="authStore.cid" class="border-b px-4 py-6">

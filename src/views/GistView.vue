@@ -145,7 +145,7 @@ onMounted(async () => {
                     Kampa<b class="text-black uppercase">@{{user.campus}}</b>
                 </span>
             </div>
-            <p>Hi, {{ userStore.name }}</p>
+            <p>Hi, <b>{{ userStore.name }}</b></p>
             <div v-html="volumeContent.gist"></div>
         </div>
     </div>

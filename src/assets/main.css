@@ -52,7 +52,7 @@ a,
   font-size: 15px;
 }
 .content ol{
-  list-style-type: decimal-leading-zero;
+  list-style-type: decimal;
 }
 .h1,
 .myred {

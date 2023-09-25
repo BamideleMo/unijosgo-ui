@@ -25,15 +25,15 @@ const getUser = () => {
             },
         })
         .then((response) => {
-            console.log(response.data.data.status)
-            if (response.data.data.status === 'verified') {
-                getArchive();
-            } else {
-                router.push({
-                    name: "welcome",
-                });
+            getArchive();
+            // if (response.data.data.status === 'verified') {
+            //     getArchive();
+            // } else {
+            //     router.push({
+            //         name: "welcome",
+            //     });
 
-            }
+            // }
         })
         .catch((error) => {
             console.log(error);

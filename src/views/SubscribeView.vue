@@ -24,7 +24,7 @@ const errorMessage = ref(null);
 const isProcessing = ref(false);
 
 const formData = ref({
-  name: "",
+  name: "Doe",
   username: "",
   campus: "",
   password: "1234",
@@ -35,16 +35,16 @@ const formData = ref({
 const mustBeNgphone = helpers.regex(/^[0][0-9]+$/);
 
 const rules = {
-  name: {
-    required: helpers.withMessage("*Required", required),
-    minLength: helpers.withMessage("*Invalid", minLength(2)),
-  },
+  // name: {
+  //   required: helpers.withMessage("*Required", required),
+  //   minLength: helpers.withMessage("*Invalid", minLength(2)),
+  // },
   username: {
     required: helpers.withMessage("*Required", required),
-    //email: helpers.withMessage("*Invalid", email),
-    minLength: helpers.withMessage("Invalid", minLength(11)),
-    maxLength: helpers.withMessage("Invalid", maxLength(11)),
-    mustBeNgphone: helpers.withMessage("Invalid", mustBeNgphone),
+    email: helpers.withMessage("*Invalid", email),
+    //minLength: helpers.withMessage("Invalid", minLength(11)),
+    //maxLength: helpers.withMessage("Invalid", maxLength(11)),
+    //mustBeNgphone: helpers.withMessage("Invalid", mustBeNgphone),
   },
   campus: {
     required: helpers.withMessage("*Required", required),
@@ -88,7 +88,7 @@ const loginNow = async () => {
     authStore.setUserDetails(res);
 
     router.push({
-        name: "welcome",
+        name: "gist",
     });
 
   } catch (error) {
@@ -106,7 +106,9 @@ const submitForm = async () => {
     let res = await axios.post(API_URL + "users/register", formData.value);
 
     code.value = res.data.data.customId;
-    sendSMS();
+    // sendSMS();
+
+        loginNow();
   } catch (error) {
     isProcessing.value = false;
     errorMessage.value = error.response.data.message;
@@ -129,31 +131,20 @@ const submitForm = async () => {
             </p>
             <form @submit.prevent="submitForm" class="bg-blue-50 p-4 border border-blue-100">
                 <div class="space-y-4 text-sm">
-                    <div class="grid grid-cols-2 sm:grid-cols-2 gap-2">
-                        <div class="">
-                            <label for="" class="font-bold">Nickname: <span class="text-red-600">*</span></label>
-                            <input type="text" v-model="formData.name" @blur="v$.name.$touch" placeholder="e.g: LadyPK" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
-                            <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.name.$error">
-                                <span class="w-16 float-right -mt-9 mr-2 text-xs">
-                                    <span>{{ v$.name.$errors[0].$message }}</span>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="">
-                            <label for="" class="font-bold">University: <span class="text-red-600">*</span></label>
-                            <select v-model="formData.campus" @blur="v$.campus.$touch" class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900">
-                                <option value="">Select</option>
-                                <option value="UniJos">UniJos</option>
-                            </select>
-                            <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.campus.$error">
-                                <span class="w-16 float-right -mt-9 mr-2 text-xs">
-                                    <span>{{ v$.campus.$errors[0].$message }}</span></span>
-                            </div>
+                    <div class="">
+                        <label for="" class="font-bold">University: <span class="text-red-600">*</span></label>
+                        <select v-model="formData.campus" @blur="v$.campus.$touch" class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900">
+                            <option value="">Select</option>
+                            <option value="UniJos">UNIJOS</option>
+                        </select>
+                        <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.campus.$error">
+                            <span class="w-16 float-right -mt-9 mr-2 text-xs">
+                                <span>{{ v$.campus.$errors[0].$message }}</span></span>
                         </div>
                     </div>
                     <div class="">
-                        <label for="" class="font-bold">Phone Number: <span class="text-red-600">*</span></label>
-                        <input type="text" v-model="formData.username" @blur="v$.username.$touch" @keydown.space.prevent placeholder="e.g: 08187084716" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
+                        <label for="" class="font-bold">Email: <span class="text-red-600">*</span></label>
+                        <input type="text" v-model="formData.username" @blur="v$.username.$touch" @keydown.space.prevent class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
                         <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.username.$error">
                             <span class="w-16 float-right -mt-9 mr-2 text-xs">
                                 <span>{{ v$.username.$errors[0].$message }}</span></span>
@@ -177,9 +168,6 @@ const submitForm = async () => {
                     </div>
                 </div>
             </form>
-            <p class="">
-                We'll never share your information with anyone or send you unsolicited/useless messages.
-            </p>
         </div>
     </div>
     <Footer />

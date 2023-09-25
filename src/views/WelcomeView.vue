@@ -101,12 +101,12 @@ onMounted(async () => {
     <Header />
     <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
         <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-5/12 lg:mx-auto">
-            <h1 class="h1 font-semibold text-lg text-center">Confirmation Code</h1>
+            <h1 class="h1 font-semibold text-lg text-center">Confirm Email Address</h1>
             <div class="sm:pt-0">
-                <p>Hi {{authStore.name}} 👋🏾</p>
-                <p>We sent a confirmation code to your phone number: <b class="text-blue-800">{{authStore.username}}</b></p>
+                <p>Hi 👋🏾</p>
+                <p>We sent a confirmation code to: <b class="text-blue-800">{{authStore.username}}</b></p>
                 <p>
-                    Enter the code into the box below and submit.
+                    Enter the code into the box below and click submit to confirm your email.
                 </p>
             </div>
             <form @submit.prevent="submitForm" class="space-y-4 bg-blue-50 p-4 border border-blue-100">
@@ -137,9 +137,9 @@ onMounted(async () => {
             </form>
             <h2><span class="text-xl">🤔</span> Psst...</h2>
             <p>
-                <b>Didn't get confirmation code via SMS?</b><br />Get it via WhatsApp chat: <a class="text-red-600 hover:opacity-60" href="https://wa.me/23408187084716?text=I'm%20yet%20to%20get%20Kampa%20confirmation%20code" target="_blank">Click here</a>
+                <b>Didn't get confirmation code via email?</b><br />Get it via WhatsApp chat: <a class="text-red-600 hover:opacity-60" href="https://wa.me/23408187084716?text=I'm%20yet%20to%20get%20Kampa%20confirmation%20code" target="_blank">Click here</a>
             </p>
-            <p><b>Want to change phone number?</b>
+            <p><b>Want to change email address?</b>
                 <br />
                 <span @click="doShowForm()" class="border-b border-black cursor-pointer text-red-600 hover:opacity-60">Click here to change <b class="text-blue-800">{{authStore.username}}</b></span>
             </p>

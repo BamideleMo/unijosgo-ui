@@ -73,6 +73,7 @@ const getVolume = (val) => {
             },
         })
         .then((response) => {
+            console.log(response)
             getLog(response.data.data.volume);
             volumeContent.value = response.data.data;
         })
@@ -92,14 +93,14 @@ const getUser = () => {
         })
         .then((response) => {
             user.value = response.data.data
-            if (response.data.data.status === 'verified') {
-                checkVol();
-            } else {
-                router.push({
-                    name: "welcome",
-                });
+            // if (response.data.data.status === 'verified') {
+            //     checkVol();
+            // } else {
+            //     router.push({
+            //         name: "welcome",
+            //     });
 
-            }
+            // }
         })
         .catch((error) => {
             console.log(error);
@@ -118,8 +119,9 @@ const checkVol = () => {
                 },
             })
             .then((response) => {
-                getLog(response.data.data.volume);
                 volumeContent.value = response.data.data;
+                console.log(volumeContent.value)
+                getLog(response.data.data.volume);
             })
             .catch((error) => {
                 console.log(error);
@@ -129,6 +131,7 @@ const checkVol = () => {
 
 onMounted(async () => {
     getUser();
+    checkVol();
 });
 </script>
 <template>
@@ -145,7 +148,7 @@ onMounted(async () => {
                     Kampa<b class="text-black uppercase">@{{user.campus}}</b>
                 </span>
             </div>
-            <p>Hi, <b>{{ userStore.name }}</b></p>
+            <p>Hi 👋🏾</p>
             <div v-html="volumeContent.gist"></div>
         </div>
     </div>

@@ -43,12 +43,11 @@ onMounted(async () => {
     <div v-else class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-20 xl:mt-20">
         <div class="w-11/12 mx-auto lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
             <h1 class="mt-1 text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-normal">
-                Get Smarter with 15-mins of 
-                <span class="font-semibold">Relevant Campus Gists</span> Published Every Saturday.
+                <span class="font-semibold">Informative, Fun, & Relevant Campus Gists.</span><br/>Every Saturday.
             </h1>
             <p class="mt-4 text-sm sm:text-base">
-                Join 650+ students and get localised campus news, interviews, opinions & more
-                to help you become smarter + stay well informed!
+                Join 650+ students and get localised campus news, interviews, opinions
+                 plus freebies and exclusive deals.
             </p>
             <div class="mt-6 space-x-4" id="subscribe">
                 <RouterLink to="/subscribe" class="shadow-lg border border-black text-white bg-black text-sm py-3 px-3 hover:opacity-40 cursor-pointer">

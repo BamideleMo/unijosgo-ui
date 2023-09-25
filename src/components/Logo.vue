@@ -8,7 +8,7 @@
                 <span class="text-black">Kampa</span>
             </span>
             <div class="-mt-1.5 text-gray-600 text-xs">
-                <span class="hover:opacity-60">www.kampa.ng</span>
+                <span class="hover:opacity-60 myred">www.kampa.ng</span>
             </div>
         </div>
     </RouterLink>

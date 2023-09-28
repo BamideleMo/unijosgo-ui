@@ -44,7 +44,7 @@ const rules = {
     email: helpers.withMessage("*Invalid", email),
     //minLength: helpers.withMessage("Invalid", minLength(11)),
     //maxLength: helpers.withMessage("Invalid", maxLength(11)),
-    //mustBeNgphone: helpers.withMessage("Invalid", mustBeNgphone),
+    // mustBeNgphone: helpers.withMessage("*Invalid", mustBeNgphone),
   },
   campus: {
     required: helpers.withMessage("*Required", required),

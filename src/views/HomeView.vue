@@ -47,7 +47,7 @@ onMounted(async () => {
             </h1>
             <p class="mt-4 text-sm sm:text-base">
                 Join 650+ students and get localised campus news, interviews, opinions
-                 plus freebies and exclusive deals.
+                 plus freebies and exclusive discounts.
             </p>
             <div class="mt-6 space-x-4" id="subscribe">
                 <RouterLink to="/subscribe" class="shadow-lg border border-black text-white bg-black text-sm py-3 px-3 hover:opacity-40 cursor-pointer">

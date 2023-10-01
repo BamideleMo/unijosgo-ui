@@ -5,8 +5,6 @@ import EmailSentView from "../views/EmailSentView.vue";
 import ReferrerView from "../views/ReferrerView.vue";
 import ReferredByView from "../views/ReferredByView.vue";
 import AboutView from "../views/AboutView.vue";
-import SubscribeView from "../views/SubscribeView.vue";
-import LoginView from "../views/LoginView.vue";
 import ArchiveView from "../views/ArchiveView.vue";
 import PostView from "../views/admin/PostView.vue";
 import AllPostsView from "../views/admin/AllPostsView.vue";
@@ -27,16 +25,6 @@ const router = createRouter({
       path: "/about",
       name: "about",
       component: AboutView,
-    },
-    {
-      path: "/subscribe",
-      name: "subscribe",
-      component: SubscribeView,
-    },
-    {
-      path: "/login",
-      name: "login",
-      component: LoginView,
     },
     {
       path: "/disclaimer",

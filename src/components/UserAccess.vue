@@ -89,7 +89,7 @@ const submitForm = async () => {
 </script>
 <template>
     <form @submit.prevent="submitForm">
-        <div class="mt-6 text-xs w-full lg:w-10/12 border border-gray-300 p-2 sm:p-3 drop-shadow-lg">
+        <div class="mt-6 text-xs w-full lg:w-10/12 border border-gray-500 p-2 sm:p-3 drop-shadow-lg">
             <div v-if="v$.username.$error || v$.campus.$error || errorMessage" class="">
                 <div class="lg:grid lg:grid-cols-4 lg:gap-3" v-if="v$.username.$error || v$.campus.$error">
                     <div class="lg:col-span-3 grid grid-cols-2 gap-1.5 lg:gap-3">

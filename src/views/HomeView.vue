@@ -3,7 +3,6 @@ import { ref, onMounted } from "vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 import Loading from "../components/Loading.vue";
-import Available from "../components/Available.vue";
 import UserAccess from "../components/UserAccess.vue";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../store/user-store";
@@ -17,6 +16,12 @@ const isloading = ref(true);
 const API_URL =
     import.meta.env.VITE_API_URL;
 
+const otherUni = ref(false);
+
+const toggleOtherUni = () => {
+    otherUni.value = !otherUni.value;
+}
+
 onMounted(async () => {
     if (userStore.cid) {
         router.push({
@@ -28,6 +33,29 @@ onMounted(async () => {
 });
 </script>
 <template>
+    <div class="w-screen h-screen top-0 fixed bg-black bg-opacity-90 z-50" v-if="!otherUni">
+        <div class="bg-white rounded-lg w-10/12 sm:w-5/12 lg:w-1/2 mx-auto mt-20 p-4 space-y-6">
+        <div class="flex justify-between border-b border-black">
+                <h1 class="h1 font-semibold text-lg">
+                    🤩
+                </h1>
+                <svg @click="toggleOtherUni" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 -mt-2 -mr-2 text-slate-900 hover:opacity-60 cursor-pointer">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </div>
+            <p>Kampa Newsletter is currently present in:</p>
+            <ol class="list-disc px-20">
+                <li>UNIJOS</li>
+                <li>UNIABUJA</li>
+                <li>KASU</li>
+                <li>ABU</li>
+                <li>FULafia</li>
+            </ol>
+            <p>
+                Will spread to more universities very soon!
+            </p>
+        </div>
+    </div>
     <Header />
     <Loading v-if="isloading" />
     <div v-else class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-20 xl:mt-20">
@@ -37,11 +65,16 @@ onMounted(async () => {
                 <span class="font-semibold">Get Informative, Fun, & Relevant Campus Gists.</span><br />Every Saturday.
             </h1>
             <p class="mt-4 text-base sm:text-base">
-                Join 650+ students and get localised campus news, interviews, opinions,
+                Join 650+ students for localised campus news, interviews, opinions,
                 freebies and exclusive discounts every Saturday.
             </p>
             <div class="text-xs mt-6">
-                <Available />
+                <span> 
+                    <b class="text-blue-800">
+                        Present in:
+                    </b>
+                    UNIJOS, UNIABUJA & <span @click="toggleOtherUni" class="border-b border-dotted border-red-600 hover:border-gray-400 hover:text-gra-400 cursor-pointer">3 Other Universities</span>.
+                </span>
             </div>
             <UserAccess class="w-full lg:pr-3"/>
         </div>

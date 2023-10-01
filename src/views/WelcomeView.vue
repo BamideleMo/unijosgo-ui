@@ -85,6 +85,29 @@ const submitForm = async () => {
   }
 };
 
+const sendLink = () =>{
+     isProcessing.value = true;
+    console.log(authStore.username)
+    axios
+        .post(
+            API_URL + "email/" + authStore.username + "/" + authStore.cid, {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${authStore.token}`,
+                },
+            }
+        )
+        .then((response) => {
+            router.push({
+              name: "emailsent",
+            });
+        })
+        .catch((error) => {
+            console.log(error);
+            isProcessing.value = false;
+        });
+}
+
 
 onMounted(async () => {
     if(!authStore.cid){
@@ -101,47 +124,28 @@ onMounted(async () => {
     <Header />
     <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
         <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-5/12 lg:mx-auto">
-            <h1 class="h1 font-semibold text-lg text-center">Confirm Email Address</h1>
+            <h1 class="h1 font-semibold text-lg text-center">Welcome!</h1>
             <div class="sm:pt-0">
-                <p>Hi 👋🏾</p>
-                <p>We sent a confirmation code to: <b class="text-blue-800">{{authStore.username}}</b></p>
+                <p>Prove you're not a robot. Confirm your email.</p>
                 <p>
-                    Enter the code into the box below and click submit to confirm your email.
+                    Click on the blue button below and we'll send a confirmation link to your email: <b>{{authStore.username}}</b>
                 </p>
-            </div>
-            <form @submit.prevent="submitForm" class="space-y-4 bg-blue-50 p-4 border border-blue-100">
-                <div>
-                    <label for="" class="font-bold">Confirmation Code: <span class="text-red-600">*</span></label>
-                    <input type="text" v-model="formData.code" @blur="v$.code.$touch" @keydown.space.prevent class="w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900" />
-                    <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.code.$error">
-                        <span class="w-16 float-right -mt-9 mr-2 text-xs">
-                            <span>{{ v$.code.$errors[0].$message }}</span></span>
-                    </div>
-                </div>
-                <div v-if="errorMessage" class="bg-black animate-pulse text-white text-xs p-2 mt-2 border-l-4 border-purple-900 capitalize">
-                    {{ errorMessage }}
-                </div>
-                <div class="">
-                    <button v-if="v$.$invalid" disabled class="w-full bg-gray-400 shadow-lg cursor-not-allowed p-3 opacity-60 text-white rounded-lg">
-                        Submit
+                <div class="pb-4">
+
+                    <button v-if="isProcessing" class="bg-orange-400 text-white px-4 py-2 rounded-lg hover:opacity-60" @click="sendLink">
+                        Processing.. .
                     </button>
-                    <span v-else>
-                        <button v-if="isProcessing" disabled class="w-full bg-orange-400 shadow-lg cursor-not-allowed p-3 animate-pulse opacity-60 text-white rounded-lg">
-                            Processing.. .
-                        </button>
-                        <button v-else class="w-full bg-red-500 shadow-lg p-3 hover:opacity-60 text-white rounded-lg">
-                            Submit
-                        </button>
-                    </span>
+
+                    <button v-else class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:opacity-60" @click="sendLink">
+                        Send me a Confirmation Link
+                    </button>
                 </div>
-            </form>
-            <h2><span class="text-xl">🤔</span> Psst...</h2>
+            </div>
+            <h2>Want to change email address? 🤔</h2>
             <p>
-                <b>Didn't get confirmation code via email?</b><br />Get it via WhatsApp chat: <a class="text-red-600 hover:opacity-60" href="https://wa.me/23408187084716?text=I'm%20yet%20to%20get%20Kampa%20confirmation%20code" target="_blank">Click here</a>
-            </p>
-            <p><b>Want to change email address?</b>
-                <br />
-                <span @click="doShowForm()" class="border-b border-black cursor-pointer text-red-600 hover:opacity-60">Click here to change <b class="text-blue-800">{{authStore.username}}</b></span>
+                <span @click="doShowForm()" class="border-b border-black cursor-pointer text-red-600 hover:opacity-60">
+                    Click here to change <b class="text-blue-800">{{authStore.username}}</b>
+                </span>
             </p>
         </div>
     </div>

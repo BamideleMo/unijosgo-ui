@@ -3,8 +3,8 @@
 </script>
 <template>
     <span> <b class="text-blue-800">
-            Now in:
+            Present in:
         </b>
-        UNIJOS <br /><span class="text-gray-400">(Will be in more Universities soon)</span>
+        UNIJOS, UNIABUJA & <span class="border-b border-dotted border-red-600 hover:border-gray-400 hover:text-gra-400 cursor-pointer">3 Other Universities</span>.
     </span>
 </template>

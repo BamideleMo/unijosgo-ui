@@ -5,17 +5,17 @@ import Footer from "../components/Footer.vue";
 import Loading from "../components/Loading.vue";
 import axios from "axios";
 import { useUserStore } from "../store/user-store";
-import { useRouter } from "vue-router";
+import { useRouter,useRoute } from "vue-router";
 
 import { useVuelidate } from "@vuelidate/core";
 import {
     required,
-    maxLength,
-    minLength,
+    email,
     helpers
 } from "@vuelidate/validators";
 
 const router = useRouter();
+const route = useRoute();
 
 const authStore = useUserStore();
 
@@ -29,15 +29,12 @@ const formData = ref({
     referrer: "",
 });
 
-const mustBeNgphone = helpers.regex(/^[0][0-9]+$/);
 
 
 const rules = {
     referrer: {
         required: helpers.withMessage("*Required", required),
-        minLength: helpers.withMessage("*Invalid", minLength(11)),
-        maxLength: helpers.withMessage("*Invalid", maxLength(11)),
-        mustBeNgphone: helpers.withMessage("*Invalid", mustBeNgphone),
+        email: helpers.withMessage("*Invalid", email),
     },
 };
 
@@ -166,7 +163,30 @@ const getMonthYear = () => {
     currentYear.value = new Date().getFullYear();
 }
 
+const patchUser = () =>{
+    axios.patch(
+                API_URL + "users/" + authStore.cid,
+                {
+                    status: "verified"
+                }, 
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${authStore.token}`,
+                    },
+                }
+            )
+            .then((response) => {
+                getReferrer();
+                getMonthYear();
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+}
+
 onMounted(async () => {
+    console.log(route.query.cid)
     if (!authStore.cid) {
 
         router.push({
@@ -174,14 +194,20 @@ onMounted(async () => {
         });
 
     } else {
-        getReferrer();
-        getMonthYear();
+        // patchUser();
+        if(route.query.cid){
+                getReferrer();
+                getMonthYear();
+
+        }
+        else{
+            patchUser();
+        }
     }
 });
 </script>
 <template>
-    
-    <div  class="min-h-screen fixed bg-slate-900 top-0 w-full z-50 bg-opacity-80" v-if="showDone">
+    <div class="min-h-screen fixed bg-slate-900 top-0 w-full z-50 bg-opacity-80" v-if="showDone">
         <div class="mt-20 bg-white p-8 rounded-lg mx-auto w-80 text-center space-y-4">
             <h2>Referrer's Info Saved!</h2>
             <p>Thanks for providing your referrer's info.</p>
@@ -196,30 +222,31 @@ onMounted(async () => {
         <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-7/12 lg:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">Who referred you?</h1>
             <div v-if="hasReferrer" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div><b>Referrer's Nickname:</b><br/>{{referredBy.name}}</div>
-                <div><b>Referrer's Campus:</b><br/>{{referredBy.campus}}</div>
+                <div><b>Referrer's Nickname:</b><br />{{referredBy.name}}</div>
+                <div><b>Referrer's Campus:</b><br />{{referredBy.campus}}</div>
             </div>
             <div v-else>
                 <div class="sm:pt-0">
                     <p>
                         <b>Someone told you about Kampa?</b>
-                        Help the person earn a point & perhaps a reward.
+                        Help the person earn a point & maybe a reward.
                     </p>
                     <p>
-                        Please enter the Phone Number of that good person into the box below and click submit.
+                        Please enter the email address of that good person into the box below and click submit.
                     </p>
                     <p>
-                        Nobody referred you or don't want to provide that info now?
-                        <br />
+                        Nobody referred you? 
+                    </p>
+                    <p>
+                        Don't want to provide that info now?
+                    </p>
+                    <p>
                         That's still awesome; just click on the SKIP button to continue.
                     </p>
                 </div>
-                <form @submit.prevent="submitForm" class="space-y-4 bg-blue-50 p-4 border border-blue-100 ">
+                <form @submit.prevent="submitForm" class="space-y-4">
                     <div>
-                        <label for="" class="font-bold">
-                            Referrer's Phone Number: <span class="text-gray-600 font-normal">(Optional)</span>
-                        </label>
-                        <input type="text" v-model="formData.referrer" @blur="v$.referrer.$touch" @keydown.space.prevent placeholder="e.g: 08187084716" class="w-full placeholder:text-blue-200 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
+                        <input type="text" v-model="formData.referrer" @blur="v$.referrer.$touch" @keydown.space.prevent placeholder="Type Referrer's email here..." class="w-full placeholder:text-gray-300 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
                         <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.referrer.$error">
                             <span class="w-16 float-right -mt-9 mr-2 text-xs">
                                 <span>{{ v$.referrer.$errors[0].$message }}</span></span>

@@ -23,15 +23,13 @@ const formData = ref({
   username: "",
 });
 
-const mustBeNgphone = helpers.regex(/^[0][0-9]+$/);
+const sent = ref(false);
+
 
 const rules = {
   username: {
     required: helpers.withMessage("*Required", required),
     email: helpers.withMessage("*Invalid", email),
-    // minLength: helpers.withMessage("*Invalid", minLength(11)),
-    // maxLength: helpers.withMessage("*Invalid", maxLength(11)),
-    // mustBeNgphone: helpers.withMessage("*Invalid", mustBeNgphone),
   },
 };
 
@@ -47,44 +45,58 @@ const submitForm = async () => {
   const validation = await v$.value.$validate();
 
   try {
-    let res = await axios.patch(API_URL + "users/"+userStore.cid, {
+    let res = await axios.patch(API_URL + "users/"+authStore.cid, {
       username: formData.value.username,
-    });
+    },{
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${authStore.token}`,
+                },
+            });
 
-    sendSMS();
+    logoutLoginNow();
+
     
   } catch (error) {
     isProcessing.value = false;
-    errorMessage.value = error.response.data.message;
+    errorMessage.value = error;
   }
 };
 
-const sendSMS = async () => {
-    try{
 
-        let res = await axios.post("https://api.ng.termii.com/api/sms/send", {
-            api_key: "TLWK68ATIe2skreBC99fl2dy7ltYNjpqpJweEoRqLRCPOamqO54zIP4RmGVh5P",
-            to: '234'+formData.value.username,
-            from: "Kampa",
-            sms: "Your Kampa confirmation code is: " + userStore.cid,
-            type: "plain",
-            channel: "generic",
-          });
+const logoutLoginNow = async () => {
 
+    authStore.clearUser();
 
+  try {
+    let res = await axios.post(API_URL + "users/login", {
+      username: formData.value.username,
+      password: "1234",
+    });
+    
+    authStore.setUserDetails(res);
+
+    if(res.data.user.status === 'unverified'){
+        sent.value = true;
         router.push({
             name: "welcome",
         });
     }
-    catch(error){
-        console.log(error)
-    }
-};
+    else{
+        router.push({
+            name: "gist",
+        });
 
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 </script>
 <template>
-    <div  class="min-h-screen fixed bg-slate-900 top-0 w-full z-50 bg-opacity-80">
+    <div class="min-h-screen fixed bg-slate-900 top-0 w-full z-50 bg-opacity-80">
         <form @submit.prevent="submitForm" class="w-11/12 lg:w-6/12 mx-auto mt-10 sm:mt-20 bg-white p-3 sm:p-10 rounded-lg">
             <div class="flex justify-between border-b border-black">
                 <h1 class="h1 font-semibold text-lg">
@@ -94,19 +106,27 @@ const sendSMS = async () => {
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </div>
-            <div v-if="errorMessage" class="bg-purple-900 animate-pulse text-red-200 text-xs p-2 mt-2 border-l-4 border-black">
-                {{ errorMessage }}
+            <div v-if="sent">
+                <div class="w-1/2 mx-auto drop-shadow-lg p-6 text-center text-xs">
+                    <p>Email address changed successfully.</p>
+                    <p class="mt-12">
+                        <button @click="$emit('closeForm')" class="bg-blue-900 text-white p-2 rounded-full hover:opacity-60">Alright</button>
+                    </p>
+                </div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 text-black">
+            <div v-else class="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 text-black">
                 <div class="space-y-4 text-xs">
-                    <p class="mt-6 sm:mt-5.5">You will be asked to Login with this new email address & enter the confirmation code you'll receive.
+                    <p class="mt-6 sm:mt-5.5">
+                        Enter another eamil address that is active and you have access to.
                     </p>
                 </div>
                 <div class="">
                     <div class="mt-6 space-y-4 text-sm">
                         <div class="">
-                            <label for="" class="font-bold">New Email: <span class="text-red-600">*</span></label>
-                            <input type="text" v-model="formData.username" @blur="v$.username.$touch" @keydown.space.prevent class="placeholder:text-blue-200 w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900" />
+                            <div v-if="errorMessage" class="lg:col-span-3 bg-yellow-400 px-3 py-1 animate-pulse mb-2">
+                                {{ errorMessage }}
+                            </div>
+                            <input placeholder="Type email here..." type="text" v-model="formData.username" @blur="v$.username.$touch" @keydown.space.prevent class="placeholder:text-gray-300 w-full shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-10 text-xs border-2 bg-transparent border-blue-900" />
                             <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.username.$error">
                                 <span class="w-16 float-right -mt-8 mr-2">
                                     <span>{{ v$.username.$errors[0].$message }}</span></span>

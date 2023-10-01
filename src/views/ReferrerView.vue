@@ -88,15 +88,18 @@ onMounted(async () => {
         <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-7/12 lg:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">Tell your friends to subscribe!</h1>
             <div class="grid grid-cols-2 gap-4">
-                <div><u><span class="text-blue-900">In Total:</span> You've referred:</u> <br /><b>{{totalRef}}</b> Friends</div>
-                <div><u><span class="text-blue-900">In Total:</span> You've earned:</u> <br /><b>{{totalRef}}</b> Points</div>
+                <div><u><span class="text-blue-900">All time:</span> You've referred:</u> <br /><b>{{totalRef}}</b> Friends</div>
+                <div><u><span class="text-blue-900">All time:</span> You've earned:</u> <br /><b>{{totalRef}}</b> Points</div>
                 <div><u><span class="text-blue-900">{{currentMonth}}, {{currentYear}}:</span> You've referred:</u> <br /><b>{{monthlyRef}}</b> Friends</div>
                 <div><u><span class="text-blue-900">{{currentMonth}}, {{currentYear}}:</span> You've earned:</u> <br /><b>{{monthlyRef}}</b> Points</div>
             </div>
             <div>
                 <h2>Earn points:</h2>
                 <p>
-                    Get your friends to subscribe to Kampa. For each one of your friends that subscribes and enters your phone number as the referrer, you will earn a point.
+                    Get your friends to subscribe to Kampa.
+                </p>
+                <p>
+                    For each one of your friends that subscribes and enters your email address as the referrer, you will earn a point.
                 </p>
                 <p>
                     Your points can get you rewards. There will be different rewards for varying milestones every other month.

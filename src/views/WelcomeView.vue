@@ -141,10 +141,10 @@ onMounted(async () => {
                     </button>
                 </div>
             </div>
-            <h2>Want to change email address? 🤔</h2>
-            <p>
-                <span @click="doShowForm()" class="border-b border-black cursor-pointer text-red-600 hover:opacity-60">
-                    Click here to change <b class="text-blue-800">{{authStore.username}}</b>
+            <p>🤔 Want to change email address?
+            
+                <span @click="doShowForm()" class="cursor-pointer text-red-600 hover:opacity-60">
+                    <span class="border-b border-black">Click here to change</span> <b class="text-blue-800">{{authStore.username}}</b>
                 </span>
             </p>
         </div>

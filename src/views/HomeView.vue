@@ -68,15 +68,15 @@ onMounted(async () => {
                 Join 650+ students for localised campus news, interviews, opinions,
                 freebies and exclusive discounts every Saturday.
             </p>
+            <UserAccess class="w-full lg:pr-3"/>
             <div class="text-xs mt-6">
                 <span> 
                     <b class="text-blue-800">
-                        Present in:
+                        Kampa is in:
                     </b>
                     UNIJOS, UNIABUJA & <span @click="toggleOtherUni" class="border-b border-dotted border-red-600 hover:border-gray-400 hover:text-gra-400 cursor-pointer">3 Other Universities</span>.
                 </span>
             </div>
-            <UserAccess class="w-full lg:pr-3"/>
         </div>
         <div class="w-11/12 sm:w-6/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 lg:-mt-6">
             <div class="px-2 lg:px-1 max-w-full mx-auto h-96 border-b-4 border-gray-400 overflow-hidden drop-shadow-lg">

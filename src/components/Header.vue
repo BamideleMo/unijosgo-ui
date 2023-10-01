@@ -36,9 +36,9 @@ const toggleShowMenu = () => {
                 <li class="border-b px-6 py-6">
                     <p class="font-semibold">About</p>
                     <p class="text-gray-900">
-                        Kampa.ng is the modern campus magazine
-                        providing the best social content that's focused on Nigerian Universities for students to
-                        enjoy, stay informed, and become smarter.
+                        Kampa.ng is a weekly online newsletter, the modern campus magazine
+                that provides the best social content that's focused on Nigerian Universities for students to
+                enjoy, stay informed, and become smarter.
                     </p>
                     <RouterLink to="/about" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
                         Learn more

@@ -10,13 +10,9 @@ const title = "About - Kampa";
         <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">About</h1>
             <p>
-                Kampa.ng is the modern campus magazine
-                providing the best social content that's focused on Nigerian Universities for students to
+                Kampa.ng is a weekly online newsletter, the modern campus magazine
+                that provides the best social content that's focused on Nigerian Universities for students to
                 enjoy, stay informed, and become smarter.
-            </p>
-            <p>
-                It's a weekly online newsletter for and about students across
-                selected Nigerian universities!
             </p>
             <h2>🚀 Features:</h2>
             <p>

@@ -58,7 +58,7 @@ onMounted(async () => {
     </div>
     <Header />
     <Loading v-if="isloading" />
-    <div v-else class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-20 xl:mt-20">
+    <div v-else class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-10 xl:mt-20">
         <div class="w-full mx-auto lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
             <img src="/smile_wave_black_lg.png" class="w-12 lg:w-12"/>
             <h1 class="mt-1 text-4xl sm:text-4xl lg:text-4xl xl:text-5xl font-normal">

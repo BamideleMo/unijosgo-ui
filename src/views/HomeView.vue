@@ -33,7 +33,7 @@ onMounted(async () => {
 });
 </script>
 <template>
-    <div class="w-screen h-screen top-0 fixed bg-black bg-opacity-90 z-50" v-if="!otherUni">
+    <div class="w-screen h-screen top-0 fixed bg-black bg-opacity-90 z-50" v-if="otherUni">
         <div class="bg-white rounded-lg w-10/12 sm:w-5/12 lg:w-1/2 mx-auto mt-20 p-4 space-y-6">
         <div class="flex justify-between border-b border-black">
                 <h1 class="h1 font-semibold text-lg">

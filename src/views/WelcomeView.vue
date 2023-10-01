@@ -87,10 +87,12 @@ const submitForm = async () => {
 
 const sendLink = () =>{
      isProcessing.value = true;
-    console.log(authStore.username)
     axios
         .post(
-            API_URL + "email/" + authStore.username + "/" + authStore.cid, {
+            API_URL + "email",{
+                username: authStore.username,
+                cid: authStore.cid,
+            }, {
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${authStore.token}`,
@@ -132,16 +134,16 @@ onMounted(async () => {
                 </p>
                 <div class="pb-4">
 
-                    <button v-if="isProcessing" class="bg-orange-400 text-white px-4 py-2 rounded-lg hover:opacity-60" @click="sendLink">
-                        Processing.. .
+                    <button v-if="isProcessing" class="bg-orange-400 text-white px-4 py-2 rounded-lg hover:opacity-60 animate-pulse" @click="sendLink">
+                        Sending confirmation link.. .
                     </button>
 
                     <button v-else class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:opacity-60" @click="sendLink">
-                        Send me a Confirmation Link
+                        Send me a confirmation link
                     </button>
                 </div>
             </div>
-            <p>🤔 Want to change email address?
+            <p><b>🤔 Want to change email address?</b><br/>
             
                 <span @click="doShowForm()" class="cursor-pointer text-red-600 hover:opacity-60">
                     <span class="border-b border-black">Click here to change</span> <b class="text-blue-800">{{authStore.username}}</b>

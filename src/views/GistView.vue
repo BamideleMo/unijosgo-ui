@@ -93,14 +93,14 @@ const getUser = () => {
         })
         .then((response) => {
             user.value = response.data.data
-            // if (response.data.data.status === 'verified') {
-            //     checkVol();
-            // } else {
-            //     router.push({
-            //         name: "welcome",
-            //     });
+            if (response.data.data.status === 'verified') {
+                checkVol();
+            } else {
+                router.push({
+                    name: "welcome",
+                });
 
-            // }
+            }
         })
         .catch((error) => {
             console.log(error);

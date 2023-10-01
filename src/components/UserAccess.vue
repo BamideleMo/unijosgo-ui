@@ -116,7 +116,7 @@ const submitForm = async () => {
                         <option value="UNIABUJA">UNIABUJA</option>
                         <option value="ABU">ABU</option>
                     </select>
-                    <input v-model="formData.username" @blur="v$.username.$touch" class="bg-white border border-black h-12 p-2 grow outline-none placeholder:text-gray-400" placeholder="Type Your Email" />
+                    <input v-model="formData.username" @blur="v$.username.$touch" class="bg-white border border-black h-12 p-2 w-full outline-none placeholder:text-gray-400" placeholder="Type Your Email" />
                 </div>
                 <div class="mt-1 sm:mt-0">
                         <button v-if="v$.$invalid" disabled class="h-12 capitalise w-full bg-blue-900 shadow-lg cursor-not-allowed p-3 opacity-60 text-white">

@@ -76,29 +76,19 @@ const sendLink = async () => {
     isProcessing.value = true;
 
     axios
-        .post(
-            "https://api.brevo.com/v3/smtp/email", {
-                "sender":{
-                    "name": "[Kampa Newsletter]",
-                },
-                "to":[
-                    {"email": authStore.username}
-                ],
-                "subject":"test",
-                "htmlContent": `<p>Hi, 👋🏾<br/><br/>Below is a link to confirm you are not a robot. Click on it:<br/><br/><a href="https://kampa.ng/referred-by?cid=${authStore.cid}">Link to confirm you're real</a>.</p>`,
+            .post("https://api.emailjs.com/api/v1.0/email/send",{
+                service_id: 'service_sbwf3yb',
+                template_id: 'template_jfqa69w',
+                user_id: 'pciJrBYZvf0lrgWPD',
+                template_params: {'message': '<p>testing</p>'}
             }, {
                 headers: {
-                    'api-key': "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",
-                    'content-type': "application/json",
-                    'accept': "application/json",
+                    "Content-Type": "application/json",
                 },
-            }
-        )
-        .then((response) => {
-            router.push({
-                    name: "emailsent",
-                });
-        })
+            })
+            .then((response) => {
+                console.log(response);
+            })
         .catch((error) => {
             console.log(error);
         });

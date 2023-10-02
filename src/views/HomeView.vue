@@ -22,6 +22,8 @@ const toggleOtherUni = () => {
     otherUni.value = !otherUni.value;
 }
 
+const callback = (response) => {console.log(response)}
+
 onMounted(async () => {
     if (userStore.cid) {
         router.push({
@@ -68,7 +70,8 @@ onMounted(async () => {
                 Join 650+ students for localised campus news, interviews, opinions,
                 freebies and exclusive discounts every Saturday.
             </p>
-            <UserAccess class="w-full lg:pr-3"/>
+            <!--<UserAccess class="w-full lg:pr-3"/>-->
+            <GoogleLogin :callback="callback" />
             <div class="text-xs mt-6">
                 <span> 
                     <b class="text-blue-800">

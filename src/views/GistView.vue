@@ -125,8 +125,7 @@ const checkVol = () => {
 }
 
 onMounted(async () => {
-    // getUser();
-    console.log('XXXXX')
+    getUser();
 });
 </script>
 <template>

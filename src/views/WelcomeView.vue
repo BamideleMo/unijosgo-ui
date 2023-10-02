@@ -2,7 +2,6 @@
 import { ref, onMounted } from "vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
-import ChangePhone from "../components/ChangePhone.vue";
 
 import { useVuelidate } from "@vuelidate/core";
 import {

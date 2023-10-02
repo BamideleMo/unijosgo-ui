@@ -79,7 +79,7 @@ const sendLink = async () => {
         .post(
             "https://api.brevo.com/v3/smtp/email", {
                 "sender":{
-                    "name": "[Kampa]",
+                    "name": "[Kampa Newsletter]",
                     "email": "kampanewsletter@gmail.com"
                 },
                 "to":[

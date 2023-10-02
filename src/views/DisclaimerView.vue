@@ -11,7 +11,7 @@ const title = "About - UniJosGo";
     <div
       class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto"
     >
-      <h1 class="h1 font-semibold text-lg text-center">Disclaimer</h1>
+      <h1 class="h1 font-semibold text-lg text-center">Terms, Disclaimer & Privacy Policy</h1>
       <p>
         This website and the contents provided herein are simply for fun and
         general information purposes only.
@@ -26,6 +26,9 @@ const title = "About - UniJosGo";
       <p>
         You are not allowed to use this website or associated platforms if you
         are below 18 years of age.
+      </p>
+      <p>
+        Your privacy is important and so we'll never give your information to any other entity.
       </p>
     </div>
   </div>

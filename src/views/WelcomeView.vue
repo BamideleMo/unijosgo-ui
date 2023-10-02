@@ -87,13 +87,13 @@ onMounted(async () => {
         <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-5/12 lg:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">Welcome!</h1>
             <div class="sm:pt-0">
-                <p>Excited to have you. & it looks like this is your first here...</p>
-                <p>Please sharply answer these 2 simple questions to continue:</p>
+                <p>Excited to have you. & it looks like this is your first here... </p>
+                <p>So sharply answer these 2 simple questions to continue:</p>
                 <form @submit.prevent="submitForm" class="space-y-4">
                     <div class="grid grid-cols-2 gap-2 sm:gap-4">
                         <div>
                             <select v-model="formData.campus" @blur="v$.campus.$touch" class="bg-white border border-black h-12 p-1 w-full outline-none disabled:text-red-600" required>
-                                <option value="" disabled selected>Which University are you?</option>
+                                <option value="" disabled selected>Your University?</option>
                                 <option value="UNIJOS">UNIJOS</option>
                                 <option value="KASU">KASU</option>
                                 <option value="UNIABUJA">UNIABUJA</option>
@@ -102,7 +102,7 @@ onMounted(async () => {
                         </div>
                         <div>
                             <select v-model="formData.level" @blur="v$.level.$touch" class="bg-white border border-black h-12 p-1 w-full outline-none disabled:text-red-600" required>
-                                <option value="" disabled selected>Which Level are you?</option>
+                                <option value="" disabled selected>Your Level?</option>
                                 <option value="100">100 Level</option>
                                 <option value="200">200 Level</option>
                                 <option value="300">300 Level</option>

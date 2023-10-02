@@ -163,30 +163,8 @@ const getMonthYear = () => {
     currentYear.value = new Date().getFullYear();
 }
 
-const patchUser = () =>{
-    axios.patch(
-                API_URL + "users/" + authStore.cid,
-                {
-                    status: "verified"
-                }, 
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${authStore.token}`,
-                    },
-                }
-            )
-            .then((response) => {
-                getReferrer();
-                getMonthYear();
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-}
 
 onMounted(async () => {
-    console.log(route.query.cid)
     if (!authStore.cid) {
 
         router.push({
@@ -194,15 +172,8 @@ onMounted(async () => {
         });
 
     } else {
-        // patchUser();
-        if(route.query.cid){
-                getReferrer();
-                getMonthYear();
-
-        }
-        else{
-            patchUser();
-        }
+        getReferrer();
+        getMonthYear();
     }
 });
 </script>
@@ -232,10 +203,10 @@ onMounted(async () => {
                         Help the person earn a point & maybe a reward.
                     </p>
                     <p>
-                        Please enter the email address of that good person into the box below and click submit.
+                        Please enter the email address of that good person below and click submit.
                     </p>
                     <p>
-                        Nobody referred you? 
+                        <b>Nobody referred you?</b>
                     </p>
                     <p>
                         Don't want to provide that info now?
@@ -246,7 +217,7 @@ onMounted(async () => {
                 </div>
                 <form @submit.prevent="submitForm" class="space-y-4">
                     <div>
-                        <input type="text" v-model="formData.referrer" @blur="v$.referrer.$touch" @keydown.space.prevent placeholder="Type Referrer's email here..." class="w-full placeholder:text-gray-300 shadow-lg mt-1 rounded-md outline-none px-1 py-2 h-12 text-xs border-2 bg-transparent border-blue-900" />
+                        <input type="text" v-model="formData.referrer" @blur="v$.referrer.$touch" @keydown.space.prevent placeholder="Type Referrer's email here..." class="bg-white placeholder:text-gray-400 border border-black h-12 p-1 w-full outline-none disabled:text-red-600" />
                         <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.referrer.$error">
                             <span class="w-16 float-right -mt-9 mr-2 text-xs">
                                 <span>{{ v$.referrer.$errors[0].$message }}</span></span>

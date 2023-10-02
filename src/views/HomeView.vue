@@ -45,7 +45,7 @@ const loginNow = async () => {
         .then((response) => {
             authStore.setUserDetails(response);
 
-            if (res.data.user.status === 'incomplete') {
+            if (response.data.user.status === 'incomplete') {
                 router.push({
                     name: "welcome",
                 });

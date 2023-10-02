@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import GistView from "../views/GistView.vue";
 import WelcomeView from "../views/WelcomeView.vue";
-import EmailSentView from "../views/EmailSentView.vue";
 import ReferrerView from "../views/ReferrerView.vue";
 import ReferredByView from "../views/ReferredByView.vue";
 import AboutView from "../views/AboutView.vue";
@@ -35,11 +34,6 @@ const router = createRouter({
       path: "/welcome",
       name: "welcome",
       component: WelcomeView,
-    },
-    {
-      path: "/sent",
-      name: "emailsent",
-      component: EmailSentView,
     },
     {
       path: "/referrer",

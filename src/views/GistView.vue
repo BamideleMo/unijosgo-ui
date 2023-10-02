@@ -88,7 +88,7 @@ const getUser = () => {
         })
         .then((response) => {
             user.value = response.data.data
-            if (response.data.data.status === 'verified') {
+            if (response.data.data.status === 'complete') {
                 checkVol();
             } else {
                 router.push({

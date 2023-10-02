@@ -26,19 +26,18 @@ const toggleOtherUni = () => {
 
 const userData = ref(null);
 const callback = (response) => {
-    userData.value = decodeCredential(response.credential)
-    console.log(userData.value);
-    console.log(userData.value.email);
-    // registerNow();
+    userData.value = decodeCredential(response.credential);
+    registerNow();
 }
 
 const formData = ref({
-  name: "Doe",
-  username: "",
-  campus: "",
+  name: userData.value.given_name,
+  username: userData.value.email,
+  campus: "unknown",
+  level: "unknown",
   password: "1234",
   user_category: "user",
-  status: "unverified",
+  status: "incomplete",
 });
 
 const loginNow = async () => {
@@ -51,7 +50,7 @@ const loginNow = async () => {
     
     authStore.setUserDetails(res);
 
-    if(res.data.user.status === 'unverified'){
+    if(res.data.user.status === 'incomplete'){
         router.push({
             name: "welcome",
         });
@@ -74,9 +73,7 @@ const registerNow = async () => {
     let res = await axios.post(API_URL + "users/register", formData.value);
     loginNow();
   } catch (error) {
-    console.log(error)
     isProcessing.value = false;
-    // errorMessage.value = error.response.data.message;
   }
 };
 

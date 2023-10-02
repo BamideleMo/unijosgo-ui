@@ -51,6 +51,7 @@ const submitForm = async () => {
             API_URL + "users/" + authStore.cid, {
                 campus: formData.value.campus,
                 level: formData.value.level,
+                status: 'complete',
             }, {
                 headers: {
                     "Content-Type": "application/json",

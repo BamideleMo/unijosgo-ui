@@ -71,7 +71,7 @@ const registerNow = async () => {
         });
         loginNow();
     } catch (error) {
-        isProcessing.value = false;
+        console.log(error);
     }
 };
 
@@ -121,7 +121,7 @@ onMounted(async () => {
                 Sign in to join 1,650+ students enjoying localised campus news, interviews, opinions,
                 freebies & exclusive discounts every Saturday.
             </p>
-            <GoogleLogin :callback="callback" class="mt-6 border-2 border-black rounded mx-auto sm:mx-0" />
+            <GoogleLogin :callback="callback" class="mt-6 border-2 border-black rounded" />
             <div class="text-xs mt-6">
                 <span>
                     <b class="text-blue-800">

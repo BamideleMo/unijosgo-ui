@@ -74,15 +74,14 @@ onMounted(async () => {
                 <span class="font-semibold">Get Informative, Fun, & Relevant Campus Gists.</span><br />Every Saturday.
             </h1>
             <p class="mt-4 text-base sm:text-base">
-                Join 650+ students for localised campus news, interviews, opinions,
-                freebies and exclusive discounts every Saturday.
+                Sign in to join 1,650+ students enjoying localised campus news, interviews, opinions,
+                freebies & exclusive discounts every Saturday.
             </p>
-            <!--<UserAccess class="w-full lg:pr-3"/>-->
-            <GoogleLogin :callback="callback" class="mt-6"/>
+            <GoogleLogin :callback="callback" class="mt-6 border border-black rounded"/>
             <div class="text-xs mt-6">
                 <span> 
                     <b class="text-blue-800">
-                        Kampa is in:
+                        Present in:
                     </b>
                     UNIJOS, UNIABUJA & <span @click="toggleOtherUni" class="border-b border-dotted border-red-600 hover:border-gray-400 hover:text-gra-400 cursor-pointer">3 Other Unis</span>.
                 </span>

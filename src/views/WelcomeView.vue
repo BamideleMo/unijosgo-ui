@@ -90,8 +90,10 @@ const sendLink = () =>{
     axios
         .post(
             API_URL + "email",{
-                username: authStore.username,
-                cid: authStore.cid,
+                from: "Kampa Newsletter <kampanewsletter@gmail.com>",
+                to: authStore.username,
+                subject: "[Kampa] Confirm your email.",
+                html: `<p>Hi 👋🏾, <br/>Below is your confirmation link. Click on it:<br/><br/><a href="https://www.kampa.ng/referred-by?cid=${authStore.cid}">Link to confirm your email</a></p>`,
             }, {
                 headers: {
                     "Content-Type": "application/json",

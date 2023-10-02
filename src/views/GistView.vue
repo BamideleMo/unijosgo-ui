@@ -87,7 +87,8 @@ const getUser = () => {
             },
         })
         .then((response) => {
-            user.value = response.data.data
+            user.value = response.data.data;
+            console.log(response.data.data.status);
             if (response.data.data.status === 'complete') {
                 checkVol();
             } else {
@@ -125,7 +126,6 @@ const checkVol = () => {
 
 onMounted(async () => {
     getUser();
-    checkVol();
 });
 </script>
 <template>

@@ -47,7 +47,7 @@ const sendLink = () =>{
                         We've sent a confirmation link to: <b>{{authStore.username}}</b>.
                     </p>
                     <p>
-                        Now check your email inbox and click on the link to confirm you are for real 😃.
+                        Now...</p><p> check your email inbox and click on the link to confirm you are for real 😃.
                     </p>
                     <p>
                         If you can't find it in your email inbox try these:

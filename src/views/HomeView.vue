@@ -11,7 +11,7 @@ import { decodeCredential } from 'vue3-google-login'
 
 
 const router = useRouter();
-const userStore = useUserStore();
+const authStore = useUserStore();
 
 const isloading = ref(true);
 
@@ -76,7 +76,7 @@ const registerNow = async () => {
 };
 
 onMounted(async () => {
-    if (userStore.cid) {
+    if (authStore.cid) {
         router.push({
             name: "gist",
         });

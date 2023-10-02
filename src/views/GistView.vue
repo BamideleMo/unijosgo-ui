@@ -46,15 +46,11 @@ const getLog = (val) => {
             },
         })
         .then((response) => {
-            console.log(response.data.data);
             if (!response.data.data.log) {
-                console.log('no log');
                 obj.value[userStore.cid] = new Date();
                 updateLog(val, obj.value);
             } else {
-                console.log('yes log');
                 const logs = response.data.data.log;
-                console.log(logs)
                 logs[userStore.cid] = new Date();
                 updateLog(val, logs);
             }
@@ -73,7 +69,6 @@ const getVolume = (val) => {
             },
         })
         .then((response) => {
-            console.log(response)
             getLog(response.data.data.volume);
             volumeContent.value = response.data.data;
         })
@@ -120,7 +115,6 @@ const checkVol = () => {
             })
             .then((response) => {
                 volumeContent.value = response.data.data;
-                console.log(volumeContent.value)
                 getLog(response.data.data.volume);
             })
             .catch((error) => {

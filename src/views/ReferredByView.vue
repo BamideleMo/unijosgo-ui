@@ -223,7 +223,7 @@ onMounted(async () => {
                                 <span>{{ v$.referrer.$errors[0].$message }}</span></span>
                         </div>
                     </div>
-                    <div v-if="errorMessage" class="bg-black animate-pulse text-white text-xs p-2 mt-2 border-l-4 border-purple-900 capitalize">
+                    <div v-if="errorMessage" class="bg-black animate-pulse text-white text-xs p-2 mt-2 border-l-4 border-purple-900">
                         {{ errorMessage }}
                     </div>
                     <div class="grid grid-cols-2 gap-4">

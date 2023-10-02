@@ -84,12 +84,11 @@ const sendLink = async () => {
                 "to":[
                     {"email": authStore.username}
                 ],
-                "api-key": "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",
                 "subject":"test",
                 "htmlContent": `<p>Hi, 👋🏾<br/><br/>Below is a link to confirm you are not a robot. Click on it:<br/><br/><a href="https://kampa.ng/referred-by?cid=${authStore.cid}">Link to confirm you're real</a>.</p>`,
             }, {
                 headers: {
-                    'api-key': "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",
+                    'api-key': "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",
                     'content-type': "application/json",
                     'accept': "application/json",
                 },

@@ -7,7 +7,7 @@ import { useRouter } from "vue-router";
 import { useUserStore } from "../store/user-store";
 import axios from "axios";
 
-import {decodeCredential} from 'vue3-google-login'
+import { decodeCredential } from 'vue3-google-login'
 
 
 const router = useRouter();
@@ -30,51 +30,49 @@ const callback = (response) => {
     registerNow();
 }
 
-const formData = ref({
-  name: userData.value.given_name,
-  username: userData.value.email,
-  campus: "unknown",
-  level: "unknown",
-  password: "1234",
-  user_category: "user",
-  status: "incomplete",
-});
 
 const loginNow = async () => {
 
-  try {
-    let res = await axios.post(API_URL + "users/login", {
-      username: formData.value.username,
-      password: "1234",
-    });
-    
-    authStore.setUserDetails(res);
-
-    if(res.data.user.status === 'incomplete'){
-        router.push({
-            name: "welcome",
-        });
-    }
-    else{
-        router.push({
-            name: "gist",
+    try {
+        let res = await axios.post(API_URL + "users/login", {
+            username: formData.value.username,
+            password: "1234",
         });
 
-    }
+        authStore.setUserDetails(res);
 
-  } catch (error) {
-    console.log(error);
-  }
+        if (res.data.user.status === 'incomplete') {
+            router.push({
+                name: "welcome",
+            });
+        } else {
+            router.push({
+                name: "gist",
+            });
+
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 
 const registerNow = async () => {
-  try {
-    let res = await axios.post(API_URL + "users/register", formData.value);
-    loginNow();
-  } catch (error) {
-    isProcessing.value = false;
-  }
+    try {
+        let res = await axios.post(API_URL + "users/register", {
+            name: userData.value.given_name,
+            username: userData.value.email,
+            campus: "unknown",
+            level: "unknown",
+            password: "1234",
+            user_category: "user",
+            status: "incomplete",
+        });
+        loginNow();
+    } catch (error) {
+        isProcessing.value = false;
+    }
 };
 
 onMounted(async () => {
@@ -90,7 +88,7 @@ onMounted(async () => {
 <template>
     <div class="w-screen h-screen top-0 fixed bg-black bg-opacity-90 z-50" v-if="otherUni">
         <div class="bg-white rounded-lg w-10/12 sm:w-5/12 lg:w-1/2 mx-auto mt-20 p-4 space-y-6">
-        <div class="flex justify-between border-b border-black">
+            <div class="flex justify-between border-b border-black">
                 <h1 class="h1 font-semibold text-lg">
                     🤩
                 </h1>
@@ -115,7 +113,7 @@ onMounted(async () => {
     <Loading v-if="isloading" />
     <div v-else class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-10 xl:mt-10">
         <div class="w-full mx-auto lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
-            <img src="/smile_wave_black_lg.png" class="w-12 lg:w-12"/>
+            <img src="/smile_wave_black_lg.png" class="w-12 lg:w-12" />
             <h1 class="mt-1 text-4xl sm:text-4xl lg:text-4xl xl:text-5xl font-normal">
                 <span class="font-semibold">Get Informative, Fun, & Relevant Campus Gists.</span><br />Every Saturday.
             </h1>
@@ -123,9 +121,9 @@ onMounted(async () => {
                 Sign in to join 1,650+ students enjoying localised campus news, interviews, opinions,
                 freebies & exclusive discounts every Saturday.
             </p>
-            <GoogleLogin :callback="callback" class="mt-6 border-2 border-black rounded"/>
+            <GoogleLogin :callback="callback" class="mt-6 border-2 border-black rounded mx-auto sm:mx-0" />
             <div class="text-xs mt-6">
-                <span> 
+                <span>
                     <b class="text-blue-800">
                         Present in:
                     </b>
@@ -141,7 +139,6 @@ onMounted(async () => {
     </div>
     <Footer />
 </template>
-
 <style>
 :selected {
     color: red;

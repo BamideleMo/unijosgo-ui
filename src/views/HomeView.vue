@@ -8,6 +8,9 @@ import { useRouter } from "vue-router";
 import { useUserStore } from "../store/user-store";
 import axios from "axios";
 
+import {decodeCredential} from 'vue3-google-login'
+
+
 const router = useRouter();
 const userStore = useUserStore();
 
@@ -22,7 +25,11 @@ const toggleOtherUni = () => {
     otherUni.value = !otherUni.value;
 }
 
-const callback = (response) => {console.log(response)}
+const callback = (response) => {
+    console.log(response)
+    const userData = decodeCredential(response.credential)
+    console.log(userData);
+}
 
 onMounted(async () => {
     if (userStore.cid) {
@@ -71,7 +78,7 @@ onMounted(async () => {
                 freebies and exclusive discounts every Saturday.
             </p>
             <!--<UserAccess class="w-full lg:pr-3"/>-->
-            <GoogleLogin :callback="callback" />
+            <GoogleLogin :callback="callback" class="mt-6"/>
             <div class="text-xs mt-6">
                 <span> 
                     <b class="text-blue-800">

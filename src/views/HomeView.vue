@@ -32,47 +32,60 @@ const callback = (response) => {
 
 
 const loginNow = async () => {
+    axios.post(
+            API_URL + "users/login", {
+                username: userData.value.email,
+                password: "1234",
+            }, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        )
+        .then((response) => {
+            authStore.setUserDetails(response);
 
-    try {
-        let res = await axios.post(API_URL + "users/login", {
-            username: formData.value.username,
-            password: "1234",
+            if (res.data.user.status === 'incomplete') {
+                router.push({
+                    name: "welcome",
+                });
+            } else {
+                router.push({
+                    name: "gist",
+                });
+
+            }
+        })
+        .catch((error) => {
+            console.log(error);
         });
-
-        authStore.setUserDetails(res);
-
-        if (res.data.user.status === 'incomplete') {
-            router.push({
-                name: "welcome",
-            });
-        } else {
-            router.push({
-                name: "gist",
-            });
-
-        }
-
-    } catch (error) {
-        console.log(error);
-    }
 };
 
 
 const registerNow = async () => {
-    try {
-        let res = await axios.post(API_URL + "users/register", {
-            name: userData.value.given_name,
-            username: userData.value.email,
-            campus: "unknown",
-            level: "unknown",
-            password: "1234",
-            user_category: "user",
-            status: "incomplete",
+
+    axios.post(
+            API_URL + "users/register", {
+                name: userData.value.given_name,
+                username: userData.value.email,
+                campus: "unknown",
+                level: "unknown",
+                password: "1234",
+                user_category: "user",
+                status: "incomplete",
+            }, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        )
+        .then((response) => {
+            console.log(response);
+            loginNow();
+        })
+        .catch((error) => {
+            console.log(error);
         });
-        loginNow();
-    } catch (error) {
-        console.log(error);
-    }
 };
 
 onMounted(async () => {

@@ -24,11 +24,61 @@ const toggleOtherUni = () => {
     otherUni.value = !otherUni.value;
 }
 
+const userData = ref(null);
 const callback = (response) => {
-    console.log(response)
-    const userData = decodeCredential(response.credential)
-    console.log(userData);
+    userData.value = decodeCredential(response.credential)
+    console.log(userData.value);
+    console.log(userData.value.email);
+    // registerNow();
 }
+
+const formData = ref({
+  name: "Doe",
+  username: "",
+  campus: "",
+  password: "1234",
+  user_category: "user",
+  status: "unverified",
+});
+
+const loginNow = async () => {
+
+  try {
+    let res = await axios.post(API_URL + "users/login", {
+      username: formData.value.username,
+      password: "1234",
+    });
+    
+    authStore.setUserDetails(res);
+
+    if(res.data.user.status === 'unverified'){
+        router.push({
+            name: "welcome",
+        });
+    }
+    else{
+        router.push({
+            name: "gist",
+        });
+
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+const registerNow = async () => {
+  try {
+    let res = await axios.post(API_URL + "users/register", formData.value);
+    loginNow();
+  } catch (error) {
+    console.log(error)
+    isProcessing.value = false;
+    // errorMessage.value = error.response.data.message;
+  }
+};
 
 onMounted(async () => {
     if (userStore.cid) {

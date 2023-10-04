@@ -83,6 +83,7 @@ a,
 /*  border-top: #000000 dashed 1px;*/
 }
 .content h2::before {
+  position: absolute;
   background: linear-gradient(130deg,#ff7a18,#af002d,#af002d 41.07%, #319197 76.05%);
   height: 3px;
   border-radius: 2px;

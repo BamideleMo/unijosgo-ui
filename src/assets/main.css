@@ -83,15 +83,17 @@ a,
 /*  border-top: #000000 dashed 1px;*/
 }
 .content h2::before {
-  position: absolute;
+  width: 100%;
   background: linear-gradient(130deg,#ff7a18,#af002d,#af002d 41.07%, #319197 76.05%);
   height: 3px;
   border-radius: 2px;
   content: "";
+  margin-top: 40px;
+  display: block;
 }
-.content h2.date {
+.content .date {
   border: none;
-  margin-top: 0 !important;
+  margin-top: 30 !important;
 }
 .content h3 {
   margin-top: 8px;

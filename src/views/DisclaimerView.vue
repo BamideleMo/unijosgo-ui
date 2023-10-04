@@ -1,8 +1,16 @@
 <script setup>
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
+import {useHead} from '@unhead/vue'
 
-const title = "About - UniJosGo";
+useHead({
+    title: 'Terms, Disclaimer & Privacy Policy - Kampa',
+    meta: [{
+        name: 'description',
+        content: `This website and the contents provided herein are simply for fun and
+        general information purposes only.`
+    }]
+})
 </script>
 
 <template>

@@ -6,6 +6,7 @@ import Loading from "../components/Loading.vue";
 import { useUserStore } from "../store/user-store";
 import { useRoute, useRouter } from "vue-router";
 import axios from "axios";
+import {useHead} from '@unhead/vue';
 
 const route = useRoute();
 const router = useRouter();
@@ -127,6 +128,14 @@ const checkVol = () => {
 onMounted(async () => {
     getUser();
 });
+
+useHead({
+    title: 'Gists - Kampa',
+    meta: [{
+        name: 'description',
+        content: `Localised campus gists.`
+    }]
+})
 </script>
 <template>
     <Header />

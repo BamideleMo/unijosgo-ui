@@ -6,6 +6,7 @@ import Loading from "../components/Loading.vue";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../store/user-store";
 import axios from "axios";
+import {useHead} from '@unhead/vue'
 
 import { decodeCredential } from 'vue3-google-login'
 
@@ -84,6 +85,16 @@ onMounted(async () => {
         isloading.value = false;
     }
 });
+
+useHead({
+    title: 'Kampa Newsletter',
+    meta: [{
+        name: 'description',
+        content: `A weekly online newsletter for Nigerian Uni students. It's the modern campus magazine
+                that provides the best social content that's focused on Nigerian Universities for readers to
+                enjoy.`
+    }]
+})
 </script>
 <template>
     <div class="w-screen h-screen top-0 fixed bg-black bg-opacity-90 z-50" v-if="otherUni">

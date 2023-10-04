@@ -1,8 +1,17 @@
 <script setup>
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
+import {useHead} from '@unhead/vue'
 
-const title = "About - Kampa";
+useHead({
+    title: 'About - Kampa',
+    meta: [{
+        name: 'description',
+        content: `Kampa.ng is a weekly online newsletter for Nigerian Uni students. It's the modern campus magazine
+                that provides the best social content that's focused on Nigerian Universities for you to
+                enjoy.`
+    }]
+})
 </script>
 <template>
     <Header />
@@ -12,18 +21,19 @@ const title = "About - Kampa";
             <p>
                 Kampa.ng is a weekly online newsletter for Nigerian Uni students. It's the modern campus magazine
                 that provides the best social content that's focused on Nigerian Universities for you to
-                enjoy, stay informed, and become smarter.
+                enjoy.
             </p>
             <h2>🚀 Smart + Well informed:</h2>
             <p>
                 <em class="text-blue-500">Every Saturday</em> we share fun gists, interviews, opinions, and more
-                that we’ve gathered during the week to help you become smarter and stay well informed.</p>
+                that we’ve gathered during the week.</p>
 
             <p>
-                Asides localised campus gists, we also curate and share national news titbits published by major newspapers especially when it's about universities in Nigeria.
+                Asides localised campus gists, we also curate national news titbits published by major newspapers especially when it's about universities in Nigeria.
             </p>
+            <p>All of these will help you become smarter and stay well informed.</p>
             <p>
-                Now... </p><p>To really understand this "plenty English", just sign in and see for yourself. 😎
+                But... </p><p>To really understand this "plenty grammar", just sign in and see for yourself. 😎
             </p>
             <h2>☎️ Holla @ us:</h2>
             <p>

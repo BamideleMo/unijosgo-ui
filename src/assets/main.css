@@ -48,7 +48,7 @@ a,
   font-weight: bold;
 }
 .content ul li, .content ol li {
-  padding: 8px 0;
+  padding: 16px 0;
   font-size: 15px;
 }
 .content ol{
@@ -71,7 +71,7 @@ a,
 }
 .content p {
   color: #000000;
-  margin: 15px 0;
+  margin: 16px 0;
 }
 .content h2 {
   padding-top: 30px;
@@ -80,7 +80,13 @@ a,
   font-weight: bold;
   font-size: 15px;
   text-transform: uppercase;
-  border-top: #000000 dashed 1px;
+/*  border-top: #000000 dashed 1px;*/
+}
+.content h2::before {
+  background: linear-gradient(130deg,#ff7a18,#af002d,#af002d 41.07%, #319197 76.05%);
+  height: 3px;
+  border-radius: 2px;
+  content: "";
 }
 .content h2.date {
   border: none;

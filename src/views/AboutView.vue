@@ -14,22 +14,21 @@ const title = "About - Kampa";
                 that provides the best social content that's focused on Nigerian Universities for you to
                 enjoy, stay informed, and become smarter.
             </p>
-            <h2>🚀 What we do:</h2>
+            <h2>🚀 Become smarter + stay well informed:</h2>
             <p>
                 <em class="text-blue-500">Every Saturday</em> we share fun gists, interviews, opinions, and more
                 that we’ve gathered during the week to help you become smarter and stay well informed.</p>
 
             <p>
-                Asides localised campus gists, we also share titbits of national news too
-                 especially when it concerns universities in Nigeria.
+                Asides localised campus gists, we also curate and share national news titbits published by major newspapers especially when it's about universities in Nigeria.
+            </p>
+            <p>
+                Now... to really understand this "plenty English", just sign in and see for yourself. 😎
             </p>
             <h2>☎️ Holla @ us:</h2>
             <p>
                 We're always excited to hear from you. Contact us today!<br />
                 <a href="https://wa.me/23408187084716" target="_blank" class="">0818 708 4716</a>
-            </p>
-            <p>
-                😎
             </p>
         </div>
     </div>

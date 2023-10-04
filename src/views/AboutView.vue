@@ -14,7 +14,7 @@ const title = "About - Kampa";
                 that provides the best social content that's focused on Nigerian Universities for you to
                 enjoy, stay informed, and become smarter.
             </p>
-            <h2>🚀 Become smarter + stay well informed:</h2>
+            <h2>🚀 Smart + Well informed:</h2>
             <p>
                 <em class="text-blue-500">Every Saturday</em> we share fun gists, interviews, opinions, and more
                 that we’ve gathered during the week to help you become smarter and stay well informed.</p>

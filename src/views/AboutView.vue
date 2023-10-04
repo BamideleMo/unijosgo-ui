@@ -23,7 +23,7 @@ const title = "About - Kampa";
                 Asides localised campus gists, we also curate and share national news titbits published by major newspapers especially when it's about universities in Nigeria.
             </p>
             <p>
-                Now... to really understand this "plenty English", just sign in and see for yourself. 😎
+                Now... </p><p>To really understand this "plenty English", just sign in and see for yourself. 😎
             </p>
             <h2>☎️ Holla @ us:</h2>
             <p>

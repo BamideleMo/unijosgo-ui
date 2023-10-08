@@ -37,7 +37,7 @@ const toggleShowMenu = () => {
                     <p class="font-semibold">About</p>
                     <p class="text-gray-900">
                         Kampa.ng is a weekly online newsletter for Nigerian Uni students. It's the modern campus magazine
-                that provides the best social content that's focused on Nigerian Universities for you to
+                that provides the best social content created for students to
                 enjoy, stay informed, and become smarter.
                     </p>
                     <RouterLink to="/about" class="border-b border-red-600 hover:opacity-60 cursor-pointer">

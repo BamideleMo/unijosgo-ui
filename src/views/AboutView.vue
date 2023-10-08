@@ -20,8 +20,8 @@ useHead({
             <h1 class="h1 font-semibold text-lg text-center">About</h1>
             <p>
                 Kampa.ng is a weekly online newsletter for Nigerian Uni students. It's the modern campus magazine
-                that provides the best social content that's focused on Nigerian Universities for you to
-                enjoy.
+                that provides the best social content created for students to
+                enjoy, stay informed, and become smarter.
             </p>
             <h2>🚀 Smart + Well informed:</h2>
             <p>

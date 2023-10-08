@@ -107,7 +107,7 @@ useHead({
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </div>
-            <p>Kampa Newsletter is currently present in:</p>
+            <p>Kampa Newsletter is also present in:</p>
             <ol class="list-disc px-10">
                 <li>KASU</li>
                 <li>ABU</li>
@@ -131,7 +131,7 @@ useHead({
                     Sign in to join 1,650+ students enjoying localised campus news, interviews, opinions,
                     freebies & exclusive discounts every Saturday.
                 </p>
-                <GoogleLogin :callback="callback" class="mt-6 border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg" />
+                <GoogleLogin :callback="callback" class="mt-6 border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />
                 <div class="text-xs mt-6">
                     <span>
                         <b class="text-blue-800">
@@ -175,6 +175,7 @@ useHead({
     <div class="w-11/12 lg:w-9/12 mx-auto py-12 flex space-x-2 sm:space-x-6">
         <div class="w-16 sm:w-20">
             <img src="/quote-kampa-newsletter.png" class="w-full"/>
+            <div class="uppercase text-base rotate-90">Testimonial</div>
         </div>
         <div class="grow space-y-3 pt-4 sm:pt-6">
             <h2 class="text-xl sm:text-2xl">Excellent work love it!</h2>

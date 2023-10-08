@@ -122,30 +122,65 @@ useHead({
     </div>
     <Header />
     <Loading v-if="isloading" />
-    <div v-else class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-10 xl:mt-10">
-        <div class="w-full mx-auto lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
-            <img src="/smile_wave_black_lg.png" class="w-12 lg:w-12" />
-            <h1 class="mt-1 text-4xl sm:text-4xl lg:text-4xl xl:text-5xl font-normal">
-                <span class="font-semibold">Get Informative, Fun, & Relevant Campus Gists.</span><br />Every Saturday.
-            </h1>
-            <p class="mt-4 text-base sm:text-base">
-                Sign in to join 1,650+ students enjoying localised campus news, interviews, opinions,
-                freebies & exclusive discounts every Saturday.
-            </p>
-            <GoogleLogin :callback="callback" class="mt-6 border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg" />
-            <div class="text-xs mt-6">
-                <span>
-                    <b class="text-blue-800">
-                        Present in:
-                    </b>
-                    UNIJOS, UNIABUJA & <span @click="toggleOtherUni" class="border-b border-dotted border-red-600 hover:border-gray-400 hover:text-gra-400 cursor-pointer">3 Other Unis</span>.
-                </span>
+    <div v-else>
+        <div class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-10 xl:mt-10">
+            <div class="w-full mx-auto lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
+                <img src="/smile_wave_black_lg.png" class="w-12 lg:w-12" />
+                <h1 class="mt-1 text-4xl sm:text-4xl lg:text-4xl xl:text-5xl font-normal">
+                    <span class="font-semibold">Get Informative, Fun, & Relevant Campus Gists.</span><br />Every Saturday.
+                </h1>
+                <p class="mt-4 text-base sm:text-base">
+                    Sign in to join 1,650+ students enjoying localised campus news, interviews, opinions,
+                    freebies & exclusive discounts every Saturday.
+                </p>
+                <GoogleLogin :callback="callback" class="mt-6 border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg" />
+                <div class="text-xs mt-6">
+                    <span>
+                        <b class="text-blue-800">
+                            Present in:
+                        </b>
+                        UNIJOS, UNIABUJA & <span @click="toggleOtherUni" class="border-b border-dotted border-red-600 hover:border-gray-400 hover:text-gra-400 cursor-pointer">3 Other Unis</span>.
+                    </span>
+                </div>
+            </div>
+            <div class="w-11/12 sm:w-6/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 lg:-mt-2">
+                <div class="px-2 lg:px-1 max-w-full mx-auto h-96 overflow-hidden drop-shadow-lg">
+                    <img src="/kampa.png" class="w-full lg:float-right" />
+                </div>
             </div>
         </div>
-        <div class="w-11/12 sm:w-6/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 lg:-mt-2">
-            <div class="px-2 lg:px-1 max-w-full mx-auto h-96 border-b-4 border-gray-400 overflow-hidden drop-shadow-lg">
-                <img src="/kampa.png" class="w-full lg:float-right" />
+    </div>
+    <div class="bg-gray-100 border-y text-xs">
+        <div class="w-11/12 lg:w-9/12 mx-auto py-12">
+            <h2 class="text-center text-sm">3 Reasons Why You Should Subscribe...</h2>
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
+                <div class="space-y-2">
+                    <h4><span class="bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-1">1</span></h4>
+                    <h3 class="font-semibold">Exclusive Content + Give-aways</h3>
+                    <p>What will an extra 10K do for you? How about a 50% discount on TP back home at semester end? Now... our 
+                    subscribers get to enjoy such give-aways along with exclusive content.</p>
+                </div>
+                <div class="space-y-2">
+                    <h4><span class="bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-1">2</span></h4>
+                    <h3 class="font-semibold">You'll Become Smarter</h3>
+                    <p>With our curation of top 5 national news & the excellent career ideas (in the #GraduateWell section) that we post, you will definitely get smarter and stay ahead of the game.</p>
+                </div>
+                <div class="space-y-2">
+                    <h4><span class="bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-1">3</span></h4>
+                    <h3 class="font-semibold">It's Totally FREE</h3>
+                    <p>You don't have to pay anything to subscribe even though what you'll be getting is worth thousands of naira.</p>
+                    <p>Sign in and see for yourself.</p>
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="w-11/12 lg:w-9/12 mx-auto py-12 flex space-x-2 sm:space-x-6">
+        <div class="w-16 sm:w-20">
+            <img src="/quote-kampa-newsletter.png" class="w-full"/>
+        </div>
+        <div class="grow space-y-3 pt-4 sm:pt-8">
+            <h2 class="text-xl sm:text-2xl">Excellent work love it!</h2>
+            <p class="text-xs">- Franca (400L Student)</p>
         </div>
     </div>
     <Footer />

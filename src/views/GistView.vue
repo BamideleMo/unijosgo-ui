@@ -147,7 +147,7 @@ useHead({
                 <span class="capitalize border-b border-black">{{ volumeContent.post_date }}</span>
             </div>
             <div class="at">
-                <span class="capitalize text-gray-300">
+                <span class="capitalize text-gray-300 text-4xl">
                     Kampa<b class="text-black uppercase">@{{user.campus}}</b>
                 </span>
             </div>

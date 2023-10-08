@@ -132,7 +132,7 @@ useHead({
                 Sign in to join 1,650+ students enjoying localised campus news, interviews, opinions,
                 freebies & exclusive discounts every Saturday.
             </p>
-            <GoogleLogin :callback="callback" class="mt-6 border-2 border-black rounded" />
+            <GoogleLogin :callback="callback" class="mt-6 border-2 border-red-600 rounded-md hover:opacity-60" />
             <div class="text-xs mt-6">
                 <span>
                     <b class="text-blue-800">
@@ -142,7 +142,7 @@ useHead({
                 </span>
             </div>
         </div>
-        <div class="w-11/12 sm:w-6/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 lg:-mt-6">
+        <div class="w-11/12 sm:w-6/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 lg:-mt-2">
             <div class="px-2 lg:px-1 max-w-full mx-auto h-96 border-b-4 border-gray-400 overflow-hidden drop-shadow-lg">
                 <img src="/kampa.png" class="w-full lg:float-right" />
             </div>

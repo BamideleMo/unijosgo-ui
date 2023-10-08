@@ -108,9 +108,7 @@ useHead({
                 </svg>
             </div>
             <p>Kampa Newsletter is currently present in:</p>
-            <ol class="list-disc px-20">
-                <li>UNIJOS</li>
-                <li>UNIABUJA</li>
+            <ol class="list-disc px-10">
                 <li>KASU</li>
                 <li>ABU</li>
                 <li>FULafia</li>
@@ -152,7 +150,7 @@ useHead({
     </div>
     <div class="bg-gray-100 border-y text-xs">
         <div class="w-11/12 lg:w-9/12 mx-auto py-12">
-            <h2 class="text-center text-sm">3 Reasons Why You Should Subscribe...</h2>
+            <h2 class="text-left text-sm">Wondering why you should subscribe? Here are 3 Reasons...</h2>
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
                 <div class="space-y-2">
                     <h4><span class="bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-1">1</span></h4>

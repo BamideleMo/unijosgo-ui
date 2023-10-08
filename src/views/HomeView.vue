@@ -176,7 +176,7 @@ useHead({
         <div class="w-16 sm:w-20">
             <img src="/quote-kampa-newsletter.png" class="w-full"/>
         </div>
-        <div class="grow space-y-3 pt-4 sm:pt-8">
+        <div class="grow space-y-3 pt-4 sm:pt-6">
             <h2 class="text-xl sm:text-2xl">Excellent work love it!</h2>
             <p class="text-xs">- Franca (400L Student)</p>
         </div>

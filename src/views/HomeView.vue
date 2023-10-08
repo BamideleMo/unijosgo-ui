@@ -132,7 +132,7 @@ useHead({
                 Sign in to join 1,650+ students enjoying localised campus news, interviews, opinions,
                 freebies & exclusive discounts every Saturday.
             </p>
-            <GoogleLogin :callback="callback" class="mt-6 border-2 border-red-600 rounded-md hover:opacity-60" />
+            <GoogleLogin :callback="callback" class="mt-6 border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg" />
             <div class="text-xs mt-6">
                 <span>
                     <b class="text-blue-800">

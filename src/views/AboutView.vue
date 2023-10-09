@@ -23,7 +23,7 @@ useHead({
                 that provides the best social content created for students to
                 enjoy, stay informed, and become smarter.
             </p>
-            <h2>🚀 Smart + Well informed:</h2>
+            <h2>🚀 What we do:</h2>
             <p>
                 <em class="text-blue-500">Every Saturday</em> we share fun gists, interviews, opinions, and more
                 that we’ve gathered during the week.</p>

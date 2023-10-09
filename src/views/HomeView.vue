@@ -6,7 +6,7 @@ import Loading from "../components/Loading.vue";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../store/user-store";
 import axios from "axios";
-import {useHead} from '@unhead/vue'
+import { useHead } from '@unhead/vue'
 
 import { decodeCredential } from 'vue3-google-login'
 
@@ -148,38 +148,38 @@ useHead({
             </div>
         </div>
     </div>
-    <div class="bg-gray-100 border-y text-xs">
+    <div class="bg-gray-100 border-y text-sm text-center sm:text-left">
         <div class="w-11/12 lg:w-9/12 mx-auto py-12">
-            <h2 class="text-left text-sm">Wondering why you should subscribe? Here are 3 Reasons...</h2>
+            <h2 class=" text-sm">Wondering why you should sign in? <br class="sm:hidden" />Here are 3 Reasons...</h2>
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
                 <div class="space-y-2">
-                    <h4><span class="bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-1">1</span></h4>
+                    <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-0.5">1</span></h4>
                     <h3 class="font-semibold">Exclusive Content + Give-aways</h3>
-                    <p>What will an extra 10K do for you? How about a 50% discount on TP back home at semester end? Now... our 
-                    subscribers get to enjoy such give-aways along with exclusive content.</p>
+                    <p>What will an extra 10K do for you? How about a 50% discount on TP back home at semester end? Now... our
+                        subscribers get to enjoy such give-aways along with exclusive content.</p>
                 </div>
                 <div class="space-y-2">
-                    <h4><span class="bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-1">2</span></h4>
+                    <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-0.5">2</span></h4>
                     <h3 class="font-semibold">You'll Become Smarter</h3>
                     <p>With our curation of top 5 national news & the excellent career ideas (in the #GraduateWell section) that we post, you will definitely get smarter and stay ahead of the game.</p>
                 </div>
                 <div class="space-y-2">
-                    <h4><span class="bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-1">3</span></h4>
+                    <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-0.5">3</span></h4>
                     <h3 class="font-semibold">It's Totally FREE</h3>
-                    <p>You don't have to pay anything to subscribe even though what you'll be getting is worth thousands of naira.</p>
+                    <p>You don't have to pay anything to sign in even though what you'll be getting is worth thousands of naira.</p>
                     <p>Sign in and see for yourself.</p>
                 </div>
             </div>
         </div>
     </div>
     <div class="w-11/12 lg:w-9/12 mx-auto py-12 flex space-x-2 sm:space-x-6">
-        <div class="w-16 sm:w-20">
-            <img src="/quote-kampa-newsletter.png" class="w-full"/>
-            <div class="uppercase text-base rotate-90">Testimonial</div>
+        <div class="w-26 sm:w-40">
+            <img src="/quote-kampa-newsletter.png" class="w-full" />
         </div>
         <div class="grow space-y-3 pt-4 sm:pt-6">
-            <h2 class="text-xl sm:text-2xl">Excellent work love it!</h2>
-            <p class="text-xs">- Franca (400L Student)</p>
+            <div class="uppercase text-xs text-gray-400">Testimonial</div>
+            <h2 class="text-xl sm:text-xl">I like Kampa Newsletter a lot because it is helpful, especially the GraduateWell and Hotshot sections. I try not to miss it every Saturday & I've also convinced some friends to join too. Thank you.</h2>
+            <p class="text-xs text-gray-400">Rose Danladi (400L Student, UNIJOS)</p>
         </div>
     </div>
     <Footer />

@@ -36,7 +36,7 @@ a,
 /* My styles */
 .content {
   color: #000000 !important;
-  font-size: 15px;
+  font-size: 14px !important;
 }
 .content ul,.content ol {
   list-style-type: square;
@@ -49,7 +49,7 @@ a,
 }
 .content ul li, .content ol li {
   padding: 16px 0;
-  font-size: 15px;
+  font-size: 14px !important;
 }
 .content ol{
   list-style-type: decimal;
@@ -72,6 +72,7 @@ a,
 .content p {
   color: #000000;
   margin: 15px 0;
+  font-size: 14px !important;
 }
 .content h2 {
   padding-top: 30px;

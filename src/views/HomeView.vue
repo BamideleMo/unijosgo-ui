@@ -160,12 +160,12 @@ useHead({
                 </div>
                 <div class="space-y-2">
                     <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-0.5">2</span></h4>
-                    <h3 class="font-semibold">You'll Become Smarter</h3>
+                    <h3 class="font-semibold">Become Smarter</h3>
                     <p>With our curation of top 5 national news & the excellent career ideas (in the #GraduateWell section) that we post, you will definitely get smarter and stay ahead of the game.</p>
                 </div>
                 <div class="space-y-2">
                     <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-0.5">3</span></h4>
-                    <h3 class="font-semibold">It's Totally FREE</h3>
+                    <h3 class="font-semibold">It's for FREE</h3>
                     <p>You don't have to pay anything to sign in even though what you'll be getting is worth thousands of naira.</p>
                     <p>Sign in and see for yourself.</p>
                 </div>

@@ -161,7 +161,8 @@ useHead({
                 <div class="space-y-2">
                     <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-0.5">2</span></h4>
                     <h3 class="font-semibold">Become Smarter</h3>
-                    <p>With news curation that makes reading the news enjoyable, & the excellent career ideas (in the #GraduateWell section) that we post, you will definitely get smarter and stay ahead of the game.</p>
+                    <p>Get smarter and stay ahead of the game with news curation that makes reading the news enjoyable, & the excellent career ideas we share in the #GraduateWell section.</p>
+                    <p>You'll love it!</p>
                 </div>
                 <div class="space-y-2">
                     <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-0.5">3</span></h4>

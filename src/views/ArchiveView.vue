@@ -70,7 +70,7 @@ onMounted(async () => {
       class=" text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto"
     >
       <h1 class="h1 font-semibold text-lg text-center">All Vols.</h1>
-      <table cellpadding="0" cellspacing="0" class="w-full">
+      <table cellpadding="0" cellspacing="0" class="w-full space-y-2">
         <tr v-for="(item, index) in content" :key="index" class="bg-gray-200">
           <td class="border-b border-white p-4 lg:p-6">
             <span class="text-xs flex justify-between font-semibold pb-3"

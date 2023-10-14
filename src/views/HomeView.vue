@@ -156,19 +156,20 @@ useHead({
                     <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-0.5">1</span></h4>
                     <h3 class="font-semibold">Exclusive Content + Give-aways</h3>
                     <p>What will an extra 10K do for you? How about a 50% discount on TP back home at semester end? </p>
-                    <p>Now... you can enjoy such give-aways along with exclusive content every other Saturday.</p>
+                    <p>You will enjoy such give-aways along with exclusive content every other Saturday.</p>
                 </div>
                 <div class="space-y-2">
                     <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-0.5">2</span></h4>
                     <h3 class="font-semibold">Become Smarter</h3>
-                    <p>Get smarter and stay ahead of the game with news curation that makes reading the news enjoyable, & the excellent career ideas we share in the #GraduateWell section.</p>
+                    <p>Get smarter and stay ahead of the game with news curation that makes reading the news enjoyable, plus excellent career ideas we share in the #GraduateWell section.</p>
                     <p>You'll love it!</p>
                 </div>
                 <div class="space-y-2">
                     <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-0.5">3</span></h4>
                     <h3 class="font-semibold">It's for FREE</h3>
-                    <p>You don't have to pay anything to sign in even though what you'll be getting is worth thousands of naira.</p>
+                    <p>You don't have to pay anything to sign in even though what you'll get every Saturday is worth thousands of naira.</p>
                     <p>Sign in and see for yourself.</p>
+                    <p>😎</p>
                 </div>
             </div>
         </div>

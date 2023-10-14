@@ -36,7 +36,7 @@ useHead({
             </p>
             <p>All of these will help you become smarter and stay well informed.</p>
             <p>
-                But... </p><p>To really understand this "plenty grammar", just sign in and see for yourself. 😎
+                Now... </p><p>To really understand this "plenty grammar", just sign in and see for yourself. 😎
             </p>
             <h2>☎️ Holla @ us:</h2>
             <p>

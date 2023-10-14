@@ -123,7 +123,7 @@ useHead({
     <div v-else>
         <div class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-10 xl:mt-10">
             <div class="w-full mx-auto lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
-                <div>&nbsp;</div>
+                <div class="hidden sm:block">&nbsp;</div>
                 <h1 class="mt-1 text-4xl sm:text-4xl lg:text-4xl xl:text-5xl font-normal">
                     <span class="font-semibold">Get Informative, Fun, & Relevant Campus Gists.</span><br />Every Saturday.
                 </h1>

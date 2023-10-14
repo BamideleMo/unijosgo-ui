@@ -71,7 +71,7 @@ a,
 }
 .content p {
   color: #000000;
-  margin: 16px 0;
+  margin: 15px 0;
 }
 .content h2 {
   padding-top: 30px;
@@ -99,15 +99,14 @@ a,
   margin-top: 8px;
 /*  border-left: 5px #00bfff solid;*/
 /*  padding-left: 4px;*/
-  color: #0b5394;
+  color: #1c7ff2;
   font-weight: bold;
   font-size: 16px;
   text-transform: capitalize;
   line-height: 19px;
 }
 .content a {
-  border-bottom: #000000 1px solid !important;
-  color: #0b5394;
+  border-bottom: #1c7ff2 1px solid !important;
 }
 .content a:hover {
   color: #ff3300;

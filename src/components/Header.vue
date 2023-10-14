@@ -26,23 +26,28 @@ const toggleShowMenu = () => {
         <div class="bg-white w-80 sm:w-1/2 lg:w-2/5 xl:w-3/5 text-sm xl:text-sm">
             <div class="flex border-b shadow-lg py-2.5 px-6">
                 <div class="grow">
-                    <img src="/icon.png" class="h-10"/>
+                    <img src="/icon.png" class="h-10" />
                 </div>
                 <div class="w-8">
                     <IconClose @click="toggleShowMenu" class="text-red-400 cursor-pointer hover:opacity-60" />
                 </div>
             </div>
             <ol class="">
-                <li class="border-b px-6 py-6">
-                    <p class="font-semibold">About</p>
+                <li class="border-b px-6 py-6 space-y-4">
+                    <p class="font-semibold h1 text-lg">About</p>
+                    <p>
+                        Kampa informs and helps Nigerian Uni students become smarter by curating and creating smart, fun & localised content for students to enjoy.
+                    </p>
                     <p class="text-gray-900">
                         Kampa.ng is a weekly online newsletter for Nigerian Uni students. It's the modern campus magazine
-                that provides the best social content created for students to
-                enjoy, stay informed, and become smarter.
+                        that provides the best social content created for students to
+                        enjoy, stay informed, and become smarter.
                     </p>
-                    <RouterLink to="/about" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
-                        Learn more
-                    </RouterLink>
+                    <p>
+                        <RouterLink to="/about" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
+                            Learn more
+                        </RouterLink>
+                    </p>
                 </li>
                 <!--<li v-if="!authStore.cid" class="border-b px-6 py-6">
                     <RouterLink to="/subscribe" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
@@ -76,7 +81,7 @@ const toggleShowMenu = () => {
         <div class="w-11/12 lg:w-9/12 mx-auto flex justify-between">
             <Logo />
             <div class="pt-2.5 sm:pt-2.5 drop-shadow-lg">
-                <MenuIcon @click="toggleShowMenu" class="cursor-pointer hover:opacity-60 -mt-2 -mr-1"  />
+                <MenuIcon @click="toggleShowMenu" class="cursor-pointer hover:opacity-60 -mt-2 -mr-1" />
             </div>
         </div>
     </div>

@@ -19,6 +19,9 @@ useHead({
         <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">About</h1>
             <p>
+                Kampa informs and helps Nigerian Uni students become smarter by curating and creating smart, fun & localised content for students to enjoy.
+            </p>
+            <p>
                 Kampa.ng is a weekly online newsletter for Nigerian Uni students. It's the modern campus magazine
                 that provides the best social content created for students to
                 enjoy, stay informed, and become smarter.

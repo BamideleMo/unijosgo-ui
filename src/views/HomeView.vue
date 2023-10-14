@@ -172,15 +172,12 @@ useHead({
             </div>
         </div>
     </div>
-    <div class="w-11/12 lg:w-9/12 mx-auto py-12 flex space-x-2 sm:space-x-6">
-        <div class="w-26 sm:w-40">
-            <img src="/quote-kampa-newsletter.png" class="w-full" />
-        </div>
-        <div class="grow space-y-3 pt-4 sm:pt-6">
-            <div class="uppercase text-xs text-gray-400">Testimonial</div>
-            <h2 class="text-sm sm:text-base lg:text-xl">I like Kampa Newsletter a lot because it is helpful, especially the GraduateWell and Hotshot sections. I try not to miss it every Saturday & I've also convinced some friends to join too. Thank you.</h2>
-            <p class="text-xs text-gray-400">Rose Danladi (400L Student, UNIJOS)</p>
-        </div>
+    <div class="mt-20 w-11/12 lg:w-9/12 mx-auto p-10 border border-purple-600 space-y-4 text-xl">
+       
+        <h2><span class="border-b border-purple-600">OUR MISSION</span></h2>
+        <p>
+            Kampa informs and helps Nigerian Uni students become smarter by curating and creating smart, fun & localised content for students to enjoy.
+        </p>
     </div>
     <Footer />
 </template>

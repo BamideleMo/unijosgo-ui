@@ -26,16 +26,6 @@ useHead({
                 that provides the best social content created for students to
                 enjoy, stay informed, and become smarter.
             </p>
-            <h2>
-                🚀 Sponsored:</h2>
-            <blockquote>
-                <p>
-                    <em class="text-blue-500">Every Saturday</em> we share fun gists, interviews, opinions, and more
-                    that we’ve gathered during the week.</p>
-                <p>
-                    Asides localised campus gists, we also curate national news titbits published by major newspapers especially when it's about universities in Nigeria.
-                </p>
-            </blockquote>
             <h2>🚀 What we do:</h2>
             <p>
                 <em class="text-blue-500">Every Saturday</em> we share fun gists, interviews, opinions, and more

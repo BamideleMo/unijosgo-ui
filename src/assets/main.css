@@ -85,7 +85,7 @@ a,
 .content h2::before {
   width: 100%;
   background: linear-gradient(to bottom right, #0100ec, #fb36f4);
-  height: 1px;
+  height: 2px;
   border-radius: 2px;
   content: "";
   margin-bottom: 50px;

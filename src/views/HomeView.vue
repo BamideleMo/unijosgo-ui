@@ -150,7 +150,7 @@ useHead({
     </div>
     <div class="bg-gray-100 border-y border-gray-300 text-sm text-center sm:text-left">
         <div class="w-11/12 lg:w-9/12 mx-auto py-12 lg:py-16">
-            <h2 class=" text-sm"><span class="h1 font-semibold text-lg">Why Join Kampa?</span> <br class="" />Here are 3 Reasons why you should Sign in to join us now...</h2>
+            <h2 class=" text-sm"><span class="h1 font-semibold text-lg">Why Join Kampa?</span> <br class="" />3 Reasons why you should Sign in to join:</h2>
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
                 <div class="space-y-2">
                     <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white text-center pt-0.5">1</span></h4>

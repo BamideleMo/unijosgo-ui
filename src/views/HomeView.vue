@@ -153,19 +153,19 @@ useHead({
             <h2 class=" text-sm"><span class="h1 font-semibold text-lg">Why Join Kampa?</span> <br class="" />3 Reasons why you should Sign in to join:</h2>
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
                 <div class="space-y-2">
-                    <h4><span class="mx-0 sm:mx-0 bg-red-600 block w-6 h-6 text-white text-center pt-0.5">1</span></h4>
+                    <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5">1</span></h4>
                     <h3 class="font-semibold">Exclusive Content + Give-aways</h3>
                     <p class="text-left">What will an extra 10K do for you? How about a 50% discount on Transport fare back home at semester end? </p>
                     <p class="text-left">You'll enjoy such give-aways every now & then along with exclusive content every Saturday.</p>
                 </div>
                 <div class="space-y-2">
-                    <h4><span class="mx-0 sm:mx-0 bg-red-600 block w-6 h-6 text-white text-center pt-0.5">2</span></h4>
+                    <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5">2</span></h4>
                     <h3 class="font-semibold">Become Smarter</h3>
                     <p class="text-left">Get smarter and stay ahead of the game with news curation that makes reading the news enjoyable, plus excellent career ideas we share in the #GraduateWell section.</p>
                     <p class="text-left">You'll love it!</p>
                 </div>
                 <div class="space-y-2">
-                    <h4><span class="mx-0 sm:mx-0 bg-red-600 block w-6 h-6 text-white text-center pt-0.5">3</span></h4>
+                    <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5">3</span></h4>
                     <h3 class="font-semibold">It's for FREE</h3>
                     <p class="text-left">You don't have to pay anything to sign in even though what you'll get every Saturday is worth thousands of naira.</p>
                     <p class="text-left">Sign in to join and see for yourself.</p>
@@ -174,8 +174,8 @@ useHead({
             </div>
         </div>
     </div>
-    <div class="mt-20 w-11/12 lg:w-9/12 mx-auto p-4 sm:p-10 border border-purple-600 space-y-4 sm:text-xl">
-        <h2><span class="border-b border-purple-600">OUR MISSION</span></h2>
+    <div class="mt-20 w-11/12 lg:w-9/12 mx-auto p-4 sm:p-10 border border-black space-y-4 sm:text-xl">
+        <h2><span class="border-b border-black">OUR MISSION</span></h2>
         <div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-6">
             <p class="grow">
                 Kampa informs and helps Nigerian Uni students become smarter by curating and creating smart, fun & localised content for students to enjoy.

@@ -38,11 +38,6 @@ const toggleShowMenu = () => {
                     <p>
                         Kampa informs and helps Nigerian Uni students become smarter by curating and creating smart, fun & localised content for students to enjoy.
                     </p>
-                    <p class="text-gray-900">
-                        Kampa.ng is a weekly online newsletter for Nigerian Uni students. It's the modern campus magazine
-                        that provides the best social content created for students to
-                        enjoy, stay informed, and become smarter.
-                    </p>
                     <p>
                         <RouterLink to="/about" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
                             Learn more

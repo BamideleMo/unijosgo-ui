@@ -129,7 +129,7 @@ useHead({
                 </h1>
                 <p class="mt-4 text-base sm:text-base">
                     Sign in to join 1,650+ students enjoying localised campus news, interviews, opinions,
-                    give-aways & exclusive discounts every Saturday.
+                    give-aways & exclusive discounts.
                 </p>
                 <GoogleLogin :callback="callback" class="mt-6 border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />
                 <div class="text-xs mt-4">
@@ -137,7 +137,7 @@ useHead({
                         <b class="text-blue-800">
                             Present in:
                         </b>
-                        UNIJOS, UNIABUJA & <span @click="toggleOtherUni" class="border-b border-dotted border-red-600 hover:border-gray-400 hover:text-gra-400 cursor-pointer">3 Other Unis</span>.
+                        UNIJOS, UNIABUJA & <span @click="toggleOtherUni" class="border-b border-dotted border-red-600 hover:border-gray-400 hover:text-gra-400 cursor-pointer">3 more</span>.
                     </span>
                 </div>
             </div>
@@ -148,24 +148,24 @@ useHead({
             </div>
         </div>
     </div>
-    <div class="bg-gray-100 border-y border-gray-300 text-sm text-center sm:text-left">
+    <div class="bg-gray-100 border-y border-gray-300 text-sm text-left sm:text-left">
         <div class="w-11/12 lg:w-9/12 mx-auto py-12 lg:py-16">
             <h2 class=" text-sm"><span class="h1 font-semibold text-lg">Why Join Kampa?</span> <br class="" />3 Reasons why you should Sign in to join:</h2>
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
                 <div class="space-y-2">
-                    <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white text-center pt-0.5">1</span></h4>
+                    <h4><span class="mx-0 sm:mx-0 bg-red-600 block w-6 h-6 text-white text-center pt-0.5">1</span></h4>
                     <h3 class="font-semibold">Exclusive Content + Give-aways</h3>
                     <p class="text-left">What will an extra 10K do for you? How about a 50% discount on Transport fare back home at semester end? </p>
                     <p class="text-left">You'll enjoy such give-aways every now & then along with exclusive content every Saturday.</p>
                 </div>
                 <div class="space-y-2">
-                    <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white text-center pt-0.5">2</span></h4>
+                    <h4><span class="mx-0 sm:mx-0 bg-red-600 block w-6 h-6 text-white text-center pt-0.5">2</span></h4>
                     <h3 class="font-semibold">Become Smarter</h3>
                     <p class="text-left">Get smarter and stay ahead of the game with news curation that makes reading the news enjoyable, plus excellent career ideas we share in the #GraduateWell section.</p>
                     <p class="text-left">You'll love it!</p>
                 </div>
                 <div class="space-y-2">
-                    <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white text-center pt-0.5">3</span></h4>
+                    <h4><span class="mx-0 sm:mx-0 bg-red-600 block w-6 h-6 text-white text-center pt-0.5">3</span></h4>
                     <h3 class="font-semibold">It's for FREE</h3>
                     <p class="text-left">You don't have to pay anything to sign in even though what you'll get every Saturday is worth thousands of naira.</p>
                     <p class="text-left">Sign in to join and see for yourself.</p>

@@ -129,7 +129,7 @@ useHead({
                 </h1>
                 <p class="mt-4 text-base sm:text-base">
                     Sign in to join 1,650+ students enjoying localised campus news, interviews, opinions,
-                    freebies & exclusive discounts every Saturday.
+                    give-aways & exclusive discounts every Saturday.
                 </p>
                 <GoogleLogin :callback="callback" class="mt-6 border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />
                 <div class="text-xs mt-4">
@@ -150,31 +150,31 @@ useHead({
     </div>
     <div class="bg-gray-100 border-y border-gray-300 text-sm text-center sm:text-left">
         <div class="w-11/12 lg:w-9/12 mx-auto py-12 lg:py-16">
-            <h2 class=" text-sm">Wondering why you should sign in? <br class="sm:hidden" />Here are 3 Reasons...</h2>
+            <h2 class=" text-sm"><span class="h1 font-semibold text-lg">Why Join Kampa?</span> <br class="" />Here are 3 Reasons why you should Sign in to join us now...</h2>
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
                 <div class="space-y-2">
-                    <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-0.5">1</span></h4>
+                    <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white text-center pt-0.5">1</span></h4>
                     <h3 class="font-semibold">Exclusive Content + Give-aways</h3>
-                    <p>What will an extra 10K do for you? How about a 50% discount on TP back home at semester end? </p>
-                    <p>You will enjoy such give-aways along with exclusive content every other Saturday.</p>
+                    <p class="text-left">What will an extra 10K do for you? How about a 50% discount on Transport fare back home at semester end? </p>
+                    <p class="text-left">You'll enjoy such give-aways every now & then along with exclusive content every Saturday.</p>
                 </div>
                 <div class="space-y-2">
-                    <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-0.5">2</span></h4>
+                    <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white text-center pt-0.5">2</span></h4>
                     <h3 class="font-semibold">Become Smarter</h3>
-                    <p>Get smarter and stay ahead of the game with news curation that makes reading the news enjoyable, plus excellent career ideas we share in the #GraduateWell section.</p>
-                    <p>You'll love it!</p>
+                    <p class="text-left">Get smarter and stay ahead of the game with news curation that makes reading the news enjoyable, plus excellent career ideas we share in the #GraduateWell section.</p>
+                    <p class="text-left">You'll love it!</p>
                 </div>
                 <div class="space-y-2">
-                    <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white rounded-full text-center pt-0.5">3</span></h4>
+                    <h4><span class="mx-auto sm:mx-0 bg-red-600 block w-6 h-6 text-white text-center pt-0.5">3</span></h4>
                     <h3 class="font-semibold">It's for FREE</h3>
-                    <p>You don't have to pay anything to sign in even though what you'll get every Saturday is worth thousands of naira.</p>
-                    <p>Sign in and see for yourself.</p>
-                    <p>😎</p>
+                    <p class="text-left">You don't have to pay anything to sign in even though what you'll get every Saturday is worth thousands of naira.</p>
+                    <p class="text-left">Sign in to join and see for yourself.</p>
+                    <p class="text-left">😎</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="mt-20 w-11/12 lg:w-9/12 mx-auto p-10 border border-purple-600 space-y-4 text-xl">
+    <div class="mt-20 w-11/12 lg:w-9/12 mx-auto p-4 sm:p-10 border border-purple-600 space-y-4 sm:text-xl">
        
         <h2><span class="border-b border-purple-600">OUR MISSION</span></h2>
         <p>

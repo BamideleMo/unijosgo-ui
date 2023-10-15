@@ -175,11 +175,14 @@ useHead({
         </div>
     </div>
     <div class="mt-20 w-11/12 lg:w-9/12 mx-auto p-4 sm:p-10 border border-purple-600 space-y-4 sm:text-xl">
-       
         <h2><span class="border-b border-purple-600">OUR MISSION</span></h2>
-        <p>
-            Kampa informs and helps Nigerian Uni students become smarter by curating and creating smart, fun & localised content for students to enjoy.
-        </p>
+        <div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-6">
+            <p class="grow">
+                Kampa informs and helps Nigerian Uni students become smarter by curating and creating smart, fun & localised content for students to enjoy.
+            </p>
+            <div>
+            <GoogleLogin :callback="callback" class="border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" /></div>
+        </div>
     </div>
     <Footer />
 </template>

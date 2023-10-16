@@ -92,7 +92,7 @@ a,
     color: #000000;
     font-weight: bold;
     font-size: 20px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     /*  border-top: #000000 dashed 1px;*/
 }
 

@@ -113,7 +113,7 @@ a,
 
 .content h3 {
     margin-top: 8px;
-    color: #ff3300;
+    color: #1c7ff2;
     font-weight: bold;
     font-size: 19px;
     text-transform: capitalize;
@@ -121,15 +121,16 @@ a,
 }
 
 .content h4 {
-    color: #1c7ff2;
+    color: #000000;
     font-weight: 700;
     font-size: 16px;
     text-transform: capitalize;
     line-height: 19px;
+    border-bottom: #000000 dashed 1px;
 }
 
 .content a {
-    border-bottom: #1c7ff2 1px solid !important;
+    border-bottom: #ff3300 1px solid !important;
 }
 
 .content a:hover {

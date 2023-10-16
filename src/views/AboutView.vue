@@ -34,7 +34,6 @@ useHead({
             <p>
                 Asides localised campus gists, we also curate national news titbits published by major newspapers especially when it's about universities in Nigeria.
             </p>
-            <p>All of these will help you become smarter and stay well informed.</p>
             <p>
                 Now... </p>
             <p>To really understand this "plenty grammar", just sign in and see for yourself. 😎

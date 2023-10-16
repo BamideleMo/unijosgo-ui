@@ -121,13 +121,11 @@ a,
 }
 
 .content h4 {
-    color: #000000;
+    color: #666666;
     font-weight: 700;
     font-size: 16px;
     text-transform: capitalize;
     line-height: 19px;
-    text-decoration: underline;
-    text-decoration-style: dotted;
 }
 
 .content a {

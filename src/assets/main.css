@@ -126,8 +126,8 @@ a,
     font-size: 16px;
     text-transform: capitalize;
     line-height: 19px;
-    border-left: #1c7ff2 solid 4px;
-    padding-left: 1px;
+    border-left: #1c7ff2 solid 6px;
+    padding-left: 3px;
 }
 
 .content a {

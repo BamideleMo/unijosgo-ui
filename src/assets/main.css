@@ -126,7 +126,8 @@ a,
     font-size: 16px;
     text-transform: capitalize;
     line-height: 19px;
-    border-bottom: #000000 dashed 1px;
+    text-decoration: underline;
+    text-decoration-style: dashed;
 }
 
 .content a {

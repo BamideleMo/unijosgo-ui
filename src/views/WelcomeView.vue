@@ -86,7 +86,7 @@ onMounted(async () => {
         <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-5/12 lg:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">Welcome!</h1>
             <div class="sm:pt-0">
-                <p>Hi, so excited to have you. </p> <p>My name is Moses, creator of Kampa Newsletter.</p>
+                <p>Very excited to have you. </p> <p>My name is Moses, creator of Kampa Newsletter.</p>
                 <p>I created Kampa to help you stay informed, entertained and become smarter.</p>
                 <p>Pls sharply answer these 2 quick questions so you can delve in:</p>
                 <form @submit.prevent="submitForm" class="space-y-4">

@@ -203,13 +203,12 @@ onMounted(async () => {
                         Help the person earn a point & maybe a reward.
                     </p>
                     <p>
-                        Please enter the email address of that good person below and click submit.
+                        Just enter the email address of that good person below and click submit.
                     </p>
                     <p>
                         <b>Nobody referred you?</b>
-                    </p>
-                    <p>
-                        Don't want to provide that info now?
+                    or
+                        <b>Don't want to provide that info now?</b>
                     </p>
                     <p>
                         That's still awesome; just click on the SKIP button to continue.

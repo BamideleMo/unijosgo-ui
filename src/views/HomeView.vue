@@ -150,27 +150,27 @@ useHead({
     <div class="bg-gray-100 border-y border-gray-300 text-sm text-left sm:text-left">
         <div class="w-10/12 lg:w-9/12 mx-auto py-12 lg:py-16">
             <h2 class=" text-sm"><span class="h1 font-semibold text-lg">Why Join Kampa?</span> <br class="" />4 Reasons why you should Sign in to join:</h2>
-            <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
-                <div class="space-y-2">
+            <div class="mt-6 grid grid-cols-1 gap-y-6 sm:gap-0 sm:grid-cols-2">
+                <div class="space-y-2 sm:border-r sm:border-b sm:border-black sm:pt-4 sm:pr-4">
                     <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5 rounded-bl-lg rounded-tr-lg">1</span></h4>
                     <h3 class="font-semibold">Exclusive Content</h3>
                     <p class="text-left">Every Saturday you'll be able to read exclusive interview excerpts, opinions, gists and more; geared to make you better and stay relevantly informed.</p>
                 </div>
-                <div class="space-y-2">
+                <div class="space-y-2 sm:border-b sm:border-black sm:pl-4 sm:pb-4 sm:pt-4">
                     <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5 rounded-bl-lg rounded-tr-lg">2</span></h4>
                     <h3 class="font-semibold">Give-aways & Discounts</h3>
                     <p class="text-left">What will an extra 10K do for you? How about a 50% discount on Transport fare back home at semester end? </p>
                     <p class="text-left">You'll enjoy such give-aways and discounts every now & then.</p>
                 </div>
-                <div class="space-y-2">
+                <div class="space-y-2 sm:pt-4 sm:pr-4 sm:border-r sm:border-black">
                     <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5 rounded-bl-lg rounded-tr-lg">3</span></h4>
                     <h3 class="font-semibold">Become Smarter</h3>
                     <p class="text-left">Get smarter and stay ahead of the game with news curation that makes reading the news enjoyable, plus excellent career ideas we share in the #GraduateWell section.</p>
                     <p class="text-left">You'll love it!</p>
                 </div>
-                <div class="space-y-2">
+                <div class="space-y-2 sm:border-black sm:p-4">
                     <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5 rounded-bl-lg rounded-tr-lg">4</span></h4>
-                    <h3 class="font-semibold">It's for FREE</h3>
+                    <h3 class="font-semibold">It's FREE</h3>
                     <p class="text-left">You don't have to pay anything to sign in even though what you'll get every Saturday is worth a few thousands of naira.</p>
                     <p class="text-left">Sign in to join and see for yourself.</p>
                     <p class="text-left">😎</p>

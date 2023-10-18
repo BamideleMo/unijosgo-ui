@@ -2,6 +2,10 @@
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 import { useHead } from '@unhead/vue'
+import { useUserStore } from "../store/user-store";
+
+
+const authStore = useUserStore();
 
 useHead({
     title: 'About - Kampa',
@@ -32,15 +36,17 @@ useHead({
                 <em class="text-blue-500">Every Saturday</em> we share fun gists, interviews, opinions, give-aways and more
                 that we’ve gathered during the week.</p>
             <p>
-                We curate 'feel-good' news titbits published by major newspapers especially when it's about universities in Nigeria alongside  localised campus gists.
+                We curate 'feel-good' news titbits published by major newspapers especially when it's about universities in Nigeria alongside localised campus gists.
             </p>
-            <p>
-                Now... </p>
-            <p>To really understand this "plenty grammar", just sign in and see for yourself. 😎
-            </p>
-            <p>
-                <GoogleLogin :callback="callback" class="border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />
-            </p>
+            <div v-if="!authStore.cid">
+                <p>
+                    Now... </p>
+                <p>To really understand this "plenty grammar", just sign in and see for yourself. 😎
+                </p>
+                <p>
+                    <GoogleLogin :callback="callback" class="border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />
+                </p>
+            </div>
         </div>
     </div>
     <Footer />

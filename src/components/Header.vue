@@ -44,16 +44,9 @@ const toggleShowMenu = () => {
                         </RouterLink>
                     </p>
                 </li>
-                <!--<li v-if="!authStore.cid" class="border-b px-6 py-6">
-                    <RouterLink to="/subscribe" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
-                        Subsribe for FREE
-                    </RouterLink>
-                </li>
                 <li v-if="!authStore.cid" class="border-b px-6 py-6">
-                    <RouterLink to="/login" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
-                        Login
-                    </RouterLink>
-                </li>-->
+                    <GoogleLogin :callback="callback" class="border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />
+                </li>
                 <li v-if="authStore.cid" class="border-b px-6 py-6">
                     <RouterLink to="/archive" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
                         All Volumes
@@ -73,7 +66,7 @@ const toggleShowMenu = () => {
         </div>
     </div>
     <div class="bg-white border-b shadow-lg py-2">
-        <div class="w-11/12 lg:w-9/12 mx-auto flex justify-between">
+        <div class="w-10/12 lg:w-9/12 mx-auto flex justify-between">
             <Logo />
             <div class="pt-2.5 sm:pt-2.5 drop-shadow-lg">
                 <MenuIcon @click="toggleShowMenu" class="cursor-pointer hover:opacity-60 -mt-2 -mr-1" />

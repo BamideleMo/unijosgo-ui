@@ -87,7 +87,7 @@ onMounted(async () => {
 });
 
 useHead({
-    title: 'Kampa Newsletter',
+    title: 'Kampa',
     meta: [{
         name: 'description',
         content: `A weekly online newsletter for Nigerian Uni students. It's the modern campus magazine
@@ -121,7 +121,7 @@ useHead({
     <Header />
     <Loading v-if="isloading" />
     <div v-else>
-        <div class="w-11/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-10 xl:mt-10">
+        <div class="w-10/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-10 xl:mt-10">
             <div class="w-full mx-auto lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
                 <div class="hidden sm:block">&nbsp;</div>
                 <h1 class="mt-1 text-4xl sm:text-4xl lg:text-4xl xl:text-5xl font-normal">
@@ -141,7 +141,7 @@ useHead({
                     </span>
                 </div>
             </div>
-            <div class="w-11/12 sm:w-6/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 lg:-mt-2">
+            <div class="w-10/12 sm:w-6/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 lg:-mt-2">
                 <div class="px-2 lg:px-1 max-w-full mx-auto h-96 overflow-hidden drop-shadow-lg">
                     <img src="/kampa.png" class="w-full lg:float-right" />
                 </div>
@@ -149,7 +149,7 @@ useHead({
         </div>
     </div>
     <div class="bg-gray-100 border-y border-gray-300 text-sm text-left sm:text-left">
-        <div class="w-11/12 lg:w-9/12 mx-auto py-12 lg:py-16">
+        <div class="w-10/12 lg:w-9/12 mx-auto py-12 lg:py-16">
             <h2 class=" text-sm"><span class="h1 font-semibold text-lg">Why Join Kampa?</span> <br class="" />3 Reasons why you should Sign in to join:</h2>
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
                 <div class="space-y-2">
@@ -174,7 +174,7 @@ useHead({
             </div>
         </div>
     </div>
-    <div class="mt-20 w-11/12 lg:w-9/12 mx-auto p-4 sm:p-10 border border-black space-y-4 sm:text-xl">
+    <div class="mt-20 w-10/12 lg:w-9/12 mx-auto p-4 sm:p-10 border border-black space-y-4 sm:text-xl">
         <h2><span class="border-b border-black">OUR MISSION</span></h2>
         <div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-6">
             <p class="grow">

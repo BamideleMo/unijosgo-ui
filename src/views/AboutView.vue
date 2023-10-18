@@ -15,33 +15,31 @@ useHead({
 </script>
 <template>
     <Header />
-    <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
+    <div class="w-10/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
         <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">About</h1>
             <p>
                 Kampa informs and helps Nigerian Uni students become smarter by curating and creating smart, fun & localised content for students to enjoy.
             </p>
             <p>
-                It's a weekly online newsletter for Nigerian Uni students. A modern 
+                It's a weekly online newsletter for Nigerian Uni students. A modern
                 campus magazine
                 that provides the best social content created for students to
                 enjoy, stay informed, and become smarter.
             </p>
             <h2>🚀 What we do:</h2>
             <p>
-                <em class="text-blue-500">Every Saturday</em> we share fun gists, interviews, opinions, and more
+                <em class="text-blue-500">Every Saturday</em> we share fun gists, interviews, opinions, give-aways and more
                 that we’ve gathered during the week.</p>
             <p>
-                Asides localised campus gists, we also curate national news titbits published by major newspapers especially when it's about universities in Nigeria.
+                We curate 'feel-good' news titbits published by major newspapers especially when it's about universities in Nigeria alongside  localised campus gists.
             </p>
             <p>
                 Now... </p>
             <p>To really understand this "plenty grammar", just sign in and see for yourself. 😎
             </p>
-            <h2>☎️ Holla @ us:</h2>
             <p>
-                We're always excited to hear from you. Contact us today!<br />
-                <a href="https://wa.me/23408187084716" target="_blank" class="">0818 708 4716</a>
+                <GoogleLogin :callback="callback" class="border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />
             </p>
         </div>
     </div>

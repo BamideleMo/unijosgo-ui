@@ -189,7 +189,7 @@ onMounted(async () => {
     </div>
     <Header />
     <Loading v-if="isLoading" />
-    <div v-else class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
+    <div v-else class="w-10/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
         <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-7/12 lg:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">Who referred you?</h1>
             <div v-if="hasReferrer" class="grid grid-cols-1 sm:grid-cols-2 gap-4">

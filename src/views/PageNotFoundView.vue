@@ -7,7 +7,7 @@ const title = "Page Not Found";
 
 <template>
   <Header />
-  <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
+  <div class="w-10/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
     <div
       class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto"
     >

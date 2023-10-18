@@ -140,7 +140,7 @@ useHead({
 <template>
     <Header />
     <Loading v-if="!volumeContent" />
-    <div v-else class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-2">
+    <div v-else class="w-10/12 sm:w-10/12 lg:w-9/12 mx-auto py-2">
         <div class="content leading-snug lg:leading-loose space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto">
             <div class="date flex justify-between text-sm">
                 <span class="capitalize border-b border-black">Vol. #{{ volumeContent.volume }}</span>

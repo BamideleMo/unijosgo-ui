@@ -65,7 +65,7 @@ onMounted(async () => {
 <template>
   <Header />
   <Loading v-if="!content" />
-  <div v-else class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
+  <div v-else class="w-10/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
     <div
       class=" text-sm leading-normal space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto"
     >

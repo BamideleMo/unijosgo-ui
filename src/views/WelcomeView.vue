@@ -82,7 +82,7 @@ onMounted(async () => {
 </script>
 <template>
     <Header />
-    <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
+    <div class="w-10/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
         <div class="content text-sm leading-normal space-y-4 mt-2 lg:mt-4 lg:w-5/12 lg:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">Welcome!</h1>
             <div class="sm:pt-0">

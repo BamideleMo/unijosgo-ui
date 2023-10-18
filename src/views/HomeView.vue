@@ -124,12 +124,11 @@ useHead({
         <div class="w-10/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-10 xl:mt-10">
             <div class="w-full mx-auto lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
                 <div class="hidden sm:block">&nbsp;</div>
-                <h1 class="mt-1 text-4xl sm:text-4xl lg:text-4xl xl:text-5xl font-normal">
+                <h1 class="mt-1 text-2xl sm:text-4xl lg:text-4xl xl:text-5xl font-normal">
                     <span class="font-semibold">Get Informative, Fun, & Relevant Campus Gists.</span><br />Every Saturday.
                 </h1>
                 <p class="mt-4 text-base sm:text-base">
-                    Sign in to join 1,650+ students enjoying localised campus news, interviews, opinions,
-                    give-aways & exclusive discounts.
+                    Sign in now to join 1,650+ students enjoying exclusive content & becoming smarter for FREE!
                 </p>
                 <GoogleLogin :callback="callback" class="mt-6 border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />
                 <div class="text-xs mt-4">
@@ -141,7 +140,7 @@ useHead({
                     </span>
                 </div>
             </div>
-            <div class="w-10/12 sm:w-6/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 lg:-mt-2">
+            <div class="w-11/12 sm:w-6/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 lg:-mt-2">
                 <div class="px-2 lg:px-1 max-w-full mx-auto h-96 overflow-hidden drop-shadow-lg">
                     <img src="/kampa.png" class="w-full lg:float-right" />
                 </div>
@@ -153,21 +152,21 @@ useHead({
             <h2 class=" text-sm"><span class="h1 font-semibold text-lg">Why Join Kampa?</span> <br class="" />3 Reasons why you should Sign in to join:</h2>
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
                 <div class="space-y-2">
-                    <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5">1</span></h4>
-                    <h3 class="font-semibold">Exclusive Content + Give-aways</h3>
+                    <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5 rounded-bl-lg rounded-tr-lg">1</span></h4>
+                    <h3 class="font-semibold">Exclusive Content + Give-aways & Discounts</h3>
                     <p class="text-left">What will an extra 10K do for you? How about a 50% discount on Transport fare back home at semester end? </p>
-                    <p class="text-left">You'll enjoy such give-aways every now & then along with exclusive content every Saturday.</p>
+                    <p class="text-left">You'll enjoy such give-aways + discounts every now & then along with exclusive content every Saturday.</p>
                 </div>
                 <div class="space-y-2">
-                    <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5">2</span></h4>
+                    <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5 rounded-bl-lg rounded-tr-lg">2</span></h4>
                     <h3 class="font-semibold">Become Smarter</h3>
                     <p class="text-left">Get smarter and stay ahead of the game with news curation that makes reading the news enjoyable, plus excellent career ideas we share in the #GraduateWell section.</p>
                     <p class="text-left">You'll love it!</p>
                 </div>
                 <div class="space-y-2">
-                    <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5">3</span></h4>
+                    <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5 rounded-bl-lg rounded-tr-lg">3</span></h4>
                     <h3 class="font-semibold">It's for FREE</h3>
-                    <p class="text-left">You don't have to pay anything to sign in even though what you'll get every Saturday is worth thousands of naira.</p>
+                    <p class="text-left">You don't have to pay anything to sign in even though what you'll get every Saturday is worth a few thousands of naira.</p>
                     <p class="text-left">Sign in to join and see for yourself.</p>
                     <p class="text-left">😎</p>
                 </div>

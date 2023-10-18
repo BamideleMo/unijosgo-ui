@@ -33,15 +33,16 @@ useHead({
             </p>
             <h2>🚀 What we do:</h2>
             <p>
-                <em class="text-blue-500">Every Saturday</em> we share fun gists, interviews, opinions, give-aways and more
+                <em class="text-blue-500">Every Saturday</em> we share fun gists, interviews, opinions, and more
                 that we’ve gathered during the week.</p>
             <p>
-                We curate 'feel-good' news titbits published by major newspapers especially when it's about universities in Nigeria alongside localised campus gists.
+                We curate 'feel-good' news titbits published by reputable news outlets especially when it's about 
+                pop culture, governance or university education in Nigeria alongside localised campus gists.
             </p>
             <div v-if="!authStore.cid">
                 <p>
                     Now... </p>
-                <p>To really understand this "plenty grammar", just sign in and see for yourself. 😎
+                <p>To better understand all this "plenty grammar", just sign in to see for yourself:
                 </p>
                 <p>
                     <GoogleLogin :callback="callback" class="border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />

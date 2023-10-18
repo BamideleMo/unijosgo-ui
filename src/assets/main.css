@@ -126,8 +126,9 @@ a,
     font-size: 16px;
     text-transform: capitalize;
     line-height: 19px;
-    border-left: #1c7ff2 solid 6px;
-    padding-left: 3px;
+    text-decoration: underline;
+    text-decoration-color: #1c7ff2;
+    text-decoration-thickness: 2px;
 }
 
 .content a {

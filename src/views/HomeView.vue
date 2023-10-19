@@ -3,12 +3,13 @@ import { ref, onMounted } from "vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 import Loading from "../components/Loading.vue";
+import MyGoogleSignIn from "../components/GoogleSignIn.vue";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../store/user-store";
 import axios from "axios";
 import { useHead } from '@unhead/vue'
 
-import { decodeCredential } from 'vue3-google-login'
+// import { decodeCredential } from 'vue3-google-login'
 
 
 const router = useRouter();
@@ -25,56 +26,55 @@ const toggleOtherUni = () => {
     otherUni.value = !otherUni.value;
 }
 
-const userData = ref(null);
-const callback = (response) => {
-    userData.value = decodeCredential(response.credential);
-    registerNow();
-}
+// const userData = ref(null);
+// const callback = (response) => {
+//     userData.value = decodeCredential(response.credential);
+//     registerNow();
+// }
+
+// const loginNow = async () => {
+
+//     try {
+//         let res = await axios.post(API_URL + "users/login", {
+//             username: userData.value.email,
+//             password: "1234",
+//         });
+
+//         authStore.setUserDetails(res);
+
+//         if (res.data.user.status === 'incomplete') {
+//             router.push({
+//                 name: "welcome",
+//             });
+//         } else {
+//             router.push({
+//                 name: "gist",
+//             });
+
+//         }
+
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
 
 
-const loginNow = async () => {
-
-    try {
-        let res = await axios.post(API_URL + "users/login", {
-            username: userData.value.email,
-            password: "1234",
-        });
-
-        authStore.setUserDetails(res);
-
-        if (res.data.user.status === 'incomplete') {
-            router.push({
-                name: "welcome",
-            });
-        } else {
-            router.push({
-                name: "gist",
-            });
-
-        }
-
-    } catch (error) {
-        console.log(error);
-    }
-};
-
-
-const registerNow = async () => {
-    try {
-        let res = await axios.post(API_URL + "users/register", {
-            name: userData.value.given_name,
-            username: userData.value.email,
-            campus: "unknown",
-            level: "unknown",
-            password: "1234",
-            user_category: "user",
-            status: "incomplete",
-        });
-        loginNow();
-    } catch (error) {
-        console.log(error)
-    }
-};
+// const registerNow = async () => {
+//     try {
+//         let res = await axios.post(API_URL + "users/register", {
+//             name: userData.value.given_name,
+//             username: userData.value.email,
+//             campus: "unknown",
+//             level: "unknown",
+//             password: "1234",
+//             user_category: "user",
+//             status: "incomplete",
+//         });
+//         loginNow();
+//     } catch (error) {
+//         console.log(error)
+//     }
+// };
 
 onMounted(async () => {
     if (authStore.cid) {
@@ -119,29 +119,29 @@ useHead({
         </div>
     </div>
     <Header />
-    <Loading v-if="isloading" />
+    <Loading class="mt-80" v-if="isloading" />
     <div v-else>
-        <div class="w-10/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 lg:mt-10 xl:mt-10">
-            <div class="w-full mx-auto lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
-                <div class="hidden sm:block">&nbsp;</div>
+        <div class="w-10/12 lg:w-9/12 mx-auto sm:flex sm:space-x-6 lg:space-x-12 mt-10 sm:mt-12 lg:mt-20 xl:mt-20">
+            <div class="w-full mx-auto sm:w-7/12 lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
+                <div class="hidden lg:block">&nbsp;</div>
                 <h1 class="mt-1 text-2xl sm:text-4xl lg:text-4xl xl:text-5xl font-normal">
                     <span class="font-semibold">Get Informative, Fun, & Relevant Campus Gists.</span><br />Every Saturday.
                 </h1>
                 <p class="mt-4 text-base sm:text-base">
-                    Sign in now to join 1,650+ students enjoying exclusive content & becoming smarter for FREE!
+                    Sign in now to join other students enjoying exclusive content & becoming smarter for FREE!
                 </p>
-                <GoogleLogin :callback="callback" class="mt-6 border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />
-                <div class="text-xs mt-4">
+                <MyGoogleSignIn/>
+                <!--<div class="text-xs mt-4">
                     <span>
                         <b class="text-blue-800">
                             Present in:
                         </b>
                         UNIJOS, UNIABUJA & <span @click="toggleOtherUni" class="border-b border-dotted border-red-600 hover:border-gray-400 hover:text-gra-400 cursor-pointer">3 more</span>.
                     </span>
-                </div>
+                </div>-->
             </div>
-            <div class="w-11/12 sm:w-6/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 lg:-mt-2">
-                <div class="px-2 lg:px-1 max-w-full mx-auto h-96 overflow-hidden drop-shadow-lg">
+            <div class="w-11/12 sm:w-5/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 sm:-mt-2">
+                <div class="px-2 lg:px-1 max-w-full mx-auto h-80 lg:h-96 overflow-hidden drop-shadow-lg">
                     <img src="/kampa.png" class="w-full lg:float-right" />
                 </div>
             </div>
@@ -149,43 +149,46 @@ useHead({
     </div>
     <div class="bg-gray-100 border-y border-gray-300 text-sm text-left sm:text-left">
         <div class="w-10/12 lg:w-9/12 mx-auto py-12 lg:py-16">
-            <h2 class=" text-sm"><span class="h1 font-semibold text-lg">Why Join Kampa?</span> <br class="" />4 Reasons why you should Sign in to join:</h2>
+            <h2 class=" text-sm"><span class="h1 font-semibold text-lg capitalize leading-tight">4 Reasons why you should Sign in & join Kampa now:</span></h2>
             <div class="mt-6 grid grid-cols-1 gap-y-6 sm:gap-0 sm:grid-cols-2">
                 <div class="space-y-2 sm:border-r sm:border-b sm:border-black sm:pt-4 sm:pr-4">
                     <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5 rounded-bl-lg rounded-tr-lg">1</span></h4>
-                    <h3 class="font-semibold">Exclusive Content</h3>
-                    <p class="text-left">Every Saturday you'll be able to read exclusive interview excerpts, opinions, gists and more; geared to make you better and stay relevantly informed.</p>
+                    <h3 class="font-semibold">Exclusive Gists</h3>
+                    <p class="text-left">Every Saturday we post exclusive interview excerpts, localised news,
+                        and more to keep you well informed.</p>
+                    <p>Just what you'll need to relax through the weekend.</p>
                 </div>
-                <div class="space-y-2 sm:border-b sm:border-black sm:pl-4 sm:pb-4 sm:pt-4">
+                <div class="space-y-2 border-y sm:border-y-0 sm:border-b border-black sm:pl-4 pb-4 pt-4">
                     <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5 rounded-bl-lg rounded-tr-lg">2</span></h4>
                     <h3 class="font-semibold">Give-aways & Discounts</h3>
                     <p class="text-left">What will an extra 10K do for you? How about a 50% discount on Transport fare back home at semester end? </p>
-                    <p class="text-left">You'll enjoy such give-aways and discounts every now & then.</p>
+                    <p class="text-left">You'll get access to such give-aways and discounts every now & then.</p>
                 </div>
-                <div class="space-y-2 sm:pt-4 sm:pr-4 sm:border-r sm:border-black">
+                <div class="space-y-2 pb-4 sm:pb-0 sm:pt-4 sm:pr-4 border-b sm:border-b-0 sm:border-r border-black">
                     <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5 rounded-bl-lg rounded-tr-lg">3</span></h4>
-                    <h3 class="font-semibold">Become Smarter</h3>
-                    <p class="text-left">Get smarter and stay ahead of the game with news curation that makes reading the news enjoyable, plus excellent career ideas we share in the #GraduateWell section.</p>
+                    <h3 class="font-semibold">It'll make you Smarter</h3>
+                    <p class="text-left">Keep getting smarter and stay ahead of the game with our curation of relevant news, plus the excellent career ideas & resources we share in the "Graduate Well" and "Free Resource" sections.</p>
                     <p class="text-left">You'll love it!</p>
                 </div>
-                <div class="space-y-2 sm:border-black sm:p-4">
+                <div class="space-y-2 sm:p-4">
                     <h4><span class="mx-0 sm:mx-0 bg-black block w-6 h-6 text-white text-center pt-0.5 rounded-bl-lg rounded-tr-lg">4</span></h4>
                     <h3 class="font-semibold">It's FREE</h3>
-                    <p class="text-left">You don't have to pay anything to sign in even though what you'll get every Saturday is worth a few thousands of naira.</p>
+                    <p class="text-left">You don't have to pay to sign in even though what you'll be getting every Saturday is worth a few thousands of naira.</p>
                     <p class="text-left">Sign in to join and see for yourself.</p>
                     <p class="text-left">😎</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="mt-20 w-10/12 lg:w-9/12 mx-auto p-4 sm:p-10 border border-black space-y-4 sm:text-xl">
-        <h2><span class="border-b border-black">OUR MISSION</span></h2>
-        <div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-6">
+    <div class="mt-10 w-10/12 lg:w-9/12 mx-auto p-4 sm:p-10 border border-black space-y-4 sm:text-xl">
+        <h2><span class="border-b border-black">😎</span></h2>
+        <div class="flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:space-x-6">
             <p class="grow">
-                Kampa informs and helps Nigerian Uni students become smarter by curating and creating smart, fun & localised content for students to enjoy.
+                Kampa informs and helps Nigerian Uni students become smarter by curating and creating relevant, fun & localised content for students to enjoy.
             </p>
             <div>
-            <GoogleLogin :callback="callback" class="border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" /></div>
+                <MyGoogleSignIn/>
+            </div>
         </div>
     </div>
     <Footer />

@@ -5,6 +5,7 @@ import Logo from "./Logo.vue";
 import MenuIcon from "./icons/IconMenu.vue"
 import IconClose from "./icons/IconClose.vue"
 import { useRouter } from "vue-router";
+import MyGoogleSignIn from "../components/GoogleSignIn.vue";
 
 const authStore = useUserStore();
 const router = useRouter();
@@ -36,7 +37,7 @@ const toggleShowMenu = () => {
                 <li class="border-b px-6 py-6 space-y-4">
                     <p class="font-semibold h1 text-lg">About</p>
                     <p>
-                        Kampa informs and helps Nigerian Uni students become smarter by curating and creating smart, fun & localised content for students to enjoy.
+                        Kampa informs and helps Nigerian Uni students become smarter by curating and creating relevant, fun & localised content for students to enjoy.
                     </p>
                     <p>
                         <RouterLink to="/about" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
@@ -45,7 +46,7 @@ const toggleShowMenu = () => {
                     </p>
                 </li>
                 <li v-if="!authStore.cid" class="border-b px-6 py-6">
-                    <GoogleLogin :callback="callback" class="border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />
+                    <MyGoogleSignIn />
                 </li>
                 <li v-if="authStore.cid" class="border-b px-6 py-6">
                     <RouterLink to="/archive" class="border-b border-red-600 hover:opacity-60 cursor-pointer">

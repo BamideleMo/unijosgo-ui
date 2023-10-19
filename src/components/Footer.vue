@@ -10,7 +10,10 @@ const authStore = useUserStore();
 
 const showForm = ref(false);
 
-const doShowForm = (which) => {
+const which = ref(null);
+const doShowForm = (wh) => {
+    console.log
+    which.value = wh;
     showForm.value = !showForm.value;
 };
 
@@ -19,12 +22,12 @@ const closeForm = () => {
 };
 </script>
 <template>
-    <ComingSoon v-if="showForm" @close-form="closeForm" />
+    <ComingSoon v-if="showForm" :which="which" @close-form="closeForm" />
     <footer class="py-10 mt-20 border-t border-gray-400 text-xs sm:text-xs text-black">
         <div class="w-11/12 sm:w-10/12 lg:w-9/12 mx-auto flex justify-between">
             <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-                <img @click="doShowForm" src="/play-store.png" class="cursor-pointer h-10 sm:h-10 hover:opacity-60" />
-                <img @click="doShowForm" src="/app-store.png" class="cursor-pointer h-10 sm:h-10 hover:opacity-60" />
+                <img @click="doShowForm('Android')" src="/play-store.png" class="cursor-pointer h-10 sm:h-10 hover:opacity-60" />
+                <img @click="doShowForm('iOS')" src="/app-store.png" class="cursor-pointer h-10 sm:h-10 hover:opacity-60" />
             </div>
             <div class="flex flex-col space-y-6 sm:flex-row sm:space-y-0 sm:space-x-4 lg:space-x-6 sm:pt-2">
                 <div>

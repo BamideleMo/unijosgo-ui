@@ -87,6 +87,10 @@ a,
     line-height: 20px !important;
 }
 
+.what {
+    font-size: 18px!important;
+}
+
 .content h2 {
     padding-top: 8px;
     color: #bf2434;

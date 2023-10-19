@@ -21,6 +21,10 @@ useHead({
     >
       <h1 class="h1 font-semibold text-lg text-center">Terms, Disclaimer & Privacy Policy</h1>
       <p>
+        You are not allowed to use this website or associated platforms if you
+        are below 18 years of age.
+      </p>
+      <p>
         This website and the contents provided herein are simply for fun and
         general information purposes only.
       </p>
@@ -30,10 +34,6 @@ useHead({
         any liability to any part of the loss, damage or disruption caused by
         errors or omissions, negligence or other causes that may be linked to
         this platform.
-      </p>
-      <p>
-        You are not allowed to use this website or associated platforms if you
-        are below 18 years of age.
       </p>
       <p>
         Your privacy is important and so we'll never give your information to any other entity.

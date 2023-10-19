@@ -130,6 +130,7 @@ useHead({
                 <p class="mt-4 text-base sm:text-base">
                     Sign in now to join other students enjoying exclusive content & becoming smarter for FREE!
                 </p>
+                <p>&nbsp;</p>
                 <MyGoogleSignIn/>
                 <!--<div class="text-xs mt-4">
                     <span>

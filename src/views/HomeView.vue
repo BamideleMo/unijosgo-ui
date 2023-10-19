@@ -181,7 +181,7 @@ useHead({
         </div>
     </div>
     <div class="mt-10 w-10/12 lg:w-9/12 mx-auto p-4 sm:p-10 border border-black space-y-4 sm:text-xl">
-        <h2><span class="border-b border-black">✌🏽</span></h2>
+        <h2><span class="text-xl">✌🏿</span></h2>
         <div class="flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:space-x-6">
             <p class="grow">
                 Kampa informs and helps Nigerian Uni students become smarter by curating and creating relevant, fun & localised content for students to enjoy.

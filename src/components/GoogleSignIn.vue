@@ -2,6 +2,11 @@
 import { ref, onMounted } from "vue";
 import axios from "axios";
 import { decodeCredential } from 'vue3-google-login';
+import { useRouter } from "vue-router";
+import { useUserStore } from "../store/user-store";
+
+const router = useRouter();
+const authStore = useUserStore();
 
 const API_URL =
     import.meta.env.VITE_API_URL;

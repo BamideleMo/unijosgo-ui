@@ -12,10 +12,13 @@ const API_URL =
     import.meta.env.VITE_API_URL;
 
 
+const isProcessing = ref(false);
+
 const userData = ref(null);
 const callback = (response) => {
     userData.value = decodeCredential(response.credential);
     registerNow();
+    isProcessing.value = true;
 }
 
 const loginNow = async () => {
@@ -63,5 +66,6 @@ const registerNow = async () => {
 };
 </script>
 <template>
-    <GoogleLogin :callback="callback" class="border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />
+    <span v-if="isProcessing" class="border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600 p-2 text-xs animate-pulse">Signing in ...</span>
+    <GoogleLogin :callback="callback" v-else class="border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />
 </template>

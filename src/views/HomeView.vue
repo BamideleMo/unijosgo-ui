@@ -124,7 +124,7 @@ useHead({
         <div class="w-10/12 lg:w-9/12 mx-auto sm:flex sm:space-x-6 lg:space-x-12 mt-10 sm:mt-12 lg:mt-20 xl:mt-20">
             <div class="w-full mx-auto sm:w-7/12 lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
                 <div class="hidden lg:block">&nbsp;</div>
-                <h1 class="mt-1 text-2xl sm:text-4xl lg:text-4xl xl:text-5xl font-normal">
+                <h1 class="mt-1 text-4xl sm:text-4xl lg:text-4xl xl:text-5xl font-normal">
                     <span class="font-semibold">Get Informative, Fun, & Relevant Campus Gists.</span><br />Every Saturday.
                 </h1>
                 <p class="mt-4 text-base sm:text-base">
@@ -141,14 +141,14 @@ useHead({
                     </span>
                 </div>-->
             </div>
-            <div class="w-11/12 sm:w-5/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 sm:-mt-2">
+            <div class="hidden sm:block w-11/12 sm:w-5/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 sm:-mt-2">
                 <div class="px-2 lg:px-1 max-w-full mx-auto h-80 lg:h-96 overflow-hidden drop-shadow-lg">
                     <img src="/kampa.png" class="w-full lg:float-right" />
                 </div>
             </div>
         </div>
     </div>
-    <div class="bg-gray-100 border-y border-gray-300 text-sm text-left sm:text-left">
+    <div class="mt-8 sm:mt-0 bg-gray-100 border-y border-gray-300 text-sm text-left sm:text-left">
         <div class="w-10/12 lg:w-9/12 mx-auto py-12 lg:py-16">
             <h2 class=" text-sm"><span class="h1 font-semibold text-lg capitalize leading-tight">4 Reasons why you should Sign in & join Kampa now:</span></h2>
             <div class="mt-6 grid grid-cols-1 gap-y-6 sm:gap-0 sm:grid-cols-2">

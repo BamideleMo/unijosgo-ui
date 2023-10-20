@@ -37,7 +37,7 @@ const closeForm = () => {
                 </div>
                 <div>
                     <RouterLink to="/disclaimer" class="border-b border-red-600 hover:opacity-60 cursor-pointer">
-                        Disclaimer
+                        Terms of use
                     </RouterLink>
                 </div>
                 <div>

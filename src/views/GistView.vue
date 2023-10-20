@@ -152,6 +152,8 @@ useHead({
                 </span>
             </div>
             <div v-html="volumeContent.gist"></div>
+            <p>Share this custom referral code: https://kampa.ng/?ref={{userStore.cid}}</p>
+            <p>Your referral count: <br/>Total = 0<br/>In Oct = 0</p>
         </div>
     </div>
     <Footer />

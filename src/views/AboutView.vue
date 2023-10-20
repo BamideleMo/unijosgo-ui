@@ -23,7 +23,7 @@ useHead({
     <div class="w-10/12 sm:w-10/12 lg:w-9/12 mx-auto py-5">
         <div class="content text-sm space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto">
             <h1 class="h1 font-semibold text-lg text-center">About</h1>
-            <div class="text-xl text-gray-600"><a href="https://www.kampa.ng">www.kampa.ng</a> is the modern
+            <div class="text-xl"><a href="https://www.kampa.ng">www.kampa.ng</a> is the modern
                 campus newsletter
                 that provides the best social content created for students in Nigerian Universities to
                 enjoy, stay informed, and become smarter.
@@ -36,15 +36,16 @@ useHead({
                 entertainment, tech, governance, & pop culture across Nigeria.
             </p>
             <p>
-                We gather localised campus gists, excerpts from exclusive interviews, student surveys, opinions, & more.
+                We also collect localised campus gists, excerpts from exclusive interviews, student surveys, opinions, & more.
             </p>
             <p>
-                Then on <em class="text-blue-500">Saturday</em>, we share all of it as one enjoyable newsletter. 🚀 
+                Then . . .
+            </p>
+            <p>
+                On <em class="text-blue-500">Saturday</em>, we post all of that as one enjoyable newsletter to keep you informed and entertained. 🚀
             </p>
             <div v-if="!authStore.cid">
-                <p>
-                    Now...
-                </p>
+                <p>Now:</p>
                 <p>To really understand all this "plenty grammar", just sign in & see for yourself:
                 </p>
                 <p>

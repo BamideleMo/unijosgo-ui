@@ -139,7 +139,7 @@ useHead({
 </script>
 <template>
     <Header />
-    <Loading class="mt-80" v-if="!volumeContent" />
+    <Loading class="mt-64" v-if="!volumeContent" />
     <div v-else class="w-10/12 sm:w-10/12 lg:w-9/12 mx-auto py-2">
         <div class="content space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto">
             <div class="date flex justify-between text-sm">

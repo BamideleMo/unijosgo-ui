@@ -119,7 +119,7 @@ useHead({
         </div>
     </div>
     <Header />
-    <Loading class="mt-80" v-if="isloading" />
+    <Loading class="mt-64" v-if="isloading" />
     <div v-else>
         <div class="w-10/12 lg:w-9/12 mx-auto sm:flex sm:space-x-6 lg:space-x-12 mt-10 sm:mt-12 lg:mt-20 xl:mt-20">
             <div class="w-full mx-auto sm:w-7/12 lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">

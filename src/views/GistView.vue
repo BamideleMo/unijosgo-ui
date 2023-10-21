@@ -147,13 +147,13 @@ useHead({
                 <span class="capitalize border-b border-black">{{ volumeContent.post_date }}</span>
             </div>
             <div class="text-center py-6">
-                <span class="capitalize text-gray-500 text-4xl">
+                <span class="capitalize text-gray-500 text-3xl sm:text-4xl">
                     Kampa<b class="text-black uppercase">@{{user.campus}}</b>
                 </span>
             </div>
             <div v-html="volumeContent.gist"></div>
-            <p class="pt-10">Your custom referral code: {{userStore.cid}}</p>
-            <p>Your referral count: 0</p>
+            <div class="font-semibold"><p class="pt-10">Your custom referral code: {{userStore.cid}}</p>
+            <p>Your referral count: 0</p></div>
         </div>
     </div>
     <Footer />

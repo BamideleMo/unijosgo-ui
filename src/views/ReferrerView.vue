@@ -3,6 +3,7 @@ import { ref, onMounted } from "vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 import SubmitReferrer from "../components/SubmitReferrer.vue";
+import Loading from "../components/Loading.vue";
 import axios from "axios";
 import { useUserStore } from "../store/user-store";
 import { useRouter } from "vue-router";
@@ -145,21 +146,20 @@ onMounted(async () => {
             <div v-if="!hasReferrer">
                 <p>You're yet to provide the 'unique referral code' of the person who told you about Kampa. If you do, the person will earn a point that might get him/her a reward.</p>
                 <p>
-                    <span class="link">Click here</span> to submit the 'unique referral code' of the person. HOWEVER . . . if no one invited you just ignore this.
+                    <span @click="doShowForm" class="link">Click here to submit the 'unique referral code' of the person</span>. HOWEVER . . . if no one invited you just ignore this.
                 </p>
             </div>
             <div v-else>
                 <p>{{referredBy.name}} in {{referredBy.campus}} invited you to Kampa & we're thankful to him. Return the favour & invite someone too.</p>
             </div>
-            <h2>Share Kampa:</h2>
-            <p>Don’t keep us a secret.</p>
-            <p>Tell your friends to join Kampa too. You can even show them how to join.</p>
-            <p>
-                Ask them to use your 'unique referral code' when asked so you will earn a point that may get you rewards. Because there will be different rewards for varying milestones every now and then.
-            </p>
             <h2>Referral Report:</h2>
             <p>Your {{currentMonth}} referral count is: <b>{{monthlyRef}}</b></p>
             <p>Your total referral count is: <b>{{totalRef}}</b></p>
+            <h2>Don’t keep us a secret:</h2>
+            <p>Tell your friends to join Kampa too. You can even show them how to join.</p>
+            <p>
+                Tell them to use your 'unique referral code' when asked so you will earn a point. Because there will be different rewards for varying milestones every now and then.
+            </p>
         </div>
     </div>
     <Footer />

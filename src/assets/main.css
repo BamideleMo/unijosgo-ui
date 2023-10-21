@@ -96,7 +96,7 @@ a,
     color: #bf2434;
     font-weight: bold;
     font-size: 13px;
-    text-transform: uppercase;
+/*    text-transform: capitalize;*/
     /*  border-top: #000000 dashed 1px;*/
 }
 

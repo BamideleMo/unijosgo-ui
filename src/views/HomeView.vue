@@ -125,21 +125,13 @@ useHead({
             <div class="w-full mx-auto sm:w-7/12 lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg">
                 <div class="hidden lg:block">&nbsp;</div>
                 <h1 class="mt-1 text-4xl sm:text-4xl lg:text-4xl xl:text-5xl font-normal">
-                    <span class="font-semibold">Get Informative, Fun, & Relevant Campus Gists.</span><br />Every Saturday.
+                    <span class="font-semibold">Get Informative, Fun, & Relevant <span class="stressed">Campus Gists</span>.</span><br />Every Saturday.
                 </h1>
                 <p class="mt-4 text-base sm:text-base">
                     Sign in now to join other students enjoying exclusive content & becoming smarter for FREE!
                 </p>
                 <p>&nbsp;</p>
                 <MyGoogleSignIn/>
-                <!--<div class="text-xs mt-4">
-                    <span>
-                        <b class="text-blue-800">
-                            Present in:
-                        </b>
-                        UNIJOS, UNIABUJA & <span @click="toggleOtherUni" class="border-b border-dotted border-red-600 hover:border-gray-400 hover:text-gra-400 cursor-pointer">3 more</span>.
-                    </span>
-                </div>-->
             </div>
             <div class="hidden sm:block w-11/12 sm:w-5/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 sm:-mt-2">
                 <div class="px-2 lg:px-1 max-w-full mx-auto h-80 lg:h-96 overflow-hidden drop-shadow-lg">
@@ -194,8 +186,14 @@ useHead({
     </div>
     <Footer />
 </template>
-<style>
+<style scoped>
 :selected {
     color: red;
+}
+.stressed{
+    background-image: linear-gradient(to top, orange, yellow, transparent);
+        background-position: 0 85%;
+        background-repeat: no-repeat;
+        background-size: auto .40rem;
 }
 </style>

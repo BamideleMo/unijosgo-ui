@@ -107,7 +107,7 @@ const createReferrer = () => {
         <div class="w-11/12 lg:w-6/12 mx-auto mt-10 sm:mt-20 bg-white p-5 sm:p-10 rounded-lg">
             <div class="flex justify-between border-b border-black">
                 <h1 class="h1 font-semibold text-lg">
-                    Submit Referrer's Unique Referral Code
+                    Submit Code
                 </h1>
                 <svg @click="$emit('closeForm')" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 -mt-2 -mr-2 text-slate-900 hover:opacity-60 cursor-pointer">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -120,7 +120,8 @@ const createReferrer = () => {
                 </div>
                 <form v-else @submit.prevent="submitForm" class="space-y-4">
                     <div>
-                        <input type="text" v-model="formData.referrer" @blur="v$.referrer.$touch" @keydown.space.prevent placeholder="Type Referrer's Unique Referral Code here..." class="bg-white placeholder:text-gray-400 border border-black h-12 p-1 w-full outline-none disabled:text-red-600" />
+                        <p>Enter the Unique Referral Code of the person who told you about Kampa below and click the submit button.</p>
+                        <input type="text" v-model="formData.referrer" @blur="v$.referrer.$touch" @keydown.space.prevent placeholder="Type Code here..." class="bg-white placeholder:text-gray-400 border border-black h-12 p-1 w-full outline-none disabled:text-red-600" />
                         <div class="text-right text-red-600 animate-pulse font-semibold mt-1 text-xs" v-if="v$.referrer.$error">
                             <span class="w-16 float-right -mt-9 mr-2 text-xs">
                                 <span>{{ v$.referrer.$errors[0].$message }}</span></span>
@@ -129,25 +130,18 @@ const createReferrer = () => {
                     <div v-if="errorMessage" class="bg-black animate-pulse text-white text-xs p-2 mt-2 border-l-4 border-purple-900">
                         {{ errorMessage }}
                     </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <button @click="skip" class="w-full bg-blue-900 shadow-lg p-3 hover:opacity-60 text-white rounded-lg">
-                                Skip for Now
+                    <div class="">
+                        <button v-if="v$.$invalid" disabled class="w-full bg-gray-400 shadow-lg cursor-not-allowed p-3 opacity-60 text-white rounded-lg">
+                            Submit
+                        </button>
+                        <span v-else>
+                            <button v-if="isProcessing" disabled class="w-full bg-orange-400 shadow-lg cursor-not-allowed p-3 animate-pulse opacity-60 text-white rounded-lg">
+                                Processing.. .
                             </button>
-                        </div>
-                        <div>
-                            <button v-if="v$.$invalid" disabled class="w-full bg-gray-400 shadow-lg cursor-not-allowed p-3 opacity-60 text-white rounded-lg">
+                            <button v-else class="w-full bg-red-500 shadow-lg p-3 hover:opacity-60 text-white rounded-lg">
                                 Submit
                             </button>
-                            <span v-else>
-                                <button v-if="isProcessing" disabled class="w-full bg-orange-400 shadow-lg cursor-not-allowed p-3 animate-pulse opacity-60 text-white rounded-lg">
-                                    Processing.. .
-                                </button>
-                                <button v-else class="w-full bg-red-500 shadow-lg p-3 hover:opacity-60 text-white rounded-lg">
-                                    Submit
-                                </button>
-                            </span>
-                        </div>
+                        </span>
                     </div>
                 </form>
             </div>

@@ -12,7 +12,6 @@ const showForm = ref(false);
 
 const which = ref(null);
 const doShowForm = (wh) => {
-    console.log
     which.value = wh;
     showForm.value = !showForm.value;
 };

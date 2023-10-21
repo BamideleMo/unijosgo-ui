@@ -36,7 +36,7 @@ const router = createRouter({
       component: WelcomeView,
     },
     {
-      path: "/referrer",
+      path: "/referral",
       name: "referrer",
       component: ReferrerView,
     },

@@ -96,8 +96,6 @@ a,
     color: #bf2434;
     font-weight: bold;
     font-size: 13px;
-/*    text-transform: capitalize;*/
-    /*  border-top: #000000 dashed 1px;*/
 }
 
 .content h2::before {
@@ -134,11 +132,11 @@ a,
     text-decoration-thickness: 2px;
 }
 
-.content a {
+.content a, .content .link {
     border-bottom: #000000 1px solid !important;
 }
 
-.content a:hover {
+.content a:hover, .content .link:hover {
     color: #bf2434;
 }
 

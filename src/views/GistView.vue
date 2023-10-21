@@ -152,8 +152,11 @@ useHead({
                 </span>
             </div>
             <div v-html="volumeContent.gist"></div>
-            <div class=""><p class="pt-10">Your custom referral code: <b>{{userStore.cid}}</b></p>
-            <p>Your OCT referral count: <b>0</b></p></div>
+            <div class="">
+                <p class="pt-10">Your custom referral code: <b>{{userStore.cid}}</b></p>
+                <p>Your OCT referral count: <b>0</b></p>
+                <p class="text-xs"><RouterLink to="/referral">More about your referral</RouterLink></p>
+            </div>
         </div>
     </div>
     <Footer />

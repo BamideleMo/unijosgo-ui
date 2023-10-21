@@ -4,7 +4,6 @@ import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 import Loading from "../components/Loading.vue";
 import SubmitReferrer from "../components/SubmitReferrer.vue";
-import axios from "axios";
 import { useUserStore } from "../store/user-store";
 import { useRouter,useRoute } from "vue-router";
 

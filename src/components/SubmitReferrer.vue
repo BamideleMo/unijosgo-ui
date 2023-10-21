@@ -1,11 +1,14 @@
 <script setup>
     import { useVuelidate } from "@vuelidate/core";
+import { useUserStore } from "../store/user-store";
+import axios from "axios";
 import {
     required,
     helpers,
     minLength,
     maxLength
 } from "@vuelidate/validators";
+
 const authStore = useUserStore();
 
 

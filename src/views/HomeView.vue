@@ -191,7 +191,7 @@ useHead({
     color: red;
 }
 .stressed{
-    background-image: linear-gradient(to top, #0095ff, #00bfff, transparent);
+    background-image: linear-gradient(to top, #eeeeee, #00bfff, transparent);
         background-position: 0 85%;
         background-repeat: no-repeat;
         background-size: auto .40rem;

@@ -146,7 +146,7 @@ onMounted(async () => {
             <div v-if="!hasReferrer">
                 <p>You're yet to provide the 'unique referral code' of the person who told you about Kampa. If you do, the person will earn a point that might get him/her a reward.</p>
                 <p>
-                    <span @click="doShowForm" class="link cursor:pointer">Click here to submit the 'unique referral code' of the person</span>. HOWEVER . . . if no one invited you just ignore this.
+                    <span @click="doShowForm" class="link cursor-pointer">Click here to submit the 'unique referral code' of the person</span>. HOWEVER . . . if no one invited you just ignore this.
                 </p>
             </div>
             <div v-else>

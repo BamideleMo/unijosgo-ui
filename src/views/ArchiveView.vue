@@ -71,8 +71,8 @@ onMounted(async () => {
     >
       <h1 class="h1 font-semibold text-lg text-center">All Vols.</h1>
       <table cellpadding="0" cellspacing="0" class="w-full space-y-2">
-        <tr v-for="(item, index) in content" :key="index" class="bg-gray-200">
-          <td class="border-b border-white p-4 lg:p-6">
+        <tr v-for="(item, index) in content" :key="index" class="bg-white">
+          <td class="border-b border-black py-4 lg:py-6">
             <span class="text-xs flex justify-between font-semibold pb-3"
               ><span class="">Vol. #{{ item.volume }}</span
               ><span>{{ item.post_date }}</span></span

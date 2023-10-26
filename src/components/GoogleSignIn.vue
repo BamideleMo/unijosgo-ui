@@ -67,5 +67,5 @@ const registerNow = async () => {
 </script>
 <template>
     <span v-if="isProcessing" class="block w-52 border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-white py-3 px-4 text-xs animate-pulse ">Wait. Signing in ...</span>
-    <GoogleLogin :callback="callback" v-else class="border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg bg-red-600" />
+    <GoogleLogin :callback="callback" v-else class="border-2 border-red-600 rounded hover:opacity-60 drop-shadow-lg" />
 </template>

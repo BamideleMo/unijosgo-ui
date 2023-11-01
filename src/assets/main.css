@@ -1,0 +1,149 @@
+@import "./base.css";
+
+/* #app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+} */
+
+a,
+.green {
+    text-decoration: none;
+    color: hsla(160, 100%, 37%, 1);
+    transition: 0.4s;
+}
+
+@media (hover: hover) {
+    nav a:hover {
+        background-color: hsla(160, 100%, 37%, 0.2);
+    }
+}
+
+@media (min-width: 1024px) {
+    /* body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  } */
+}
+
+/* My styles */
+.content {
+    color: #000000 !important;
+    font-size: 14px !important;
+}
+
+.content ul,
+.content ol {
+    list-style-type: square;
+    margin: 0 32px;
+}
+
+.content ul li strong {
+    color: #000000;
+    display: block;
+    font-weight: bold;
+}
+
+.content ul li,
+.content ol li {
+    padding: 16px 0;
+    font-size: 14px !important;
+    line-height: 20px !important;
+}
+
+.content ol {
+    list-style-type: decimal;
+}
+
+.h1,
+.myred {
+    color: #bf2434;
+}
+
+.content em {
+    font-weight: bold;
+    color: #000000;
+    font-style: normal;
+}
+
+.content img {
+    margin: 0 auto;
+    max-width: 100% !important;
+    border: solid 1px #000000;
+}
+
+.content p {
+    color: #000000;
+    margin: 15px 0;
+    font-size: 14px !important;
+    line-height: 20px !important;
+}
+
+.what {
+    font-size: 18px!important;
+}
+
+.content h2 {
+    padding-top: 8px;
+    color: #bf2434;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.content h2::before {
+    width: 100%;
+    background: linear-gradient(to bottom right, #0100ec, #fb36f4);
+    height: 1px;
+    border-radius: 2px;
+    content: "";
+    margin-bottom: 20px;
+    display: block;
+}
+
+.content .date {
+    border: none;
+    margin-top: 30px !important;
+}
+
+.content h3 {
+    margin-top: 8px;
+    color: #1c7ff2;
+    font-weight: bold;
+    font-size: 19px;
+    text-transform: capitalize;
+    line-height: 21px;
+}
+
+.content h4 {
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: capitalize;
+    line-height: 19px;
+    text-decoration: underline;
+    text-decoration-color: #1c7ff2;
+    text-decoration-thickness: 2px;
+}
+
+.content a, .content .link {
+    border-bottom: #000000 1px solid !important;
+}
+
+.content a:hover, .content .link:hover {
+    color: #bf2434;
+}
+
+
+.content blockquote {
+    margin: 20px 0 !important;
+    padding: 10px;
+    background-color: #eaf0f6;
+    border-radius: 10px;
+}

@@ -22,13 +22,6 @@ const closeForm = () => {
 <template>
   <ComingSoon v-if="showForm" :which="which" @close-form="closeForm" />
 
-  <div
-    class="h-screen bg-yellow-400 absolute w-full top-0 mt-96"
-    v-if="authStore.cid"
-  >
-    <div class="bg-gradient-to-t from-white h-48 -mt-48">&nbsp;</div>
-    <div class="bg-red-600">xxx</div>
-  </div>
   <footer
     class="py-10 mt-20 border-t border-gray-400 text-xs sm:text-xs text-black"
   >

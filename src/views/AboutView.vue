@@ -57,6 +57,43 @@ useHead({
           <MyGoogleSignIn />
         </p>
       </div>
+      <div v-if="!authStore.cid">
+        <h2>4 Reasons Why You Should Sign In to Join:</h2>
+        <h3>#1. Exclusive Gists</h3>
+        <p>
+          Every Saturday we post exclusive interview excerpts, localised news,
+          and more to keep you well informed.
+        </p>
+        <p>Just what you'll need to relax through the weekend.</p>
+        <p>&nbsp;</p>
+        <h3>#2. Give-aways & Discounts</h3>
+        <p>
+          What will an extra 10K do for you? How about a 50% discount on
+          Transport fare back home at semester end?
+        </p>
+        <p>
+          You'll get access to such give-aways and discounts every now & then.
+        </p>
+        <p>&nbsp;</p>
+        <h3>#3. Future-proof your Career</h3>
+        <p>
+          Keep getting smarter and stay ahead of the game with our curation of
+          relevant news, plus the excellent career ideas & resources we share in
+          the "Graduate Well" and "Free Resource" sections.
+        </p>
+        <p>You'll love it!</p>
+        <p>&nbsp;</p>
+        <h3>#4. It’s completely FREE</h3>
+        <p>
+          You don't have to pay to sign in even though what you'll be getting
+          every Saturday is worth a few thousands of naira.
+        </p>
+        <p>Sign in to join and see for yourself.</p>
+        <p>
+          <MyGoogleSignIn />
+        </p>
+        <p>😎</p>
+      </div>
     </div>
   </div>
   <Footer />

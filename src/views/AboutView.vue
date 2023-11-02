@@ -48,11 +48,7 @@ useHead({
         enjoyable newsletter to keep you informed and entertained. 🚀
       </p>
       <div v-if="!authStore.cid">
-        <p>Now:</p>
-        <p>
-          To really understand all this "plenty grammar", just sign in now & see
-          for yourself:
-        </p>
+        <p>Just sign in now & see for yourself:</p>
         <p>
           <MyGoogleSignIn />
         </p>
@@ -88,8 +84,13 @@ useHead({
           What you'll be getting every Saturday is worth a few thousands of
           naira. BUT . . .
         </p>
-        <p>You don't have to pay anything. 🤩</p>
-        <p>Sign in now to join:</p>
+        <p>You don't have to pay anything.</p>
+        <p>🤩</p>
+        <p>Now:</p>
+        <p>
+          To really understand all this "plenty grammar", just sign in now. See
+          for yourself:
+        </p>
         <p>
           <MyGoogleSignIn />
         </p>

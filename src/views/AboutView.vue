@@ -28,19 +28,19 @@ useHead({
       <h1 class="h1 font-semibold text-lg text-center">About</h1>
       <div class="text-xl">
         <a href="https://www.kampa.ng">www.kampa.ng</a> is the modern weekly
-        campus newsletter that provides the best social content created for
-        students in Nigerian Universities to enjoy, stay informed, and become
-        smarter.
+        campus newsletter that provides the best social content for students in
+        Nigerian Universities to enjoy, stay informed, and become smarter.
       </div>
       <h2>During the week . . .</h2>
       <p>
-        We do a curation of relevant and 'feel-good' news about university
+        We do a curation of relevant 'feel-good' news about university
         education, entertainment, tech, governance, & pop culture across
         Nigeria.
       </p>
       <p>
         We also gather localised campus gists, excerpts from exclusive
-        interviews, student surveys, opinions, & more.
+        interviews, student surveys, opinions, career advice/tips that'll help
+        you prepare for the Nigerian labour market, & more.
       </p>
       <p>Then . . .</p>
       <p>

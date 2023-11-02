@@ -50,8 +50,8 @@ useHead({
       <div v-if="!authStore.cid">
         <p>Now:</p>
         <p>
-          To really understand all this "plenty grammar", just sign in & see for
-          yourself:
+          To really understand all this "plenty grammar", just sign in now & see
+          for yourself:
         </p>
         <p>
           <MyGoogleSignIn />
@@ -77,22 +77,22 @@ useHead({
         <p>&nbsp;</p>
         <h3>#3. Future-proof your Career</h3>
         <p>
-          Keep getting smarter and stay ahead of the game with our curation of
-          relevant news, plus the excellent career ideas & resources we share in
-          the "Graduate Well" and "Free Resource" sections.
+          Keep getting smarter and stay ahead of the game with the excellent
+          career ideas & resources we share in the "<b>Graduate Well</b>" and
+          "<b>Helpful Resource</b>" sections.
         </p>
         <p>You'll love it!</p>
         <p>&nbsp;</p>
         <h3>#4. It’s completely FREE</h3>
         <p>
-          You don't have to pay to sign in even though what you'll be getting
-          every Saturday is worth a few thousands of naira.
+          What you'll be getting every Saturday is worth a few thousands of
+          naira. BUT . . .
         </p>
-        <p>Sign in to join and see for yourself.</p>
+        <p>You don't have to pay anything. 🤩</p>
+        <p>Sign in now to join:</p>
         <p>
           <MyGoogleSignIn />
         </p>
-        <p>😎</p>
       </div>
     </div>
   </div>

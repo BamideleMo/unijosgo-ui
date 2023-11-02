@@ -24,7 +24,7 @@ const closeForm = () => {
 
   <div
     class="h-screen bg-yellow-400 absolute w-full top-0 mt-96"
-    v-if="!authStore.cid"
+    v-if="authStore.cid"
   >
     <div class="bg-gradient-to-t from-white h-48 -mt-48">&nbsp;</div>
     <div class="bg-red-600">xxx</div>

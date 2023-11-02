@@ -85,10 +85,10 @@ useHead({
   <Loading class="mt-64" v-if="isloading" />
   <div v-else>
     <div
-      class="w-10/12 lg:w-9/12 mx-auto sm:flex sm:space-x-6 lg:space-x-12 mt-10 sm:mt-12 lg:mt-20 xl:mt-20"
+      class="w-10/12 lg:w-9/12 mx-auto lg:flex lg:space-x-12 mt-10 sm:mt-12 lg:mt-20 xl:mt-20"
     >
       <div
-        class="pb-12 w-full mx-auto sm:w-7/12 lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg"
+        class="pb-12 w-full mx-auto lg:w-8/12 xl:w-8/12 text-left lg:text-left drop-shadow-lg"
       >
         <div class="hidden lg:block">&nbsp;</div>
         <h1
@@ -106,7 +106,7 @@ useHead({
         <MyGoogleSignIn />
       </div>
       <div
-        class="hidden lg:block w-11/12 sm:w-5/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 sm:-mt-2"
+        class="hidden lg:block w-11/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 sm:-mt-2"
       >
         <div
           class="px-2 lg:px-1 max-w-full mx-auto h-80 lg:h-96 overflow-hidden drop-shadow-lg"

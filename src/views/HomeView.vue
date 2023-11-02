@@ -106,7 +106,7 @@ useHead({
         <MyGoogleSignIn />
       </div>
       <div
-        class="hidden sm:block w-11/12 sm:w-5/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 sm:-mt-2"
+        class="hidden lg:block w-11/12 sm:w-5/12 mx-auto mt-12 lg:w-4/12 xl:w-4/12 sm:-mt-2"
       >
         <div
           class="px-2 lg:px-1 max-w-full mx-auto h-80 lg:h-96 overflow-hidden drop-shadow-lg"
@@ -118,9 +118,7 @@ useHead({
   </div>
 
   <div class="bg-gray-100 py-4 lg:pt-6 lg:pb-16">
-    <div
-      class="mt-10 w-10/12 lg:w-9/12 mx-auto grid grid-cols-1 sm:grid-cols-3"
-    >
+    <div class="w-10/12 lg:w-9/12 mx-auto grid grid-cols-1 sm:grid-cols-3">
       <img src="/testimonial-1.png" />
       <img src="/testimonial-2.png" />
       <img src="/testimonial-3.png" />

@@ -117,9 +117,9 @@ useHead({
     </div>
   </div>
 
-  <div class="bg-gray-100 pt-6 pb-16">
+  <div class="bg-gray-100 py-4 lg:pt-6 lg:pb-16">
     <div
-      class="mt-10 w-10/12 lg:w-9/12 mx-auto grid grid-cols-1 lg:grid-cols-3"
+      class="mt-10 w-10/12 lg:w-9/12 mx-auto grid grid-cols-1 sm:grid-cols-3"
     >
       <img src="/testimonial-1.png" />
       <img src="/testimonial-2.png" />

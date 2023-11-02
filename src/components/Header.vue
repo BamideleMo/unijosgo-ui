@@ -72,11 +72,16 @@ const toggleShowMenu = () => {
     <div class="w-10/12 lg:w-9/12 mx-auto flex justify-between">
       <Logo />
       <div class="pt-3 sm:pt-3 drop-shadow-lg">
-        <RouterLink v-if="!authStore.cid" to="/about">About</RouterLink>
+        <RouterLink
+          v-if="!authStore.cid"
+          to="/about"
+          class="hover:opacity-60 border-b border-red-600"
+          >About</RouterLink
+        >
         <span
           v-else
           @click="toggleShowMenu"
-          class="cursor-pointer hover:opacity-60"
+          class="cursor-pointer hover:opacity-60 border-b border-red-600"
           >Menu</span
         >
       </div>

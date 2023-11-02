@@ -116,29 +116,29 @@ useHead({
       </div>
     </div>
   </div>
+
   <div class="bg-gray-100 pt-6 pb-16">
     <div
-      class="mt-10 w-10/12 lg:w-9/12 mx-auto p-2 sm:p-10 border border-black space-y-4 sm:text-xl"
+      class="mt-10 w-10/12 lg:w-9/12 mx-auto grid grid-cols-1 lg:grid-cols-3"
     >
-      <h2><span class="text-xl">✌🏿</span></h2>
-      <div
-        class="flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:space-x-6"
-      >
-        <p class="grow">
-          Kampa informs and helps Nigerian Uni students become smarter by
-          curating and creating relevant, fun & localised content for students
-          to enjoy.
-        </p>
-        <div>
-          <MyGoogleSignIn />
-        </div>
-      </div>
+      <img src="/testimonial-1.png" />
+      <img src="/testimonial-2.png" />
+      <img src="/testimonial-3.png" />
     </div>
   </div>
-  <div class="mt-10 w-10/12 lg:w-9/12 mx-auto grid grid-cols-1 lg:grid-cols-3">
-    <img src="/testimonial-1.png" />
-    <img src="/testimonial-2.png" />
-    <img src="/testimonial-3.png" />
+  <div
+    class="mt-10 w-10/12 lg:w-9/12 mx-auto p-2 sm:p-10 border border-black space-y-4 sm:text-xl"
+  >
+    <h2><span class="text-xl">✌🏿</span></h2>
+    <div class="flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:space-x-6">
+      <p class="grow">
+        Kampa informs and helps Nigerian Uni students become smarter by curating
+        and creating relevant, fun & localised content for students to enjoy.
+      </p>
+      <div>
+        <MyGoogleSignIn />
+      </div>
+    </div>
   </div>
   <Footer />
 </template>

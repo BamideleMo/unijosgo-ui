@@ -59,10 +59,6 @@ useHead({
       </div>
     </div>
   </div>
-  <div class="h-96 -mt-96" v-if="authStore.cid">
-    <div class="bg-gradient-to-t from-white h-48">&nbsp;</div>
-    <div class="bg-red-600 h-full">xxx</div>
-  </div>
   <Footer />
 </template>
 <style></style>

@@ -125,37 +125,54 @@ const checkVol = () => {
   }
 };
 
-
 const currentMonth = ref(null);
 const currentYear = ref(null);
 const getMonthYear = () => {
+  var mnt = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  currentMonth.value = mnt[new Date().getMonth()];
+  currentYear.value = new Date().getFullYear();
 
-    var mnt = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    currentMonth.value = mnt[new Date().getMonth()];
-    currentYear.value = new Date().getFullYear();
-
-    getReferralMonthly();
-}
-
+  getReferralMonthly();
+};
 
 const monthlyRef = ref(null);
 const getReferralMonthly = async () => {
-
-    axios.get(
-            API_URL + "referrerlogs/scores/" + authStore.username + "/" + currentMonth.value + "/" + currentYear.value, {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${authStore.token}`,
-                },
-            }
-        )
-        .then((response) => {
-            const monthly = response.data.data;
-            monthlyRef.value = monthly.length;
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+  axios
+    .get(
+      API_URL +
+        "referrerlogs/scores/" +
+        authStore.username +
+        "/" +
+        currentMonth.value +
+        "/" +
+        currentYear.value,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${authStore.token}`,
+        },
+      }
+    )
+    .then((response) => {
+      const monthly = response.data.data;
+      monthlyRef.value = monthly.length;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
 onMounted(async () => {
@@ -179,14 +196,15 @@ useHead({
     <div class="content space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto">
       <div class="date flex justify-between text-sm">
         <span class="capitalize border-b border-black"
-          >Vol. #{{ volumeContent.volume }}</span
+          >Issue #{{ volumeContent.volume }}</span
         >
         <span class="capitalize border-b border-black">{{
           volumeContent.post_date
         }}</span>
       </div>
       <div class="text-center py-6">
-        <span class="capitalize text-3xl sm:text-4xl uppercase">@{{ user.campus }}</b>
+        <span class="capitalize text-3xl sm:text-4xl uppercase font-semibold"
+          >@{{ user.campus }}
         </span>
       </div>
       <div v-html="volumeContent.gist"></div>
@@ -194,7 +212,9 @@ useHead({
         <p class="pt-10">
           Your custom referral code: <b>{{ userStore.cid }}</b>
         </p>
-        <p>Your {{currentMonth}} referral count: <b>{{monthlyRef}}</b></p>
+        <p>
+          Your {{ currentMonth }} referral count: <b>{{ monthlyRef }}</b>
+        </p>
         <p class="text-xs">
           <RouterLink to="/referral">More about your referral</RouterLink>
         </p>

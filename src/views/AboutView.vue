@@ -33,14 +33,13 @@ useHead({
       </div>
       <h2>During the week . . .</h2>
       <p>
-        We do a curation of relevant 'feel-good' news about university
-        education, entertainment, tech, governance, & pop culture across
-        Nigeria.
+        We gather localised campus gists, excerpts from exclusive interviews,
+        student surveys, career advice & tips that'll help you prepare for the
+        Nigerian labour market, & more.
       </p>
       <p>
-        We also gather localised campus gists, excerpts from exclusive
-        interviews, student surveys, opinions, career advice/tips that'll help
-        you prepare for the Nigerian labour market, & more.
+        We also curate relevant 'feel-good' news about university education,
+        tech, governance, entertainment & pop culture across Nigeria.
       </p>
       <p>Then . . .</p>
       <p>

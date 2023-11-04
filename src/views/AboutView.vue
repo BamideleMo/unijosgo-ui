@@ -52,11 +52,9 @@ useHead({
           <MyGoogleSignIn />
         </p>
       </div>
-      <div v-if="!authStore.cid">
-        <h2>Why Kampa?</h2>
-        <h3>
-          Here are 4 reasons why you should visit this website every Saturday
-        </h3>
+      <div>
+        <h2>EVERY Saturday</h2>
+        <h3>4 reasons why you should check this website every Saturday</h3>
         <p><em>#1. Exclusive Gists</em></p>
         <p>
           Every Saturday we post exclusive interview excerpts, localised news,
@@ -84,12 +82,16 @@ useHead({
           naira. BUT . . .
         </p>
         <p>You don't have to pay anything.</p>
-        <p>🤩</p>
-        <p>Now:</p>
-        <p>To really understand all this "plenty grammar", just sign in now.</p>
-        <p>
-          <MyGoogleSignIn />
-        </p>
+        <div v-if="!authStore.cid">
+          <p>🤩</p>
+          <p>Now:</p>
+          <p>
+            To really understand all this "plenty grammar", just sign in now.
+          </p>
+          <p>
+            <MyGoogleSignIn />
+          </p>
+        </div>
       </div>
     </div>
   </div>

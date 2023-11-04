@@ -54,7 +54,7 @@ const toggleShowMenu = () => {
             to="/archive"
             class="border-b border-red-600 hover:opacity-60 cursor-pointer"
           >
-            All Issues
+            All Posts
           </RouterLink>
         </li>
         <li v-if="authStore.cid" class="border-b px-6 py-6">

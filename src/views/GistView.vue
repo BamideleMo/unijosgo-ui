@@ -197,7 +197,7 @@ useHead({
     <div class="content space-y-4 mt-2 lg:mt-4 sm:w-9/12 lg:w-7/12 sm:mx-auto">
       <div class="date flex justify-between text-sm">
         <span class="capitalize border-b border-black"
-          >Issue #{{ volumeContent.volume }}</span
+          >Post #{{ volumeContent.volume }}</span
         >
         <span class="capitalize border-b border-black">{{
           volumeContent.post_date
@@ -211,7 +211,7 @@ useHead({
       <div v-html="volumeContent.gist"></div>
       <div class="">
         <h2>Tell friends about us</h2>
-        <h3>Hope you enjoyed this issue.</h3>
+        <h3>Hope you enjoyed this week's post.</h3>
         <p>For more interesting gists check back again next Saturday.</p>
         <p>
           And please ask your friends to also sign in to join Kampa for weekly

@@ -76,7 +76,7 @@ useHead({
         <p>
           Keep getting smarter and stay ahead of the game with the excellent
           career ideas & resources we share in the "<b>Graduate Well</b>" and
-          "<b>Helpful Resource</b>" sections.
+          "<b>FREE Resource</b>" sections.
         </p>
         <p>You'll love it!</p>
         <p><em>#4. It’s completely FREE</em></p>
@@ -87,10 +87,7 @@ useHead({
         <p>You don't have to pay anything.</p>
         <p>🤩</p>
         <p>Now:</p>
-        <p>
-          To really understand all this "plenty grammar", just sign in now. See
-          for yourself:
-        </p>
+        <p>To really understand all this "plenty grammar", just sign in now.</p>
         <p>
           <MyGoogleSignIn />
         </p>

@@ -54,8 +54,10 @@ useHead({
         </p>
       </div>
       <div v-if="!authStore.cid">
-        <h2>Why check out Kampa every Saturday?</h2>
-        <h3>Here are 4 reasons</h3>
+        <h2>Why Kampa?</h2>
+        <h3>
+          Here are 4 reasons why you should visit this website every Saturday
+        </h3>
         <p><em>#1. Exclusive Gists</em></p>
         <p>
           Every Saturday we post exclusive interview excerpts, localised news,

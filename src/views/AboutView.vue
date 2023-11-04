@@ -34,8 +34,7 @@ useHead({
       <h2>During the week . . .</h2>
       <p>
         We gather localised campus gists, excerpts from exclusive interviews,
-        student surveys, career advice & tips that'll help you prepare for the
-        Nigerian labour market, & more.
+        student surveys, career advice & more.
       </p>
       <p>
         We also curate relevant news about university education, tech,

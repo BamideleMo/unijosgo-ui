@@ -38,8 +38,8 @@ useHead({
         Nigerian labour market, & more.
       </p>
       <p>
-        We also curate relevant 'feel-good' news about university education,
-        tech, governance, entertainment & pop culture across Nigeria.
+        We also curate relevant news about university education, tech,
+        governance, entertainment & pop culture across Nigeria.
       </p>
       <p>Then . . .</p>
       <p>
@@ -53,7 +53,7 @@ useHead({
         </p>
       </div>
       <div>
-        <h2>EVERY Saturday</h2>
+        <h2>Why Kampa?</h2>
         <h3>4 reasons why you should check this website every Saturday</h3>
         <p><em>#1. Exclusive Gists</em></p>
         <p>

@@ -54,15 +54,15 @@ useHead({
         </p>
       </div>
       <div v-if="!authStore.cid">
-        <h2>4 Reasons Why You Should Sign In to Join:</h2>
-        <h3>#1. Exclusive Gists</h3>
+        <h2>Why check out Kampa every Saturday?</h2>
+        <h3>Here are 4 reasons</h3>
+        <p><em>#1. Exclusive Gists</em></p>
         <p>
           Every Saturday we post exclusive interview excerpts, localised news,
           and more to keep you well informed.
         </p>
         <p>Just what you'll need to relax through the weekend.</p>
-        <p>&nbsp;</p>
-        <h3>#2. Give-aways & Discounts</h3>
+        <p><em>#2. Give-aways & Discounts</em></p>
         <p>
           What will an extra 10K do for you? How about a 50% discount on
           Transport fare back home at semester end?
@@ -70,16 +70,14 @@ useHead({
         <p>
           You'll get access to such give-aways and discounts every now & then.
         </p>
-        <p>&nbsp;</p>
-        <h3>#3. Future-proof your Career</h3>
+        <p><em>#3. Future-proof your Career</em></p>
         <p>
           Keep getting smarter and stay ahead of the game with the excellent
           career ideas & resources we share in the "<b>Graduate Well</b>" and
           "<b>Helpful Resource</b>" sections.
         </p>
         <p>You'll love it!</p>
-        <p>&nbsp;</p>
-        <h3>#4. It’s completely FREE</h3>
+        <p><em>#4. It’s completely FREE</em></p>
         <p>
           What you'll be getting every Saturday is worth a few thousands of
           naira. BUT . . .

@@ -123,6 +123,7 @@ const checkVol = () => {
         console.log(error);
       });
   }
+  getMonthYear();
 };
 
 const currentMonth = ref(null);
@@ -210,17 +211,18 @@ useHead({
       <div v-html="volumeContent.gist"></div>
       <div class="">
         <h2>Tell friends about us</h2>
-        <h3>Hey. Don’t keep us a secret.</h3>
+        <h3>Hope you enjoyed this issue.</h3>
+        <p>For more interesting gists check back again next Saturday.</p>
         <p>
-          Ask your friends to also sign in to join Kampa for weekly updates.
-          Tell them to use your 'unique referral code' when they sign in so that
-          you can earn points. Because points can earn you rewards.
-        </p>
-        <p class="pt-10">
-          Your custom referral code: <b>{{ userStore.cid }}</b>
+          And please ask your friends to also sign in to join Kampa for weekly
+          updates. Tell them to use your 'unique referral code' when they sign
+          in so that you can earn points. Because points can earn you rewards.
         </p>
         <p>
           Your {{ currentMonth }} referral count: <b>{{ monthlyRef }}</b>
+        </p>
+        <p class="">
+          Your custom referral code: <b>{{ userStore.cid }}</b>
         </p>
         <p class="text-xs">
           <RouterLink to="/referral">More about your referral</RouterLink>

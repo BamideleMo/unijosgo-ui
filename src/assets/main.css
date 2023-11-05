@@ -69,9 +69,10 @@ a,
 }
 
 .content em {
-  font-weight: bold;
+  display: block;
   color: #000000;
   font-style: normal;
+  font-size: 1.25rem !important;
 }
 
 .content img {

@@ -217,14 +217,14 @@ useHead({
         <p>For more interesting gists check back again next Saturday.</p>
         <p>
           And please ask your friends to also sign in to join Kampa for weekly
-          updates. Tell them to use your 'unique referral code' when they sign
+          updates. Tell them to use your 'Unique Referral Code' when they sign
           in so that you can earn points. Because points can earn you rewards.
         </p>
         <p>
           Your {{ currentMonth }} referral count: <b>{{ monthlyRef }}</b>
         </p>
         <p class="">
-          Your custom referral code: <b>{{ userStore.cid }}</b>
+          Your Unique Referral Code: <b>{{ userStore.cid }}</b>
         </p>
         <p class="text-xs">
           <RouterLink to="/referral">More about your referral</RouterLink>

@@ -156,7 +156,7 @@ const getReferralMonthly = async () => {
     .get(
       API_URL +
         "referrerlogs/scores/" +
-        authStore.username +
+        userStore.username +
         "/" +
         currentMonth.value +
         "/" +
@@ -164,7 +164,7 @@ const getReferralMonthly = async () => {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${authStore.token}`,
+          Authorization: `Bearer ${userStore.token}`,
         },
       }
     )

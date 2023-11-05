@@ -151,6 +151,7 @@ const getMonthYear = () => {
 
 const monthlyRef = ref(null);
 const getReferralMonthly = async () => {
+  console.log("PPPPPPP");
   axios
     .get(
       API_URL +
@@ -168,6 +169,7 @@ const getReferralMonthly = async () => {
       }
     )
     .then((response) => {
+      console.log(response.data.data, "XXXXX");
       const monthly = response.data.data;
       monthlyRef.value = monthly.length;
     })

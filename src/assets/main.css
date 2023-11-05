@@ -54,7 +54,7 @@ a,
 
 .content ul li,
 .content ol li {
-  padding: 16px 0;
+  padding: 10px 0;
   font-size: 14px !important;
   line-height: 20px !important;
 }
@@ -77,14 +77,14 @@ a,
 .content img {
   margin: 0 auto;
   max-width: 100% !important;
-  border: solid 1px #000000;
+  border-radius: 15px;
 }
 
 .content p {
   color: #000000;
   margin: 15px 0;
   font-size: 14px !important;
-  line-height: 20px !important;
+  line-height: 25px !important;
 }
 
 .what {
@@ -122,29 +122,20 @@ a,
   line-height: 21px;
 }
 
-.content h4 {
-  font-weight: 700;
-  font-size: 16px;
-  text-transform: capitalize;
-  line-height: 19px;
-  text-decoration: underline;
-  text-decoration-color: #1c7ff2;
-  text-decoration-thickness: 2px;
-}
-
 .content a,
 .content .link {
-  border-bottom: #000000 1px solid !important;
+  border-bottom: #999999 1px solid !important;
 }
 
 .content a:hover,
 .content .link:hover {
   color: #bf2434;
+  border-bottom: #0575ed 1px solid !important;
 }
 
 .content blockquote {
   margin: 20px 0 !important;
-  padding: 10px;
+  padding: 20px;
   background-color: #eaf0f6;
   border-radius: 10px;
 }

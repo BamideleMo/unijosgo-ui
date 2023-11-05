@@ -42,8 +42,8 @@ useHead({
       </p>
       <p>Then . . .</p>
       <p>
-        On <em class="text-blue-500">Saturday</em>, we post all of that as one
-        enjoyable newsletter to keep you informed and entertained. 🚀
+        On <strong class="text-blue-500">Saturday</strong>, we post all of that
+        as one enjoyable newsletter to keep you informed and entertained. 🚀
       </p>
       <div v-if="!authStore.cid">
         <p>Just sign in now & see for yourself:</p>
@@ -54,13 +54,13 @@ useHead({
       <div>
         <h2>Why Kampa?</h2>
         <h3>4 reasons why you should check this website every Saturday</h3>
-        <p><em>#1. Exclusive Gists</em></p>
+        <p><strong>#1. Exclusive Gists</strong></p>
         <p>
           Every Saturday we post exclusive interview excerpts, localised news,
           and more to keep you well informed.
         </p>
         <p>Just what you'll need to relax through the weekend.</p>
-        <p><em>#2. Give-aways & Discounts</em></p>
+        <p><strong>#2. Give-aways & Discounts</strong></p>
         <p>
           What will an extra 10K do for you? How about a 50% discount on
           Transport fare back home at semester end?
@@ -68,14 +68,14 @@ useHead({
         <p>
           You'll get access to such give-aways and discounts every now & then.
         </p>
-        <p><em>#3. Future-proof your Career</em></p>
+        <p><strong>#3. Future-proof your Career</strong></p>
         <p>
           Keep getting smarter and stay ahead of the game with the excellent
           career ideas & resources we share in the "<b>Graduate Well</b>" and
           "<b>FREE Resource</b>" sections.
         </p>
         <p>You'll love it!</p>
-        <p><em>#4. It’s completely FREE</em></p>
+        <p><strong>#4. It’s completely FREE</strong></p>
         <p>
           What you'll be getting every Saturday is worth a few thousands of
           naira. BUT . . .

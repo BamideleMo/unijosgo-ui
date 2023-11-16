@@ -117,10 +117,10 @@ useHead({
     </div>
   </div>
 
-  <div class="bg-gray-100 py-4 lg:pt-6 lg:pb-16">
-    <h2 class="text-center text-sm mt-4 text-red-600 font-semibold">
-      What our readers said:
-    </h2>
+  <div class="bg-black py-4 lg:pt-6 lg:pb-16">
+    <h1 class="mt-6 h1 font-semibold text-lg text-center">
+      What Readers Said:
+    </h1>
     <div class="w-10/12 lg:w-9/12 mx-auto grid grid-cols-1 sm:grid-cols-3">
       <img src="/testimonial-1.png" />
       <img src="/testimonial-2.png" />

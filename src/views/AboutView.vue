@@ -53,14 +53,19 @@ useHead({
       </div>
       <div>
         <h2>Why Kampa?</h2>
-        <h3>4 reasons why you should check this website every Saturday</h3>
-        <p><strong>#1. Exclusive Gists</strong></p>
+        <h3>5 reasons why you should check this website every Saturday</h3>
+        <p><strong>#1. Magazine-Quality Editorial</strong></p>
+        <p>
+          We bring magazine-quality editorial content to you every Saturday
+          composed with accuracy and value in mind.
+        </p>
+        <p><strong>#2. Exclusive Gists</strong></p>
         <p>
           Every Saturday we post exclusive interview excerpts, localised news,
           and more to keep you well informed.
         </p>
         <p>Just what you'll need to relax through the weekend.</p>
-        <p><strong>#2. Give-aways & Discounts</strong></p>
+        <p><strong>#3. Give-aways & Discounts</strong></p>
         <p>
           What will an extra 10K do for you? How about a 50% discount on
           Transport fare back home at semester end?
@@ -68,14 +73,14 @@ useHead({
         <p>
           You'll get access to such give-aways and discounts every now & then.
         </p>
-        <p><strong>#3. Future-proof your Career</strong></p>
+        <p><strong>#4. Future-proof your Career</strong></p>
         <p>
           Keep getting smarter and stay ahead of the game with the excellent
           career ideas & resources we share in the "<b>Graduate Well</b>" and
           "<b>FREE Resource</b>" sections.
         </p>
         <p>You'll love it!</p>
-        <p><strong>#4. It’s completely FREE</strong></p>
+        <p><strong>#5. It’s completely FREE</strong></p>
         <p>
           What you'll be getting every Saturday is worth a few thousands of
           naira. BUT . . .

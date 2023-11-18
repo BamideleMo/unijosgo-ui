@@ -128,7 +128,7 @@ useHead({
     </div>
   </div>
   <div
-    class="mt-10 w-10/12 lg:w-9/12 mx-auto p-2 sm:p-10 border border-black space-y-4 sm:text-xl"
+    class="mt-20 w-10/12 lg:w-9/12 mx-auto p-2 sm:p-10 border border-black space-y-4 sm:text-xl"
   >
     <h2><span class="text-xl">✌🏿</span></h2>
     <div class="flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:space-x-6">

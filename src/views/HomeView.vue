@@ -121,10 +121,10 @@ useHead({
     <h1 class="mt-6 h1 font-semibold text-lg text-center">
       What Readers Said:
     </h1>
-    <div class="w-10/12 lg:w-9/12 mx-auto grid grid-cols-1 sm:grid-cols-3">
-      <img src="/testimonial-1.png" />
-      <img src="/testimonial-2.png" />
-      <img src="/testimonial-3.png" />
+    <div class="w-10/12 lg:w-9/12 mx-auto grid grid-cols-1 lg:grid-cols-3">
+      <img src="/testimonial-1.png" class="w-full sm:w-3/5 mx-auto lg:w-full" />
+      <img src="/testimonial-2.png" class="w-full sm:w-3/5 mx-auto lg:w-full" />
+      <img src="/testimonial-3.png" class="w-full sm:w-3/5 mx-auto lg:w-full" />
     </div>
   </div>
   <div
